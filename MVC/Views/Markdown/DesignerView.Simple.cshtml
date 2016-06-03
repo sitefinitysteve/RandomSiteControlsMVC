@@ -1,0 +1,14 @@
+﻿@model System.Web.UI.Control
+
+@using Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Mvc;
+
+<div class="form-group">
+    <textarea sf-model="properties.Markdown.PropertyValue"
+              class="form-control" style="min-height: 500px"
+              placeholder="Enter Markdown..."></textarea>
+    <div class="text-muted text-right">
+        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a>
+    </div>
+</div>

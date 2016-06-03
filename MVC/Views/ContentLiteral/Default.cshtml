@@ -1,0 +1,13 @@
+﻿@model RandomSiteControlsMVC.MVC.Models.ContentLiteral.ContentLiteralModel
+
+
+@if (Telerik.Sitefinity.RSCUtil.SfsConfig.ContentLiteral.WrapLiteralAsContentBlock && Model.RemoveWrapper == false)
+{
+    <div class="sfContentBlock">
+        @Html.Raw(Model.Content)
+    </div>
+}
+else
+{
+    @Html.Raw(Model.Content)
+}

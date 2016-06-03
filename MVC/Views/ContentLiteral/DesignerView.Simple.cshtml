@@ -1,0 +1,15 @@
+﻿@model System.Web.UI.Control
+
+@using Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Mvc;
+
+@Html.CodeMirrorScriptReferences()
+
+<textarea sf-code-area
+          sf-type="htmlmixed"
+          sf-tab-mode="classic"
+          sf-line-numbers="true"
+          sf-match-brackets="true"
+          sf-model="properties.HtmlContent.PropertyValue"
+          placeholder="Enter Content..."></textarea>

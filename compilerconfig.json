@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Tabstrip/Bootstrap/tabstrip.es5.js",
+    "inputFile": "Tabstrip/Bootstrap/tabstrip.js"
+  },
+  {
+    "outputFile": "Tabstrip/Bootstrap/tabstrip.css",
+    "inputFile": "Tabstrip/Bootstrap/tabstrip.less"
+  }
+]

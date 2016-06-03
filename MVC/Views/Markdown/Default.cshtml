@@ -1,0 +1,13 @@
+﻿@model RandomSiteControlsMVC.MVC.Models.Markdown.MarkdownModel
+
+
+@if (Model.UseWrapper)
+{
+    <div class="sfContentBlock sfMarkdown">
+        @Html.Raw(Model.Markdown)
+    </div>
+}
+else
+{
+    @Html.Raw(Model.Markdown)
+}
