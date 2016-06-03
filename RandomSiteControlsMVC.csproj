@@ -116,8 +116,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <EmbeddedResource Include="Scripts\markdown.js" />
-    <EmbeddedResource Include="Scripts\md.min.js" />
+    <EmbeddedResource Include="Scripts\test.js" />
+    <EmbeddedResource Include="Scripts\Markdown\showdown.min.js" />
     <EmbeddedResource Include="MVC\Scripts\Markdown\designerview-simple.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

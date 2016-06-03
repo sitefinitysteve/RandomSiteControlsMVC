@@ -28,10 +28,10 @@ namespace RandomSiteControlsMVC.Helpers
             StringBuilder stringBuilder = new StringBuilder();
             UrlHelper urlHelper = new UrlHelper(helper.ViewContext.HttpContext.Request.RequestContext);
 
-            stringBuilder.Append(helper.Script(urlHelper.EmbeddedResource(typeof(Reference).FullName, "RandomSiteControlsMVC.Scripts.markdown.js")).ToHtmlString());
-            stringBuilder.Append(helper.Script(urlHelper.EmbeddedResource(typeof(Reference).FullName, "RandomSiteControlsMVC.Scripts.md.js")).ToHtmlString());
+            stringBuilder.Append(helper.Script(urlHelper.EmbeddedResource(typeof(Reference).FullName, "RandomSiteControlsMVC.Scripts.Markdown.showdown.min.js")).ToHtmlString());
 
-            return MvcHtmlString.Create(stringBuilder.ToString());
+            var scriptString =  MvcHtmlString.Create(stringBuilder.ToString());
+            return scriptString; //debugging...
         }
     }
 }
