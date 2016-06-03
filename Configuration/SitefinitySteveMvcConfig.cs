@@ -36,18 +36,5 @@ namespace RandomSiteControlsMVC.Configuration
                 this["disqus"] = value;
             }
         }
-
-        [ConfigurationProperty("ContentLiteral")]
-        public ContentLiteralConfigElement ContentLiteral
-        {
-            get
-            {
-                return (ContentLiteralConfigElement)this["ContentLiteral"];
-            }
-            set
-            {
-                this["ContentLiteral"] = value;
-            }
-        }
     }
 }

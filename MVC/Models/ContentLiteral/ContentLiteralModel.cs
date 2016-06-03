@@ -9,6 +9,6 @@ namespace RandomSiteControlsMVC.MVC.Models.ContentLiteral
     public class ContentLiteralModel
     {
         public string Content { get; set; }
-        public bool RemoveWrapper { get; set; }
+        public bool UseWrapper { get; set; }
     }
 }

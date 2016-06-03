@@ -9,6 +9,8 @@ using Telerik.Sitefinity.Abstractions.VirtualPath.Configuration;
 using Telerik.Sitefinity.Configuration;
 using Telerik.Sitefinity.Data;
 using Telerik.Sitefinity.Modules.Pages.Configuration;
+using ServiceStack;
+using ServiceStack.Formats;
 
 namespace RandomSiteControlsMVC
 {

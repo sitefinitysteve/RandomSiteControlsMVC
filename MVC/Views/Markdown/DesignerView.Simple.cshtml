@@ -1,14 +1,32 @@
-﻿@model System.Web.UI.Control
-
-@using Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models;
+﻿@using Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models;
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
 @using Telerik.Sitefinity.Mvc;
+@using RandomSiteControlsMVC.Helpers;
 
-<div class="form-group">
-    <textarea sf-model="properties.Markdown.PropertyValue"
-              class="form-control" style="min-height: 500px"
-              placeholder="Enter Markdown..."></textarea>
-    <div class="text-muted text-right">
-        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a>
+@Html.MarkdownScriptReferences()
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Markdown</label>
+            <textarea ng-model="properties.Markdown.PropertyValue"
+                      class="form-control" style="min-height: 500px"
+                      placeholder="Enter Markdown..."></textarea>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Preview</label>
+            <div class="preview">
+                {{ properties.Markdown.PropertyValue }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-muted text-right">
+            <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a>
+        </div>
     </div>
 </div>

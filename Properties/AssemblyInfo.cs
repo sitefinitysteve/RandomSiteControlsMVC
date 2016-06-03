@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Web;
+using System.Web.UI;
 using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 
 // General Information about an assembly is controlled through the following 
@@ -41,3 +42,7 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 
 //INSTALLER
 [assembly: PreApplicationStartMethod(typeof(Installer), "PreApplicationStart")]
+
+//Scripts
+[assembly: WebResource("RandomSiteControlsMVC.Scripts.markdown.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.Scripts.md.js", "text/javascript")]

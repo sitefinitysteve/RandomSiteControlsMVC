@@ -9,6 +9,10 @@ using Telerik.Sitefinity.Web.UI;
 using Telerik.Sitefinity.Modules.Pages.Configuration;
 using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 using RandomSiteControlsMVC.MVC.Models.Markdown;
+using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
+using ServiceStack.Formats;
+using ServiceStack;
+using MarkdownSharp;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -16,19 +20,44 @@ namespace SitefinityWebApp.Mvc.Controllers
     [ControllerToolboxItem(Name = "MarkdownMVC", Title = "Content markdown", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfContentBlockIcn sfMvcIcn")]
     public class MarkdownController : Controller, ICustomWidgetVisualization
     {
-        /// <summary>
-        /// This is the default Action.
-        /// </summary>
         public ActionResult Index()
         {
             var model = new MarkdownModel();
 
-            model.Markdown = this.Markdown;
+            if (!this.IsEmpty)
+            {
+                model.Markdown = this.GetHtml();
+            }
+
             model.UseWrapper = this.UseWrapper;
 
             return View("Default", model);
         }
 
+        //From ServiceStack HtmlHelper
+        protected string GetHtml()
+        {
+            try
+            {
+                var helper = new ServiceStack.Html.HtmlHelper();
+                var html = helper.RenderMarkdownToHtml(this.Markdown);
+
+                return html.ToHtmlString();
+            }
+            catch (Exception ex)
+            {
+                Logger.Writer.Write(ex);
+                return "Error Rendering Markdown";
+            }
+        }
+
+        protected override void HandleUnknownAction(string actionName)
+        {
+            View("Default").ExecuteResult(this.ControllerContext);
+        }
+
+
+        #region PROPERTIES
         string _content = String.Empty;
         public string Markdown
         {
@@ -39,8 +68,18 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
         }
 
-        public bool UseWrapper { get; set; }
+        bool _useWrapper = true;
+        public bool UseWrapper
+        {
+            get { return _useWrapper; }
+            set
+            {
+                _useWrapper = value;
+            }
+        }
+        #endregion
 
+        #region ICustomWidgetVisualization
         public bool IsEmpty
         {
             get
@@ -56,5 +95,6 @@ namespace SitefinityWebApp.Mvc.Controllers
                 return "Click to add content";
             }
         }
+        #endregion
     }
 }

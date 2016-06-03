@@ -16,19 +16,22 @@ namespace SitefinityWebApp.Mvc.Controllers
     [ControllerToolboxItem(Name = "ContentLiteralMVC", Title = "Content html", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfContentBlockIcn sfMvcIcn")]
     public class ContentLiteralController : Controller, ICustomWidgetVisualization
     {
-        /// <summary>
-        /// This is the default Action.
-        /// </summary>
         public ActionResult Index()
         {
             var model = new ContentLiteralModel();
 
             model.Content = this.HtmlContent;
-            model.RemoveWrapper = this.RemoveWrapper;
+            model.UseWrapper = this.UseWrapper;
 
             return View("Default", model);
         }
 
+        protected override void HandleUnknownAction(string actionName)
+        {
+            View("Default").ExecuteResult(this.ControllerContext);
+        }
+
+        #region PROPERTIES
         string _content = String.Empty;
         public string HtmlContent
         {
@@ -39,8 +42,18 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
         }
 
-        public bool RemoveWrapper { get; set; }
+        bool _useWrapper = true;
+        public bool UseWrapper
+        {
+            get { return _useWrapper; }
+            set
+            {
+                _useWrapper = value;
+            }
+        }
+        #endregion
 
+        #region ICustomWidgetVisualization
         public bool IsEmpty
         {
             get
@@ -56,5 +69,6 @@ namespace SitefinityWebApp.Mvc.Controllers
                 return "Click to add content";
             }
         }
+        #endregion
     }
 }

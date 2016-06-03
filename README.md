@@ -12,3 +12,5 @@
 * TODO: Document
 
 [Created by Sitefinity Steve](https://www.sitefinitysteve.com)
+
+Thanks to Progress\Telerik for making this all possible
