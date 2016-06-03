@@ -1,6 +1,9 @@
 ﻿(function ($) {
     angular.module('designer').controller('SimpleCtrl', ['$scope', 'propertyService', function ($scope, propertyService) {
+        //Resize large
+        $('.modal-dialog').scope().size = 'lg';
 
+        //Store preview
         $scope.myHTML = "";
 
         var preview = $("#preview");
@@ -8,7 +11,8 @@
         $scope.$watch('properties.Markdown.PropertyValue', function (newValue, oldValue) {
             $scope.myHTML = converter.makeHtml(newValue);
 
-            //I do not WANT to do this, I just am not sure how to bypass the security, please if you know PR it
+            //I do not WANT to do this, I just am not sure how to include sanitize properly,
+            //please if you know PR it, directive script is in the assembly already
             preview.html($scope.myHTML);
         }, true);
 

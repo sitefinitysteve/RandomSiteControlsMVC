@@ -44,5 +44,7 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 [assembly: PreApplicationStartMethod(typeof(Installer), "PreApplicationStart")]
 
 //Scripts
+[assembly: WebResource("RandomSiteControlsMVC.Scripts.Angular.angular-showdown.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.Scripts.Markdown.ng-showdown.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.Scripts.Markdown.showdown.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.Scripts.test.js", "text/javascript")]

@@ -2,6 +2,8 @@
     angular.module('designer').requires.push('sfCodeArea');
 
     angular.module('designer').controller('SimpleCtrl', ['$scope', 'propertyService', function ($scope, propertyService) {
+        $('.modal-dialog').scope().size = 'lg';
+
         propertyService.get()
             .then(function (data) {
                 if (data) {
