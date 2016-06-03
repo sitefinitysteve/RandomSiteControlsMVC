@@ -110,6 +110,7 @@
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.json" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
