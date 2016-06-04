@@ -1,1 +1,38 @@
-﻿
+﻿@model RandomSiteControlsMVC.MVC.Models.TabStrip.TabStripModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+@Html.Script("https://dev.sitefinitysteve.com/Sitefinity/Temp/test.js", "bottom")
+@Html.StyleSheet("https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css")
+@Html.StyleSheet("https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.bootstrap.min.css")
+
+
+<div class="sfsTabStrip" style="display:none">
+    <ul>
+        @foreach (var tab in Model.Tabs)
+        {
+            <li>@tab.Title</li>
+        }
+    </ul>
+    <div>
+        <span class="rainy">&nbsp;</span>
+        <div class="weather">
+            <h2>17<span>&ordm;C</span></h2>
+            <p>Rainy weather in Paris.</p>
+        </div>
+    </div>
+    <div>
+        <span class="sunny">&nbsp;</span>
+        <div class="weather">
+            <h2>29<span>&ordm;C</span></h2>
+            <p>Sunny weather in New York.</p>
+        </div>
+    </div>
+    <div>
+        <span class="sunny">&nbsp;</span>
+        <div class="weather">
+            <h2>21<span>&ordm;C</span></h2>
+            <p>Sunny weather in London.</p>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,11 @@ namespace RandomSiteControlsMVC.MVC.Models.TabStrip
 {
     public class TabStripModel
     {
+        public TabStripModel()
+        {
+            this.Tabs = new List<Tab>();
+        }
 
+        public List<Tab> Tabs { get; set; }
     }
 }

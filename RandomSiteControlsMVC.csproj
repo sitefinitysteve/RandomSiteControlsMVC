@@ -78,7 +78,6 @@
   <ItemGroup>
     <Compile Include="Configuration\DisqusConfig.cs" />
     <Compile Include="Configuration\HttpHeaderElement.cs" />
-    <Compile Include="Configuration\PlaceholderConfig.cs" />
     <Compile Include="Configuration\SitefinitySteveMvcConfig.cs" />
     <Compile Include="Helpers\FrontendHelpers.cs" />
     <Compile Include="Helpers\Reference.cs" />
@@ -89,6 +88,7 @@
     <Compile Include="MVC\Controllers\TabStrip\TabStripController.cs" />
     <Compile Include="MVC\Models\ContentLiteral\ContentLiteralModel.cs" />
     <Compile Include="MVC\Models\Markdown\MarkdownModel.cs" />
+    <Compile Include="MVC\Models\TabStrip\Tab.cs" />
     <Compile Include="MVC\Models\TabStrip\TabStripModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\RSCUtil.cs" />
@@ -106,16 +106,17 @@
     <EmbeddedResource Include="MVC\Views\Markdown\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.json" />
+    <EmbeddedResource Include="MVC\Views\TabStrip\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\TabStrip\DesignerView.Simple.json" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVC\Scripts\TabStrip\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
+    <EmbeddedResource Include="MVC\Scripts\TabStrip\designerview-simple.js" />
     <EmbeddedResource Include="Scripts\Angular\angular-sanitize.js" />
     <EmbeddedResource Include="Scripts\Markdown\ng-showdown.min.js" />
     <EmbeddedResource Include="Scripts\test.js" />

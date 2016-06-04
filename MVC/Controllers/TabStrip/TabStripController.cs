@@ -9,12 +9,14 @@ using Telerik.Sitefinity.Web.UI;
 using Telerik.Sitefinity.Modules.Pages.Configuration;
 using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 using RandomSiteControlsMVC.MVC.Models.TabStrip;
+using Telerik.Sitefinity;
+using Telerik.Sitefinity.Services;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
     [EnhanceViewEnginesAttribute]
     [ControllerToolboxItem(Name = "TabStripMVC", Title = "Tabstrip", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfFormsIcn sfMvcIcn")]
-    public class TabStripController : Controller, ICustomWidgetVisualization
+    public class TabStripController : Controller
     {
         /// <summary>
         /// This is the default Action.
@@ -23,32 +25,20 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             var model = new TabStripModel();
 
+            model.Tabs.Add(new Tab("Tab1", "k-state-active"));
+            model.Tabs.Add(new Tab("Tab2"));
+            model.Tabs.Add(new Tab("Tab3"));
+
             return View("Default", model);
         }
 
-        string _tabs;
+        string _tabs = String.Empty;
         public string Tabs
         {
             get { return _tabs; }
             set
             {
                 _tabs = value;
-            }
-        }
-
-        public bool IsEmpty
-        {
-            get
-            {
-                return String.IsNullOrEmpty(this.Tabs.Trim());
-            }
-        }
-
-        public string EmptyLinkText
-        {
-            get
-            {
-                return "Click to add content";
             }
         }
     }
