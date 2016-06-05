@@ -1,38 +1,59 @@
 ﻿@model RandomSiteControlsMVC.MVC.Models.TabStrip.TabStripModel
 
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Services;
 
 @Html.Script("https://dev.sitefinitysteve.com/Sitefinity/Temp/test.js", "bottom")
 @Html.StyleSheet("https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css")
 @Html.StyleSheet("https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.bootstrap.min.css")
 
-
-<div class="sfsTabStrip" style="display:none">
-    <ul>
-        @foreach (var tab in Model.Tabs)
-        {
-            <li>@tab.Title</li>
-        }
-    </ul>
-    <div>
-        <span class="rainy">&nbsp;</span>
-        <div class="weather">
-            <h2>17<span>&ordm;C</span></h2>
-            <p>Rainy weather in Paris.</p>
+@if (SystemManager.IsDesignMode)
+{
+    <div class="k-tabstrip-wrapper">
+        <div class="sfsTabStrip k-widget k-header k-tabstrip k-floatwrap k-tabstrip-top" style="" data-role="tabstrip" tabindex="0" role="tablist">
+            <ul class="k-tabstrip-items k-reset">
+                @{int i = 0;}
+                @foreach (var tab in Model.Tabs)
+                {
+                    <li class="k-item k-state-default @(i==0 ? "k-first" : "")@(i==Model.Tabs.Count() - 1 ? "k-last" : "")">
+                        <span class="k-loading k-complete"></span>
+                        <span class="k-link">@tab.Title</span>
+                    </li>
+                    i++;
+                }
+            </ul>
         </div>
     </div>
-    <div>
-        <span class="sunny">&nbsp;</span>
-        <div class="weather">
-            <h2>29<span>&ordm;C</span></h2>
-            <p>Sunny weather in New York.</p>
+}
+else
+{
+    <div class="sfsTabStrip" style="display:none">
+        <ul>
+            @foreach (var tab in Model.Tabs)
+            {
+                <li>@tab.Title</li>
+            }
+        </ul>
+        <div>
+            <span class="rainy">&nbsp;</span>
+            <div class="weather">
+                <h2>17<span>&ordm;C</span></h2>
+                <p>Rainy weather in Paris.</p>
+            </div>
+        </div>
+        <div>
+            <span class="sunny">&nbsp;</span>
+            <div class="weather">
+                <h2>29<span>&ordm;C</span></h2>
+                <p>Sunny weather in New York.</p>
+            </div>
+        </div>
+        <div>
+            <span class="sunny">&nbsp;</span>
+            <div class="weather">
+                <h2>21<span>&ordm;C</span></h2>
+                <p>Sunny weather in London.</p>
+            </div>
         </div>
     </div>
-    <div>
-        <span class="sunny">&nbsp;</span>
-        <div class="weather">
-            <h2>21<span>&ordm;C</span></h2>
-            <p>Sunny weather in London.</p>
-        </div>
-    </div>
-</div>
+}
