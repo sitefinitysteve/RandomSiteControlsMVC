@@ -4,16 +4,16 @@
         $('.modal-dialog').scope().size = 'lg';
 
         //Store preview
-        $scope.myHTML = "";
+        //$scope.myHTML = "";
 
         var preview = $("#preview");
         var converter = new showdown.Converter();
         $scope.$watch('properties.Markdown.PropertyValue', function (newValue, oldValue) {
-            $scope.myHTML = converter.makeHtml(newValue);
+            //$scope.myHTML = converter.makeHtml(newValue);
 
             //I do not WANT to do this, I just am not sure how to include sanitize properly,
             //please if you know PR it, directive script is in the assembly already
-            preview.html($scope.myHTML);
+            setMarkDownPreview(newValue, preview, converter);
         }, true);
 
         propertyService.get()
@@ -21,7 +21,8 @@
                 if (data) {
                     $scope.properties = propertyService.toAssociativeArray(data.Items);
 
-                    $scope.myHTML = $scope.properties.Markdown.PropertyValue;
+                    setMarkDownPreview($scope.properties.Markdown.PropertyValue, preview, converter);
+                    //$scope.myHTML = $scope.properties.Markdown.PropertyValue;
                 }
             },
             function (data) {
@@ -37,4 +38,11 @@
                 $scope.feedback.showLoadingIndicator = false;
             });
     }]);
+
+    function setMarkDownPreview(markdown, preview, converter) {
+        if (markdown !== null && markdown !== "") {
+            var html = converter.makeHtml(markdown);
+            preview.html(html);
+        }
+    }
 })(jQuery);

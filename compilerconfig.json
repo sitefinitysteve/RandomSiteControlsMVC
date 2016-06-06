@@ -1,3 +1,6 @@
 ﻿[
-
+  {
+    "outputFile": "MVC/Views/TabStrip/Resources/tabstrip.css",
+    "inputFile": "MVC/Views/TabStrip/Resources/tabstrip.less"
+  }
 ]

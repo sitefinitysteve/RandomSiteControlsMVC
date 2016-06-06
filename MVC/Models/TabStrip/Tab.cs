@@ -12,13 +12,14 @@ namespace RandomSiteControlsMVC.MVC.Models.TabStrip
         {
         }
 
-        public Tab(string title, string cssClass = ""){
+        public Tab(string title, bool selected = false, string cssClass = ""){
             this.Title = title;
-
+            this.Selected = selected;
             this.CssClass = cssClass;
         }
 
         public string Title { get; set; }
+        public bool Selected { get; set; }
         public string CssClass { get; set; }
     }
 }

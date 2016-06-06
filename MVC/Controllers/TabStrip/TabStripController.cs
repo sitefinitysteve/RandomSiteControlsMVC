@@ -25,11 +25,20 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             var model = new TabStripModel();
 
-            model.Tabs.Add(new Tab("Tab1", "k-state-active"));
+            model.Tabs.Add(new Tab("Tab1", true));
             model.Tabs.Add(new Tab("Tab2"));
             model.Tabs.Add(new Tab("Tab3"));
 
-            return View("Default", model);
+            var themeName = RSCUtil.SfsConfig.TabstripTheme;
+            if (themeName != "Bootstrap" || themeName != "Kendo")
+            {
+                return View("Bootstrap", model);
+            }
+            else
+            {
+                //Load default
+                return View(themeName, model);
+            }
         }
 
         string _tabs = String.Empty;

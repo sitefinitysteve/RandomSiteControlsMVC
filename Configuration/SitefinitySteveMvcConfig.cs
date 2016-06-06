@@ -29,6 +29,34 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
+        [ObjectInfo(Description = "Default place where widget scripts will render", Title = "Script Placeholder")]
+        [ConfigurationProperty("DefaultScriptPlaceholder", IsRequired = true, DefaultValue = "bottom")]
+        public string DefaultScriptPlaceholder
+        {
+            get
+            {
+                return (string) this["DefaultScriptPlaceholder"];
+            }
+            set
+            {
+                this["DefaultScriptPlaceholder"] = value;
+            }
+        }
+
+        [ObjectInfo(Description = "Default Tabstrip to use, options are Kendo or Bootstrap", Title = "Tabstrip Theme")]
+        [ConfigurationProperty("TabstripTheme", IsRequired = true, DefaultValue = "Bootstrap")]
+        public string TabstripTheme
+        {
+            get
+            {
+                return (string) this["TabstripTheme"];
+            }
+            set
+            {
+                this["TabstripTheme"] = value;
+            }
+        }
+
         [ConfigurationProperty("HttpHeaderModule")]
         public HttpHeaderElement HttpHeaderModule
         {

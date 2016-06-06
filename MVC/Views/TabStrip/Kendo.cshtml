@@ -1,16 +1,24 @@
 ﻿@model RandomSiteControlsMVC.MVC.Models.TabStrip.TabStripModel
 
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity;
+@using Telerik.Sitefinity.Mvc;
+@using RandomSiteControlsMVC.Helpers;
 @using Telerik.Sitefinity.Services;
 
-@Html.Script("https://dev.sitefinitysteve.com/Sitefinity/Temp/test.js", "bottom")
+@Html.Script(ScriptRef.KendoWeb, RSCUtil.SfsConfig.KendoScriptPlaceholder)
+
+@Html.Script("https://dev.sitefinitysteve.com/Sitefinity/Temp/kendo.js", RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+
+@Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css"))
 @Html.StyleSheet("https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css")
 @Html.StyleSheet("https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.bootstrap.min.css")
 
 @if (SystemManager.IsDesignMode)
 {
+    @*This is so the designer has something to render instantly on a change as SF has no way to notify on save*@
     <div class="k-tabstrip-wrapper">
-        <div class="sfsTabStrip k-widget k-header k-tabstrip k-floatwrap k-tabstrip-top" style="" data-role="tabstrip" tabindex="0" role="tablist">
+        <div class="sfs-tabstrip-configurator k-widget k-header k-tabstrip k-floatwrap k-tabstrip-top" style="" data-role="tabstrip" tabindex="0" role="tablist">
             <ul class="k-tabstrip-items k-reset">
                 @{int i = 0;}
                 @foreach (var tab in Model.Tabs)
@@ -27,7 +35,7 @@
 }
 else
 {
-    <div class="sfsTabStrip" style="display:none">
+    <div class="sfs-tabstrip-configurator" style="display:none">
         <ul>
             @foreach (var tab in Model.Tabs)
             {
