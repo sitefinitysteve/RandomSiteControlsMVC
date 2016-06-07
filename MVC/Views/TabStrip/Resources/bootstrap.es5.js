@@ -7,41 +7,42 @@ $(document).ready(function () {
             var wrapper = $(this);
             //Find configurator
             var config = wrapper.find(".sfs-tabstrip-configurator[data-type='bootstrap']");
+            if (config.length > 0) {
+                //Get tabs
+                var tabs = config.find("li[role='presentation']");
 
-            //Get tabs
-            var tabs = config.find("li[role='presentation']");
+                //Find content zone
+                var panelwrapper = wrapper.find(".tab-panels");
 
-            //Find content zone
-            var panelwrapper = wrapper.find(".tab-panels");
+                //Find panels
+                var panels = panelwrapper.find(".sfs-tabitem");
 
-            //Find panels
-            var panels = panelwrapper.find(".sfs-tabitem");
+                //Loop through each tab
+                tabs.each(function (index) {
+                    if (index <= panels.length - 1) {
+                        //Can only find matching panels if they exist
+                        var tab = $(this);
+                        var tabId = "sfs-tab-panel-" + panelCounter;
 
-            //Loop through each tab
-            tabs.each(function (index) {
-                if (index <= panels.length - 1) {
-                    //Can only find matching panels if they exist
-                    var tab = $(this);
-                    var tabId = "sfs-tab-panel-" + panelCounter;
+                        //Give the tab the anchorlink
+                        var link = $(tab.children()[0]);
+                        link.attr("href", "#" + tabId);
 
-                    //Give the tab the anchorlink
-                    var link = $(tab.children()[0]);
-                    link.attr("href", "#" + tabId);
+                        //Give the panel the ID to link to
+                        var panel = $(panels[index]);
+                        panel.attr("id", tabId);
 
-                    //Give the panel the ID to link to
-                    var panel = $(panels[index]);
-                    panel.attr("id", tabId);
-
-                    if (index === 0) {
-                        panel.addClass("active");
+                        if (index === 0) {
+                            panel.addClass("active");
+                        }
                     }
-                }
 
-                panelCounter = panelCounter + 1;
-            });
+                    panelCounter = panelCounter + 1;
+                });
 
-            //Show after initalized
-            wrapper.removeClass("loading");
+                //Show after initalized
+                wrapper.removeClass("loading");
+            }
         });
     }
 });

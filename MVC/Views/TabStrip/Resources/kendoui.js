@@ -6,20 +6,22 @@
             //Find configurator
             var config = wrapper.find(".sfs-tabstrip-configurator[data-type='kendo']");
 
-            ////Find content panels
-            var panelwrapper = wrapper.find(".tab-panels .tab-pane:first-child");
+            if (config.length > 0) {
+                ////Find content panels
+                var panelwrapper = wrapper.find(".tab-panels .tab-pane:first-child");
 
-            //Remove the wrapper nodes, kendo can't use it
-            config.unwrap();
-            panelwrapper.unwrap();
+                //Remove the wrapper nodes, kendo can't use it
+                config.unwrap();
+                panelwrapper.unwrap();
 
-            //Initalize the tabstrip on sfs-tabstrip
-            $(this).kendoTabStrip({
-                animation: false
-            });
+                //Initalize the tabstrip on sfs-tabstrip
+                $(this).kendoTabStrip({
+                    animation: false
+                });
 
-            //Show after initalized
-            wrapper.removeClass("loading");
+                //Show after initalized
+                wrapper.removeClass("loading");
+            }
         });
     }
 });

@@ -114,6 +114,7 @@
       <DependentUpon>tabstrip.css</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

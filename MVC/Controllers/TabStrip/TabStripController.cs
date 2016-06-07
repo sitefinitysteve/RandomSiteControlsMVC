@@ -29,11 +29,19 @@ namespace SitefinityWebApp.Mvc.Controllers
             model.Tabs.Add(new Tab("Tab2"));
             model.Tabs.Add(new Tab("Tab3"));
 
-            var themeName = RSCUtil.SfsConfig.TabstripTheme;
+            var themeName = String.Empty;
+            if (!String.IsNullOrEmpty(ThemeOverride))
+            {
+                themeName = this.ThemeOverride;
+            }
+            else
+            {
+                themeName = RSCUtil.SfsConfig.TabstripTheme;
 
-            //Fix bad names
-            if (themeName == "KendoUI")
-                themeName = "Kendo";
+                //Fix bad names
+                if (themeName == "KendoUI")
+                    themeName = "Kendo";
+            }
 
             return View(themeName, model);
         }
@@ -45,6 +53,16 @@ namespace SitefinityWebApp.Mvc.Controllers
             set
             {
                 _tabs = value;
+            }
+        }
+
+        string _theme = String.Empty;
+        public string ThemeOverride
+        {
+            get { return _theme; }
+            set
+            {
+                _theme = value;
             }
         }
     }
