@@ -4,19 +4,33 @@
         .sf_colsIn.tab-configurator .zeDockZoneEmpty{
             display:none;
         }
+
     }
 
     &.zeContentMode {
+        .sfs-tabstrip {
+            .tab-panels{
+                margin-top: -23px;
+                margin-left: 2px;
+            }
+        }
 
     }
 
     .sfs-tabstrip {
-        padding: 10px;
-        border: 1px solid #e4e4e4 !important;
         margin-bottom: 20px;
 
         &.loading {
             display: block;
+        }
+
+        .tab-panels{
+            padding: 10px;
+            border: 1px solid #e4e4e4 !important;
+        }
+
+        .tab-pane{
+            padding-top: 0;
         }
 
         .tab-content {
@@ -34,6 +48,10 @@
                         background-color: #f2dede;
                         font-weight:bold;
                         padding: 20px;
+
+                        > div {
+                            display:none;
+                        }
 
                         &::before{
                             content: "Layout widgets only please, consult the documentation";
@@ -71,11 +89,15 @@
 
 //Live
 .sfs-tabstrip{
+    margin-bottom: 20px;
+
     &.loading{
         display: none;
     }
 
     .tab-pane{
+        padding-top: 20px;
+
         .sf_colsIn{
             margin-top: 20px;
         }

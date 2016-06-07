@@ -128,6 +128,20 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Bootstrap.cshtml" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Kendo.cshtml" />
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.js" />
+    <Content Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.es5.min.js">
+      <DependentUpon>bootstrap.es5.js</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.js" />
+    <Content Include="MVC\Views\TabStrip\Resources\kendoui.es5.js">
+      <DependentUpon>kendoui.js</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.es5.min.js">
+      <DependentUpon>kendoui.es5.js</DependentUpon>
+    </EmbeddedResource>
     <Content Include="MVC\Views\TabStrip\Resources\tabstrip.css">
       <DependentUpon>tabstrip.less</DependentUpon>
     </Content>

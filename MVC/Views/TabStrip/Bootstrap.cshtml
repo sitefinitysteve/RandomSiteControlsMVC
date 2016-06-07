@@ -1,13 +1,15 @@
 ﻿@model RandomSiteControlsMVC.MVC.Models.TabStrip.TabStripModel
 
+@using Telerik.Sitefinity.Modules.Pages;
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
 @using Telerik.Sitefinity;
 @using Telerik.Sitefinity.Mvc;
 @using RandomSiteControlsMVC.Helpers;
 @using Telerik.Sitefinity.Services;
 
-@Html.Script("https://dev.sitefinitysteve.com/Sitefinity/Temp/bootstrap.js", RSCUtil.SfsConfig.DefaultScriptPlaceholder)
-@Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css"))
+@Html.Script(ScriptRef.JQuery, RSCUtil.SfsConfig.jQueryScriptPlaceholder)
+@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.bootstrap.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+@Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css"), "head")
 
 @if (SystemManager.IsDesignMode)
 {
@@ -17,7 +19,7 @@
             @{int i = 0;}
             @foreach (var tab in Model.Tabs)
             {
-                <li role="presentation" class='@tab.Selected ? "active" : "")'>
+                <li role="presentation" class='@(tab.Selected ? "active" : "")'>
                     <a href="#@i" aria-controls="@tab.Title.ToLower()" role="tab" data-toggle="tab">@tab.Title</a>
                 </li>
                 i++;
@@ -27,18 +29,14 @@
     }
     else
     {
-    <div class="sfs-tabstrip-configurator" data-type="bootstrap">
-        <div class="tabs">
-            <ul class="nav nav-tabs" role="tablist">
-                @{int i = 1;}
-                @foreach (var tab in Model.Tabs)
-                {
-                    <li role="presentation" class='@tab.Selected ? "active" : "")'>
-                        <a href="#@i" aria-controls="@tab.Title.ToLower()" role="tab" data-toggle="tab">@tab.Title</a>
-                    </li>
-                    i++;
-                }
-            </ul>
-        </div>
-    </div>
+    <ul class="sfs-tabstrip-configurator nav nav-tabs" role="tablist" data-type="bootstrap">
+        @{int i = 1;}
+        @foreach (var tab in Model.Tabs)
+        {
+            <li role="presentation" class='@(tab.Selected ? "active" : "")'>
+                <a aria-controls="@tab.Title.ToLower()" role="tab" data-toggle="tab">@tab.Title</a>
+            </li>
+            i++;
+        }
+    </ul>
 }

@@ -15,6 +15,19 @@ namespace RandomSiteControlsMVC.Configuration
             base.OnPropertiesInitialized();
         }
 
+        [ObjectInfo(Description = "This is where the Html.Script tag will render jQuery", Title = "jQuery Script Placeholder")]
+        [ConfigurationProperty("jQueryScriptPlaceholder", IsRequired = true, DefaultValue = "top")]
+        public string jQueryScriptPlaceholder
+        {
+            get
+            {
+                return (string) this["jQueryScriptPlaceholder"];
+            }
+            set
+            {
+                this["jQueryScriptPlaceholder"] = value;
+            }
+        }
         [ObjectInfo(Description = "This is where the Html.Script tag will render kendo", Title = "Kendo Script Placeholder")]
         [ConfigurationProperty("KendoScriptPlaceholder", IsRequired = true, DefaultValue = "top")]
         public string KendoScriptPlaceholder
@@ -43,7 +56,7 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
-        [ObjectInfo(Description = "Default Tabstrip to use, options are Kendo or Bootstrap", Title = "Tabstrip Theme")]
+        [ObjectInfo(Description = "Default Tabstrip to use, Kendo, Bootstrap, or Custom (see docs)", Title = "Tabstrip Theme")]
         [ConfigurationProperty("TabstripTheme", IsRequired = true, DefaultValue = "Bootstrap")]
         public string TabstripTheme
         {

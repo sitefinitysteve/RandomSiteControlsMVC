@@ -30,19 +30,16 @@ namespace SitefinityWebApp.Mvc.Controllers
             model.Tabs.Add(new Tab("Tab3"));
 
             var themeName = RSCUtil.SfsConfig.TabstripTheme;
-            if (themeName != "Bootstrap" || themeName != "Kendo")
-            {
-                return View("Bootstrap", model);
-            }
-            else
-            {
-                //Load default
-                return View(themeName, model);
-            }
+
+            //Fix bad names
+            if (themeName == "KendoUI")
+                themeName = "Kendo";
+
+            return View(themeName, model);
         }
 
         string _tabs = String.Empty;
-        public string Tabs
+        public string SerializedTabs
         {
             get { return _tabs; }
             set

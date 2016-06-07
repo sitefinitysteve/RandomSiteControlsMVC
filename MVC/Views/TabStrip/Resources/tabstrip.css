@@ -1,13 +1,22 @@
 ﻿.sfPageEditor.zeLayoutMode .sf_colsIn.tab-configurator .zeDockZoneEmpty {
   display: none;
 }
+.sfPageEditor.zeContentMode .sfs-tabstrip .tab-panels {
+  margin-top: -23px;
+  margin-left: 2px;
+}
 .sfPageEditor .sfs-tabstrip {
-  padding: 10px;
-  border: 1px solid #e4e4e4 !important;
   margin-bottom: 20px;
 }
 .sfPageEditor .sfs-tabstrip.loading {
   display: block;
+}
+.sfPageEditor .sfs-tabstrip .tab-panels {
+  padding: 10px;
+  border: 1px solid #e4e4e4 !important;
+}
+.sfPageEditor .sfs-tabstrip .tab-pane {
+  padding-top: 0;
 }
 .sfPageEditor .sfs-tabstrip .tab-content > .RadDockZone > .zeLayoutDock .sf_cols:before {
   content: "TabStrip Tab";
@@ -16,6 +25,9 @@
   background-color: #f2dede;
   font-weight: bold;
   padding: 20px;
+}
+.sfPageEditor .sfs-tabstrip .tab-content > .RadDockZone > .zeControlDock .rdContent > div {
+  display: none;
 }
 .sfPageEditor .sfs-tabstrip .tab-content > .RadDockZone > .zeControlDock .rdContent::before {
   content: "Layout widgets only please, consult the documentation";
@@ -40,8 +52,14 @@
   display: none;
   height: 0;
 }
+.sfs-tabstrip {
+  margin-bottom: 20px;
+}
 .sfs-tabstrip.loading {
   display: none;
+}
+.sfs-tabstrip .tab-pane {
+  padding-top: 20px;
 }
 .sfs-tabstrip .tab-pane .sf_colsIn {
   margin-top: 20px;

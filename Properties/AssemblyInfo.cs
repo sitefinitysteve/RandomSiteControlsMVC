@@ -48,6 +48,10 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 [assembly: WebResource("RandomSiteControlsMVC.Scripts.Markdown.ng-showdown.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.Scripts.Markdown.showdown.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.Scripts.test.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.bootstrap.es5.min.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.es5.min.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.bootstrap.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.js", "text/javascript")]
 
 //Styles
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css", "text/css")]

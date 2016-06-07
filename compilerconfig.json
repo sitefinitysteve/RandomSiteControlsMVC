@@ -2,5 +2,13 @@
   {
     "outputFile": "MVC/Views/TabStrip/Resources/tabstrip.css",
     "inputFile": "MVC/Views/TabStrip/Resources/tabstrip.less"
+  },
+  {
+    "outputFile": "MVC/Views/TabStrip/Resources/bootstrap.es5.js",
+    "inputFile": "MVC/Views/TabStrip/Resources/bootstrap.js"
+  },
+  {
+    "outputFile": "MVC/Views/TabStrip/Resources/kendoui.es5.js",
+    "inputFile": "MVC/Views/TabStrip/Resources/kendoui.js"
   }
 ]
