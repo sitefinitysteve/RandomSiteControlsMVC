@@ -5,6 +5,12 @@
   margin-top: -23px;
   margin-left: 2px;
 }
+.sfPageEditor .k-tabstrip-wrapper {
+  margin-bottom: 0 !important;
+}
+.sfPageEditor .k-tabstrip-wrapper .k-widget {
+  margin-bottom: -5px !important;
+}
 .sfPageEditor .sfs-tabstrip {
   margin-bottom: 20px;
 }

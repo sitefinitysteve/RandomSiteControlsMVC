@@ -11,6 +11,7 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 using RandomSiteControlsMVC.MVC.Models.TabStrip;
 using Telerik.Sitefinity;
 using Telerik.Sitefinity.Services;
+using System.Collections.Generic;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -25,9 +26,27 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             var model = new TabStripModel();
 
-            model.Tabs.Add(new Tab("Tab1", true));
-            model.Tabs.Add(new Tab("Tab2"));
-            model.Tabs.Add(new Tab("Tab3"));
+            //Load Saved tabs
+            var tabs = this.DeserializeTabs();
+
+            //Check for no tabs
+            if (tabs.Count == 0)
+            {
+                model.Tabs.Add(new Tab("Tab1", true));
+                model.Tabs.Add(new Tab("Tab2"));
+                model.Tabs.Add(new Tab("Tab3"));
+            }
+            else
+            {
+                //Check for selection
+                if (tabs.Count(x => x.Selected) == 0)
+                {
+                    //Select the first one
+                    tabs[0].Selected = true;
+                }
+
+                model.Tabs.AddRange(tabs);
+            }
 
             var themeName = String.Empty;
             if (!String.IsNullOrEmpty(ThemeOverride))
@@ -46,7 +65,7 @@ namespace SitefinityWebApp.Mvc.Controllers
             return View(themeName, model);
         }
 
-        string _tabs = String.Empty;
+        string _tabs = "[]";
         public string SerializedTabs
         {
             get { return _tabs; }
@@ -65,5 +84,21 @@ namespace SitefinityWebApp.Mvc.Controllers
                 _theme = value;
             }
         }
+
+        string _querystringKey = String.Empty;
+        public string QuerystringKey
+        {
+            get { return _querystringKey; }
+            set
+            {
+                _querystringKey = value;
+            }
+        }
+
+        private List<Tab> DeserializeTabs()
+        {
+            return ServiceStack.Text.JsonSerializer.DeserializeFromString<List<Tab>>(this.SerializedTabs);
+        }
+
     }
 }

@@ -16,7 +16,8 @@
 
                 //Initalize the tabstrip on sfs-tabstrip
                 $(this).kendoTabStrip({
-                    animation: false
+                    animation: false,
+                    tabPosition: "top"
                 });
 
                 //Show after initalized

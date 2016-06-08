@@ -6,14 +6,15 @@
 
 @Html.CodeMirrorScriptReferences()
 
-<textarea sf-code-area
-          sf-type="htmlmixed"
-          sf-tab-mode="classic"
-          sf-line-numbers="true"
-          sf-match-brackets="true"
-          sf-model="properties.HtmlContent.PropertyValue"
-          placeholder="Enter Content..."></textarea>
-
+<div class="ng-cloak">
+    <textarea sf-code-area
+              sf-type="htmlmixed"
+              sf-tab-mode="classic"
+              sf-line-numbers="true"
+              sf-match-brackets="true"
+              sf-model="properties.HtmlContent.PropertyValue"
+              placeholder="Enter Content..."></textarea>
+</div>
 <style>
     .sf-backend-wrp .modal-body.ng-scope{
         padding: 0 10px 0 0;

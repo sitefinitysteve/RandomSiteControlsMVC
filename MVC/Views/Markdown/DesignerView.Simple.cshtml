@@ -6,30 +6,31 @@
 @Html.MarkdownScriptReferences()
 
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <textarea ng-model="properties.Markdown.PropertyValue"
-                      class="form-control editor"
-                      placeholder="Enter Markdown..."></textarea>
+<div class="ng-cloak">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <textarea ng-model="properties.Markdown.PropertyValue"
+                          class="form-control editor"
+                          placeholder="Enter Markdown..."></textarea>
+            </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <div id="preview">
-                <div ng-bind-html="myHTML"></div>
-                @*<div markdown-to-html="myHTML"></div>*@
+        <div class="col-md-6">
+            <div class="form-group">
+                <div id="preview">
+                    <div ng-bind-html="myHTML"></div>
+                    @*<div markdown-to-html="myHTML"></div>*@
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="Options">
-    <div class="Options-toggler">
-        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a>
+    <div class="Options">
+        <div class="Options-toggler">
+            <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a>
+        </div>
     </div>
 </div>
-
 
 <style>
     .editor {
