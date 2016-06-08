@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web;
 using Telerik.Sitefinity.Mvc;
 using Telerik.Sitefinity.Web.UI;
 using Telerik.Sitefinity.Modules.Pages.Configuration;
@@ -38,6 +39,25 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
             else
             {
+                if (!String.IsNullOrEmpty(this.QuerystringKey))
+                {
+                    //Check for set querystring key
+                    if (Request.QueryString[this.QuerystringKey] != null)
+                    {
+                        var value = Request.QueryString[this.QuerystringKey];
+
+                        //Okay the key is there, now we need to look for a value
+                        var luckyTab = tabs.FirstOrDefault(x => x.QuerystringValue == value);
+                        if (luckyTab != null)
+                        {
+                            //Deselect all the existing tabs
+                            tabs.Select(c => { c.Selected = false; return c; }).ToList();
+
+                            luckyTab.Selected = true;
+                        }
+                    }
+                }
+
                 //Check for selection
                 if (tabs.Count(x => x.Selected) == 0)
                 {

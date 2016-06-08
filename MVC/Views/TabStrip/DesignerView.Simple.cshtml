@@ -32,17 +32,18 @@
                     <input type="text" class="form-control" id="urlvalue-input" placeholder="Url Value" ng-model="tabstrip.selectedTab.QuerystringValue">
                     <div class="text-muted">(Optional) Pairs with the Url key on the options tab to select this tab dynamically</div>
                 </div>
-                <div class="form-group" ng-hide="tabstrip.tabs.length <= 1">
-                    <div class="btn-group">
-                        <button type="button" ng-click="onDeleteTab()" class="btn btn-danger">Delete</button>
-                    </div>
-                </div>
                 <div class="checkbox">
                     <label for="selected">
                         <input id="selected" type="checkbox" ng-model="tabstrip.selectedTab.Selected" ng-change="onChangeSelected()" />
                         Default Tab
                     </label>
                 </div>
+                <div class="form-group" ng-hide="tabstrip.tabs.length <= 1">
+                    <div class="btn-group">
+                        <button type="button" ng-click="onDeleteTab()" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </tab>
