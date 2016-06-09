@@ -1,11 +1,12 @@
 ﻿(function ($) {
     angular.module('designer').controller('SimpleCtrl', ['$scope', 'propertyService', function ($scope, propertyService) {
-        $('.modal-dialog').scope().size = 'lg';
+        //$('.modal-dialog').scope().size = 'lg';
 
         $scope.tabstrip = {
             tabs: []
         };
 
+        $scope.currentTheme = "";
         $scope.origin = window.location.origin;
 
         $scope.tabstrip.selectedIndex = 0;
@@ -45,14 +46,13 @@
             $scope.tabstrip.selectedIndex = index;
         }
 
-        $scope.onChangeSelected = function (tab) {
+        $scope.onChangeSelected = function () {
             //Remove selection from other tabs
             for (var i = 0; i < $scope.tabstrip.tabs.length; i++) {
-                $scope.tabstrip.tabs[i].Selected = false;
+                if ($scope.tabstrip.tabs[i].Title != $scope.tabstrip.selectedTab.Title) {
+                    $scope.tabstrip.tabs[i].Selected = false;
+                }
             }
-
-            //Select this magical tab
-            tab.Selected = true;
         }
 
         $scope.onDeleteTab = function () {

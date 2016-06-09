@@ -8,10 +8,10 @@
 
 @Html.Script(ScriptRef.KendoWeb, RSCUtil.SfsConfig.KendoScriptPlaceholder)
 
-<tabset>
+<tabset class="nav-tabs-wrapper">
     <tab heading="Tabs">
         <div class="row ng-cloak padding">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat="tab in tabstrip.tabs" ng-click="onSelectTab(tab, $index)" ng-class="{active: tab.Editing}">
                         <span ng-if="tab.Selected" class="badge">Default</span>
@@ -22,7 +22,7 @@
                     <button type="button" class="btn btn-default" ng-click="onAddTab()" style="width: 100%">New Tab</button>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="form-group">
                     <label class="control-label" for="title-input-input">Title</label>
                     <input type="text" class="form-control" id="title-input" placeholder="Title" ng-model="tabstrip.selectedTab.Title">
@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label class="control-label" for="urlvalue-input">Url Value</label>
                     <input type="text" class="form-control" id="urlvalue-input" placeholder="Url Value" ng-model="tabstrip.selectedTab.QuerystringValue">
-                    <div class="text-muted">(Optional) Pairs with the Url key on the options tab to select this tab dynamically</div>
+                    <div class="text-muted"><strong>(Optional)</strong> Pairs with the Url key on the options tab to select this tab dynamically</div>
                 </div>
                 <div class="checkbox">
                     <label for="selected">
@@ -49,10 +49,23 @@
     </tab>
     <tab heading="Options">
         <div class="padding">
+            <div ng-show="properties.CurrentTheme.PropertyValue == 'Kendo'">
+                @* CUSTOM KENDO PROPERTIES *@
+                <div class="form-group">
+                    <label for="sel1">Tab Postion</label>
+                    <select class="form-control" ng-model="properties.TabPosition.PropertyValue">
+                        <option>top</option>
+                        <option>bottom</option>
+                        <option>left</option>
+                        <option>right</option>
+                    </select>
+                    <div class="text-muted">Selections not "top" will not be visible in design mode</div>
+                </div>
+            </div>
             <div class="form-group">
-                <label class="control-label" for="title-input-input">Url key to select tab</label>
+                <label class="control-label" for="title-input-input">Url Key</label>
                 <input type="text" class="form-control" id="title-input" placeholder="Enter a key..." ng-model="properties.QuerystringKey.PropertyValue">
-                <div class="text-muted">(Optional) {{ origin }}/page?<strong>food</strong>=bread<br/>The key is "food", set the value "bread" on the tab</div>
+                <div class="text-muted"><strong>(Optional)</strong> {{ origin }}/page?<strong>food</strong>=bread.  The key is "food", set the value "bread" on the tab</div>
             </div>
         </div>
     </tab>
@@ -66,5 +79,10 @@
 
     .padding{
         padding-top: 20px;
+    }
+
+    .text-muted{
+       font-size: 12px;
+       padding-top: 4px;
     }
 </style>

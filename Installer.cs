@@ -64,11 +64,11 @@ namespace RandomSiteControlsMVC
                 manager.SaveSection(config);
             }
 
-            if (!section.Tools.Any<ToolboxItem>(e => e.Name == "TabStrip"))
+            if (!section.Tools.Any<ToolboxItem>(e => e.Name == "TabStripMVC"))
             {
                 var tool = new ToolboxItem(section.Tools)
                 {
-                    Name = "TabStrip",
+                    Name = "TabStripMVC",
                     Title = "TabStrip",
                     Description = "Renders the parent child layouts as a RadTabStrip",
                     ControlType = "Telerik.Sitefinity.Frontend.GridSystem.GridControl, Telerik.Sitefinity.Frontend",
@@ -78,11 +78,11 @@ namespace RandomSiteControlsMVC
                 section.Tools.Add(tool);
             }
 
-            if (!section.Tools.Any<ToolboxItem>(e => e.Name == "Tab"))
+            if (!section.Tools.Any<ToolboxItem>(e => e.Name == "TabMVC"))
             {
                 var tool = new ToolboxItem(section.Tools)
                 {
-                    Name = "Tab",
+                    Name = "TabMVC",
                     Title = "Tab",
                     Description = "A tab for the tabstrip",
                     ControlType = "Telerik.Sitefinity.Frontend.GridSystem.GridControl, Telerik.Sitefinity.Frontend",

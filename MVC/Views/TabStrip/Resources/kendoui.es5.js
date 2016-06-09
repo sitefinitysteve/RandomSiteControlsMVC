@@ -19,7 +19,7 @@ $(document).ready(function () {
                 //Initalize the tabstrip on sfs-tabstrip
                 $(this).kendoTabStrip({
                     animation: false,
-                    tabPosition: "top"
+                    tabPosition: config.data("tab-position")
                 });
 
                 //Show after initalized

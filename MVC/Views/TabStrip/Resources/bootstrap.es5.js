@@ -32,7 +32,7 @@ $(document).ready(function () {
                         var panel = $(panels[index]);
                         panel.attr("id", tabId);
 
-                        if (index === 0) {
+                        if (tab.hasClass("active")) {
                             panel.addClass("active");
                         }
                     }

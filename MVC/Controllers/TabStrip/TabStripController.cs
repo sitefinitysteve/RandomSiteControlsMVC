@@ -24,6 +24,7 @@ namespace SitefinityWebApp.Mvc.Controllers
         public ActionResult Index()
         {
             var model = new TabStripModel();
+            model.TabPosition = this.TabPosition;
 
             //Load Saved tabs
             var tabs = this.DeserializeTabs();
@@ -112,6 +113,24 @@ namespace SitefinityWebApp.Mvc.Controllers
                 _querystringKey = value;
             }
         }
+
+        public string CurrentTheme
+        {
+            get { return RSCUtil.SfsConfig.TabstripTheme; }
+        }
+
+        #region AdditionalProperties
+        string _tabPosition = "top";
+        public string TabPosition
+        {
+            get { return _tabPosition; }
+            set
+            {
+                _tabPosition = value;
+            }
+        }
+
+        #endregion
 
         private List<Tab> DeserializeTabs()
         {

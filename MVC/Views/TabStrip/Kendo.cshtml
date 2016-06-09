@@ -35,7 +35,7 @@
 }
 else
 {
-    <ul class="sfs-tabstrip-configurator" role="tablist" data-type="kendo">
+    <ul class="sfs-tabstrip-configurator" role="tablist" data-type="kendo" data-tab-position="@Model.TabPosition">
         @{int i = 1;}
         @foreach (var tab in Model.Tabs)
         {

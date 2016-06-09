@@ -144,6 +144,9 @@
       <DependentUpon>bootstrap.es5.js</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.js" />
+    <Content Include="MVC\Views\TabStrip\Resources\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
     <Content Include="MVC\Views\TabStrip\Resources\kendoui.es5.js">
       <DependentUpon>kendoui.js</DependentUpon>
     </Content>
