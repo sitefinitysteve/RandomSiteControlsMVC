@@ -41,6 +41,10 @@
     <Reference Include="ServiceStack.Common">
       <HintPath>..\Web\bin\ServiceStack.Common.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Web\bin\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Text">
       <HintPath>..\Web\bin\ServiceStack.Text.dll</HintPath>
     </Reference>
@@ -162,9 +166,7 @@
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Layouts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
     <EmbeddedResource Include="MVC\Scripts\TabStrip\designerview-simple.js" />
