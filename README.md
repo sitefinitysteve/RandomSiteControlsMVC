@@ -2,14 +2,16 @@
 RandomSiteControls re-written in pure MVC for Sitefinity Feather
 
 ## Installation
-* Add the RandomSiteControlsMVC Nuget package
+* Add the RandomSiteControlsMVC Nuget package (Install-Package RandomSiteControlsMVC)
+* Run the site, load your toolbox.config and move the widgets and layouts around as needed
 > RandomSiteControlsMVC.dll is not compatible with the previous RandomSiteControls.dll, it's one or the other.
 
 ## Featuers
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4pOJaRzoFJM" frameborder="0" allowfullscreen></iframe>
 ### Widgets
 * Content html
 * Content markdown
-* Tabstrip (Kendo, Bootstrap)
+* Tabstrip (Kendo, Bootstrap): Change the site default at /Sitefinity/Administration/Settings/Advanced/SitefinitySteveMVC 
 
 ### Modules
 * RemoveHttpHeadersModule
@@ -18,6 +20,9 @@ RandomSiteControls re-written in pure MVC for Sitefinity Feather
 * TODO: Document
 
 ## Troubleshooting
+#### How do I modify your views
+Feather has you covered, just make the controller name in ~/MVC/Views/Widget and go nuts.  Example ~/MVC/Views/TabStrip/Bootstrap.cshtml
+
 #### My tabstrip is unstyled
 I am not injecting any CSS, if your theme is bootstrap you must add the CSS, if you are using kendo, you need KendoCommon and the theme you want
 
