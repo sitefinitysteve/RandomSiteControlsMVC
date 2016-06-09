@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Web\bin\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack">
       <HintPath>..\Web\bin\ServiceStack.dll</HintPath>
     </Reference>
@@ -113,6 +117,7 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\tabstrip.min.css">
       <DependentUpon>tabstrip.css</DependentUpon>
     </EmbeddedResource>
+    <None Include=".nuspec" />
     <None Include="app.config" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
@@ -130,6 +135,8 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Bootstrap.cshtml" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Kendo.cshtml" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.js" />
+    <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tab.html" />
+    <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tabstrip.html" />
     <Content Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
@@ -152,7 +159,9 @@
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Layouts\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
     <EmbeddedResource Include="MVC\Scripts\TabStrip\designerview-simple.js" />

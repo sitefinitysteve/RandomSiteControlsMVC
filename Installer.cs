@@ -32,6 +32,81 @@ namespace RandomSiteControlsMVC
 
             //Add Tools
             InstallVirtualPaths(); // See that method for VIRTUAL PATHS installation code
+            InstallLayouts();
+        }
+
+        private static void InstallLayouts()
+        {
+            ConfigManager manager = Config.GetManager();
+            manager.Provider.SuppressSecurityChecks = true;
+            var config = manager.GetSection<ToolboxesConfig>();
+            var layouts = config.Toolboxes["PageLayouts"];
+            foreach (var s in layouts.Sections)
+            {
+                Debug.WriteLine(s); ;
+            }
+
+            var section = layouts
+                            .Sections
+                            .Where<ToolboxSection>(tb => tb.Name == "Controls")
+                            .FirstOrDefault();
+
+            if (section == null)
+            {
+                section = new ToolboxSection(layouts.Sections)
+                {
+                    Name = "Controls",
+                    Title = "Controls",
+                    Description = "Controls"
+                };
+                layouts.Sections.Add(section);
+
+                manager.SaveSection(config);
+            }
+
+            if (!section.Tools.Any<ToolboxItem>(e => e.Name == "TabStrip"))
+            {
+                var tool = new ToolboxItem(section.Tools)
+                {
+                    Name = "TabStrip",
+                    Title = "TabStrip",
+                    Description = "Renders the parent child layouts as a RadTabStrip",
+                    ControlType = "Telerik.Sitefinity.Frontend.GridSystem.GridControl, Telerik.Sitefinity.Frontend",
+                    CssClass = "sfL20_20_20_20_20",
+                    LayoutTemplate = "~/SitefinitySteveMVC/RandomSiteControlsMVC.MVC.Views.TabStrip.Layouts.tabstrip.html"
+                };
+                section.Tools.Add(tool);
+            }
+
+            if (!section.Tools.Any<ToolboxItem>(e => e.Name == "Tab"))
+            {
+                var tool = new ToolboxItem(section.Tools)
+                {
+                    Name = "Tab",
+                    Title = "Tab",
+                    Description = "A tab for the tabstrip",
+                    ControlType = "Telerik.Sitefinity.Frontend.GridSystem.GridControl, Telerik.Sitefinity.Frontend",
+                    CssClass = "sfL100",
+                    LayoutTemplate = "~/SitefinitySteveMVC/RandomSiteControlsMVC.MVC.Views.TabStrip.Layouts.tab.html"
+                };
+                section.Tools.Add(tool);
+            }
+
+            //if (!section.Tools.Any<ToolboxItem>(e => e.Name == "FancyBox"))
+            //{
+            //    var tool = new ToolboxItem(section.Tools)
+            //    {
+            //        Name = "FancyBox",
+            //        Title = "FancyBox Popup",
+            //        Description = "Build a popup from the Sitefinity UI",
+            //        ControlType = "RandomSiteControls.FancyBox.FancyBoxLayout",
+            //        CssClass = "sfsLayoutFancyBoxIcon"
+            //    };
+            //    section.Tools.Add(tool);
+            //}
+
+            manager.SaveSection(config);
+            manager.Provider.SuppressSecurityChecks = false;
         }
 
         private static void InstallVirtualPaths()

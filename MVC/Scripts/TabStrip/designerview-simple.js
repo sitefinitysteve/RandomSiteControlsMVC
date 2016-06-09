@@ -15,7 +15,7 @@
 
         $scope.onAddTab = function (title) {
             var newBlankTab = {
-                Title: (title == null || title === "") ? "New Tab" : title,
+                Title: (title === null || title === "") ? "New Tab" : title,
                 Selected: ($scope.tabstrip.selectedTab == null) ? true : false, //No selected means this is the first tab! WOOHOO
                 QuerystringValue: "",
                 Editing: true

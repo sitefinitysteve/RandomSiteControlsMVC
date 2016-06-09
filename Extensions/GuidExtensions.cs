@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
 using Telerik.Sitefinity.DynamicModules;
 using Telerik.Sitefinity.DynamicModules.Model;
 using Telerik.Sitefinity.Libraries.Model;
@@ -23,8 +24,9 @@ namespace Telerik.Sitefinity
         {
             LibrariesManager manager = LibrariesManager.GetManager();
             try{
-                return (imageId != Guid.Empty) ? manager.GetImage(imageId) : null;    
+                return (imageId != Guid.Empty) ? manager.GetImage(imageId) : null;
             }catch(ItemNotFoundException iex){
+                Logger.Writer.Write(iex);
                 return null;
             }
         }
@@ -42,6 +44,7 @@ namespace Telerik.Sitefinity
             }
             catch (ItemNotFoundException iex)
             {
+                Logger.Writer.Write(iex);
                 return null;
             }
         }
@@ -86,7 +89,7 @@ namespace Telerik.Sitefinity
             var contentType = TypeResolutionService.ResolveType(type);
 
             var items = manager.GetDataItems(contentType).Where(x => contentLinks.Contains(x.Id));
-            
+
             return items;
         }
 
