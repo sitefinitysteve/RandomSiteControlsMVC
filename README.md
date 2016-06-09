@@ -28,9 +28,17 @@ They are under the "Controls" toolbox menu below your standard grid layouts
 I'm using a Javascript converter in the designer, but using the ServiceStack markdown parser on the server widget.  You'd need to post the question to ServiceStack via Stackoverflow.
 
 ## Roadmap
+* Disqus
 * Modal popup\Fancybox?
 * Document Tree List
 * Page Title
+* Placeholder
+
+## Migrating from the old hybrid version
+* Delete the DLL
+* Remove the reference in VS (If it's there)
+* Search your project for "RandomSiteControls" and remove all the old refs.  Toolbox.config and VirtualPaths.config will need to be edited
+* Find\Replace for "RandomSiteControlsUtil" to "RSCUtil"
 
 ## Author
 [Created by Sitefinity Steve](https://www.sitefinitysteve.com)

@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 namespace Telerik.Sitefinity
 {
     /// <summary>
-    /// Thanks Stephen Pittman https://plus.google.com/+StephenPittmanAus/posts 
+    /// Thanks Stephen Pittman https://plus.google.com/+StephenPittmanAus/posts
     /// </summary>
     public class PublishingExtensions
     {
@@ -41,7 +41,7 @@ namespace Telerik.Sitefinity
             if (!type.StartsWith("Telerik.Sitefinity.DynamicTypes.Model.")){
                 type = "Telerik.Sitefinity.DynamicTypes.Model.{0}".Arrange(type);
             }
-            
+
             var itemType = TypeResolutionService.ResolveType(type);
             var item = dynMgr.CreateDataItem(itemType);
 
@@ -96,20 +96,20 @@ namespace Telerik.Sitefinity
 
             //Save the master item
             if (publishOn == null) {
-                
+
                 item.PublicationDate = DateTime.Now;
             }
 
             item.SetWorkflowStatus(dynMgr.Provider.ApplicationName, "Draft");
 
             if (suppressSecurity) {
-                
+
                 dynMgr.Provider.SuppressSecurityChecks = true;
             }
             dynMgr.SaveChanges();
 
             if (suppressSecurity) {
-                
+
                 dynMgr.Provider.SuppressSecurityChecks = false;
             }
 
@@ -131,14 +131,14 @@ namespace Telerik.Sitefinity
                 //You need to call SaveChanges() in order for the items to be actually persisted to data store
                 if (suppressSecurity) {
                     dynMgr.Provider.SuppressSecurityChecks = true;
-                    
+
                 }
 
                 dynMgr.SaveChanges();
 
                 if (suppressSecurity) {
                     dynMgr.Provider.SuppressSecurityChecks = false;
-                    
+
                 }
             }
 
@@ -149,14 +149,14 @@ namespace Telerik.Sitefinity
 
     public static class PageExtensions{
         /// <summary>
-        /// Sitefinity Steve Extension from 
+        /// Sitefinity Steve Extension from
         /// https://plus.google.com/109308138315717177456/posts/CK1cANseeKP
         /// </summary>
         /// <param name="pageNode"></param>
         public static void UnpublishPage(this PageNode pageNode)
         {
             var pageManager = PageManager.GetManager();
-            
+
             pageNode.ApprovalWorkflowState = "Unpublished";
 
             pageManager.UnpublishPage(pageNode.GetPageData());
