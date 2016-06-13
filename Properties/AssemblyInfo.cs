@@ -37,8 +37,8 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("9.0.6000.0")]
-[assembly: AssemblyFileVersion("9.0.6000.0")]
+[assembly: AssemblyVersion("9.0.6000.1")]
+[assembly: AssemblyFileVersion("9.0.6000.1")]
 
 //INSTALLER
 [assembly: PreApplicationStartMethod(typeof(Installer), "PreApplicationStart")]
@@ -55,3 +55,13 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 
 //Styles
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css", "text/css")]
+
+//MIGRATION: REMOVE LATER
+//Fancybox
+[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve-layout.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve-layout.min.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControls.FancyBox.Resources.jquery.fancybox-1.3.8.min.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve.css", "text/css", PerformSubstitution = true)]
+[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve.min.css", "text/css", PerformSubstitution = true)]
+[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fblayouts.gif", "image/gif")]
+[assembly: WebResource("RandomSiteControls.FancyBox.Resources.close-icon.png", "image/png")]

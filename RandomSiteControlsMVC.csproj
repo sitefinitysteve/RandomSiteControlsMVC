@@ -107,6 +107,12 @@
     <Compile Include="Helpers\Reference.cs" />
     <Compile Include="HttpModules\RemoveHttpHeadersModule.cs" />
     <Compile Include="Installer.cs" />
+    <Compile Include="Migration\ContentLiteral\ContentLiteral.cs" />
+    <Compile Include="Migration\Layouts\FancyBox\FancyBoxLayout.cs" />
+    <Compile Include="Migration\Layouts\TabStrip\TabStripLayout.cs" />
+    <Compile Include="Migration\Layouts\TabStrip\TabStripVerticalLayout.cs" />
+    <Compile Include="Migration\ScriptStyle\ScriptStyle.cs" />
+    <Compile Include="Migration\TabStrip\TabStripConfigurator.cs" />
     <Compile Include="MVC\Controllers\ContentLiteral\ContentLiteralController.cs" />
     <Compile Include="MVC\Controllers\Markdown\MarkdownController.cs" />
     <Compile Include="MVC\Controllers\TabStrip\TabStripController.cs" />
@@ -141,6 +147,22 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.js" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tab.html" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tabstrip.html" />
+    <EmbeddedResource Include="Migration\TabStrip\TabStripConfigurator.ascx" />
+    <EmbeddedResource Include="Migration\ScriptStyle\ScriptStyle.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\ContentLiteral\ContentLiteral.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\close-icon.png" />
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve-layout.js" />
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve-layout.min.js" />
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve.css" />
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve.min.css" />
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fblayouts.gif" />
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Views\FancyBoxLayout.ascx" />
+    <EmbeddedResource Include="Migration\Layouts\TabStrip\Views\TabStripLayout.ascx" />
+    <EmbeddedResource Include="Migration\Layouts\TabStrip\Views\TabStripVerticalLayout.ascx" />
     <Content Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
@@ -161,6 +183,7 @@
       <DependentUpon>tabstrip.less</DependentUpon>
     </Content>
     <Content Include="MVC\Views\TabStrip\Resources\tabstrip.less" />
+    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve-layout.min.js.map" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
