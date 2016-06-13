@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" %>
-
-<h3>DEPRECIATED ScriptStyle</h3>
-<div><asp:Label ID="tabStripLabel" runat="server" ForeColor="Red" /></div>
-<div>This is the tab content to migreate to the new tabstrip, DONT FORGET TO USE THE NEW LAYOUT AS WELL!</div>
+<asp:Literal ID="descriptionLiteral" runat="server" />
+<asp:Panel id="designModePanel" runat="server" Visible="False">
+DEPRECIATED ScriptStyle, PLEASE MIGRATE TO SOMETHING ELSE
+</asp:Panel>

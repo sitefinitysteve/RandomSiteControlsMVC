@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Web.UI;
 using Telerik.Sitefinity.Web.UI;
+using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
+using System.Diagnostics;
+using System.Web;
 
 namespace RandomSiteControls.TabStrip
 {
@@ -15,10 +18,24 @@ namespace RandomSiteControls.TabStrip
         {
             this.tabStripLabel.Text = this.TabNames;
 
-            if (!this.IsDesignMode())
+            if (this.IsDesignMode())
             {
-                //Hide in live mode
-                this.Visible = false;
+                this.designMode.Visible = true;
+                this.liveMode.Visible = false;
+            }
+            else
+            {
+                this.designMode.Visible = false;
+                this.liveMode.Visible = true;
+            }
+
+            try
+            {
+                Logger.Writer.Write("Migrate: TabStrip: {0}".Arrange(HttpContext.Current.Request.Url.AbsoluteUri));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
             }
         }
 
@@ -63,5 +80,22 @@ namespace RandomSiteControls.TabStrip
                 return this.Container.GetControl<Label>("tabStripLabel", true);
             }
         }
+        protected virtual Panel liveMode
+        {
+            get
+            {
+                return this.Container.GetControl<Panel>("liveMode", true);
+            }
+        }
+
+        protected virtual Panel designMode
+        {
+            get
+            {
+                return this.Container.GetControl<Panel>("designMode", true);
+            }
+        }
+
+
     }
 }

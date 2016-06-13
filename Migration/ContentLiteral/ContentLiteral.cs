@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Web.UI;
 using Telerik.Sitefinity.Web.UI;
 using System.Web;
+using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
+using System.Diagnostics;
 
 namespace RandomSiteControls.ContentLiteral
 {
@@ -20,6 +22,15 @@ namespace RandomSiteControls.ContentLiteral
             {
                 //Hide in live mode
                 this.Visible = false;
+            }
+
+            try
+            {
+                Logger.Writer.Write("Migrate: ContentLiteral: {0}".Arrange(HttpContext.Current.Request.Url.AbsoluteUri));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
             }
         }
 

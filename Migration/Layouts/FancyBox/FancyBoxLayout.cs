@@ -30,7 +30,7 @@ namespace RandomSiteControls.FancyBox {
             }
         }
 
-        public string CustomTempalate = "~/SitefinitySteveMVC/RandomSiteControls.FancyBox.Views.FancyBoxLayout.ascx";
+        public string CustomTempalate = "~/SitefinitySteveMVC/RandomSiteControlsMVC.Migration.Layouts.FancyBox.Views.FancyBoxLayout.ascx";
         #endregion
     }
 }

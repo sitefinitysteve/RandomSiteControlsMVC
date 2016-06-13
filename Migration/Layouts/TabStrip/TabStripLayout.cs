@@ -36,7 +36,7 @@ namespace RandomSiteControls.TabStrip {
             }
         }
 
-        public string CustomTempalate = "~/SitefinitySteveMVC/RandomSiteControls.TabStrip.Views.TabStripLayout.ascx";
+        public string CustomTempalate = "~/SitefinitySteveMVC/RandomSiteControlsMVC.Migration.Layouts.TabStrip.Views.TabStripLayout.ascx";
         #endregion
     }
 }
