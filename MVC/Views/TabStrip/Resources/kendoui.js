@@ -20,6 +20,11 @@
                     tabPosition: config.data("tab-position")
                 });
 
+                var className = config.data("classname");
+                if(className !== ""){
+                    wrapper.addClass(className);
+                }
+
                 //Show after initalized
                 wrapper.removeClass("loading");
             }

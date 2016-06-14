@@ -37,6 +37,11 @@
                     panelCounter = panelCounter + 1;
                 });
 
+                var className = config.data("classname");
+                if (className !== "") {
+                    wrapper.addClass(className);
+                }
+
                 //Show after initalized
                 wrapper.removeClass("loading");
             }

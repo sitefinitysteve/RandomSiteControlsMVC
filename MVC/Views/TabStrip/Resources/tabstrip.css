@@ -1,10 +1,6 @@
 ﻿.sfPageEditor.zeLayoutMode .sf_colsIn.tab-configurator .zeDockZoneEmpty {
   display: none;
 }
-.sfPageEditor.zeContentMode .sfs-tabstrip .tab-panels {
-  margin-top: -23px;
-  margin-left: 2px;
-}
 .sfPageEditor .k-tabstrip-wrapper {
   margin-bottom: 0 !important;
 }
@@ -19,10 +15,23 @@
 }
 .sfPageEditor .sfs-tabstrip .tab-panels {
   padding: 10px;
-  border: 1px solid #e4e4e4 !important;
+  border: 1px solid #c4c4c4 !important;
 }
 .sfPageEditor .sfs-tabstrip .tab-pane {
-  padding-top: 0;
+  border: #c4c4c4 2px solid;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.sfPageEditor .sfs-tabstrip .tab-pane .k-tabstrip-wrapper {
+  background-color: #f2dede;
+  font-weight: bold;
+  padding: 20px;
+}
+.sfPageEditor .sfs-tabstrip .tab-pane .k-tabstrip-wrapper > div {
+  display: none;
+}
+.sfPageEditor .sfs-tabstrip .tab-pane .k-tabstrip-wrapper::before {
+  content: "Put the tabstrip in the zone marked Config Widget please";
 }
 .sfPageEditor .sfs-tabstrip .tab-content > .RadDockZone > .zeLayoutDock .sf_cols:before {
   content: "TabStrip Tab";
@@ -63,12 +72,6 @@
 }
 .sfs-tabstrip.loading {
   display: none;
-}
-.sfs-tabstrip .tab-pane {
-  padding-top: 20px;
-}
-.sfs-tabstrip .tab-pane .sf_colsIn {
-  margin-top: 20px;
 }
 .k-tabstrip-wrapper {
   margin-bottom: 20px;

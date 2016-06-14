@@ -29,7 +29,7 @@
     }
     else
     {
-    <ul class="sfs-tabstrip-configurator nav nav-tabs" role="tablist" data-type="bootstrap">
+    <ul class="sfs-tabstrip-configurator nav nav-tabs" role="tablist" data-type="bootstrap" data-classname="@(Model.ClassName)">
         @{int i = 1;}
         @foreach (var tab in Model.Tabs)
         {

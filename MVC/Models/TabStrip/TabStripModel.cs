@@ -13,6 +13,7 @@ namespace RandomSiteControlsMVC.MVC.Models.TabStrip
             this.Tabs = new List<Tab>();
         }
 
+        public string ClassName { get; set; }
         public string TabPosition { get; set; }
         public List<Tab> Tabs { get; set; }
     }

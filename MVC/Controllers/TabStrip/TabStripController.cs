@@ -25,6 +25,7 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             var model = new TabStripModel();
             model.TabPosition = this.TabPosition;
+            model.ClassName = this.ClassName;
 
             //Load Saved tabs
             var tabs = this.DeserializeTabs();
@@ -101,6 +102,16 @@ namespace SitefinityWebApp.Mvc.Controllers
             set
             {
                 _theme = value;
+            }
+        }
+
+        string _className = String.Empty;
+        public string ClassName
+        {
+            get { return _className; }
+            set
+            {
+                _className = value;
             }
         }
 

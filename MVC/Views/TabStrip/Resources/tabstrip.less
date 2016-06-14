@@ -10,8 +10,8 @@
     &.zeContentMode {
         .sfs-tabstrip {
             .tab-panels{
-                margin-top: -23px;
-                margin-left: 2px;
+                //margin-top: -23px;
+                //margin-left: 2px;
             }
         }
 
@@ -38,11 +38,28 @@
 
         .tab-panels{
             padding: 10px;
-            border: 1px solid #e4e4e4 !important;
+            border: 1px solid #c4c4c4 !important;
         }
 
         .tab-pane{
-            padding-top: 0;
+            border: #c4c4c4 2px solid;
+            margin-bottom: 20px;
+            padding: 10px;
+
+
+            .k-tabstrip-wrapper{
+                background-color: #f2dede;
+                font-weight:bold;
+                padding: 20px;
+
+                > div {
+                    display:none;
+                }
+
+                &::before{
+                    content: "Put the tabstrip in the zone marked Config Widget please";
+                }
+            }
         }
 
         .tab-content {
@@ -108,10 +125,10 @@
     }
 
     .tab-pane{
-        padding-top: 20px;
+        //padding-top: 20px;
 
         .sf_colsIn{
-            margin-top: 20px;
+            //margin-top: 20px;
         }
     }
 }

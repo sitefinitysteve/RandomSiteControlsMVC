@@ -34,19 +34,24 @@
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Web\bin\Microsoft.IdentityModel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ServiceStack">
       <HintPath>..\Web\bin\ServiceStack.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ServiceStack.Common">
       <HintPath>..\Web\bin\ServiceStack.Common.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Web\bin\ServiceStack.Interfaces.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ServiceStack.Text">
       <HintPath>..\Web\bin\ServiceStack.Text.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -57,10 +62,12 @@
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Leap\OutbreakHelp\Web\bin\System.Web.Mvc.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Web\bin\System.Web.WebPages.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,21 +78,27 @@
     <Reference Include="Telerik.OpenAccess, Version=2016.1.224.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Web\bin\Telerik.OpenAccess.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity">
       <HintPath>..\Web\bin\Telerik.Sitefinity.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Frontend">
       <HintPath>..\Web\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Model">
       <HintPath>..\Web\bin\Telerik.Sitefinity.Model.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Mvc">
       <HintPath>..\Web\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Utilities">
       <HintPath>..\Web\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -107,12 +120,6 @@
     <Compile Include="Helpers\Reference.cs" />
     <Compile Include="HttpModules\RemoveHttpHeadersModule.cs" />
     <Compile Include="Installer.cs" />
-    <Compile Include="Migration\ContentLiteral\ContentLiteral.cs" />
-    <Compile Include="Migration\Layouts\FancyBox\FancyBoxLayout.cs" />
-    <Compile Include="Migration\Layouts\TabStrip\TabStripLayout.cs" />
-    <Compile Include="Migration\Layouts\TabStrip\TabStripVerticalLayout.cs" />
-    <Compile Include="Migration\ScriptStyle\ScriptStyle.cs" />
-    <Compile Include="Migration\TabStrip\TabStripConfigurator.cs" />
     <Compile Include="MVC\Controllers\ContentLiteral\ContentLiteralController.cs" />
     <Compile Include="MVC\Controllers\Markdown\MarkdownController.cs" />
     <Compile Include="MVC\Controllers\TabStrip\TabStripController.cs" />
@@ -147,22 +154,6 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.js" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tab.html" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tabstrip.html" />
-    <EmbeddedResource Include="Migration\TabStrip\TabStripConfigurator.ascx" />
-    <EmbeddedResource Include="Migration\ScriptStyle\ScriptStyle.ascx">
-      <SubType>ASPXCodeBehind</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migration\ContentLiteral\ContentLiteral.ascx">
-      <SubType>ASPXCodeBehind</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\close-icon.png" />
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve-layout.js" />
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve-layout.min.js" />
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve.css" />
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve.min.css" />
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fblayouts.gif" />
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Views\FancyBoxLayout.ascx" />
-    <EmbeddedResource Include="Migration\Layouts\TabStrip\Views\TabStripLayout.ascx" />
-    <EmbeddedResource Include="Migration\Layouts\TabStrip\Views\TabStripVerticalLayout.ascx" />
     <Content Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
@@ -183,7 +174,6 @@
       <DependentUpon>tabstrip.less</DependentUpon>
     </Content>
     <Content Include="MVC\Views\TabStrip\Resources\tabstrip.less" />
-    <EmbeddedResource Include="Migration\Layouts\FancyBox\Resources\fancybox-steve-layout.min.js.map" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
