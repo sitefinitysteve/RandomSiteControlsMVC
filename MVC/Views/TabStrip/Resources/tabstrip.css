@@ -16,8 +16,10 @@
 .sfPageEditor .sfs-tabstrip .tab-panels {
   padding: 10px;
   border: 1px solid #c4c4c4 !important;
+  background-color: #f0f0f0;
 }
 .sfPageEditor .sfs-tabstrip .tab-pane {
+  background-color: #FFF;
   border: #c4c4c4 2px solid;
   margin-bottom: 20px;
   padding: 10px;

@@ -14,8 +14,7 @@
             <div class="col-md-5">
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat="tab in tabstrip.tabs" ng-click="onSelectTab(tab, $index)" ng-class="{active: tab.Editing}">
-                        <span ng-if="tab.Selected" class="badge">Default</span>
-                        <strong>{{tab.Title}}</strong>
+                        <span ng-class="{defaulttab: tab.Selected}">{{tab.Title}}</span>
                     </li>
                 </ul>
                 <div class="form-group">
@@ -89,5 +88,9 @@
     .text-muted{
        font-size: 12px;
        padding-top: 4px;
+    }
+
+    .defaulttab{
+        font-weight: bold;
     }
 </style>
