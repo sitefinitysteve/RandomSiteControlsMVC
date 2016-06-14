@@ -54,16 +54,15 @@
   font-family: sans-serif;
   font-size: 11px;
   font-weight: 700;
-  height: 20px;
   width: 100%;
   margin-bottom: 2px;
-  line-height: 20px;
+  line-height: 30px;
   padding-left: 8px;
   display: inline-block;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid #BBBBBB;
+  border-top-left-radius: 7px;
 }
 .sfPageEditor .sfs-tabstrip .zeLayoutDock .rdTable .rdMiddle .rdCenter .rdContent .sf_cols .RadDockZone .sf_cols:before {
   display: none;
