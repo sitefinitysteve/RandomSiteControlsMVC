@@ -20,7 +20,7 @@
 }
 .sfPageEditor .sfs-tabstrip .tab-pane {
   background-color: #FFF;
-  border: #c4c4c4 2px solid;
+  border: #ccc 2px solid;
   margin-bottom: 20px;
   padding: 10px;
 }
@@ -55,7 +55,6 @@
   font-size: 11px;
   font-weight: 700;
   width: 100%;
-  margin-bottom: 2px;
   line-height: 30px;
   padding-left: 8px;
   display: inline-block;
