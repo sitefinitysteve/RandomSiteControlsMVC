@@ -52,16 +52,9 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.es5.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.bootstrap.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js", "text/javascript")]
 
 //Styles
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css", "text/css")]
-
-//MIGRATION: REMOVE LATER
-//Fancybox
-[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve-layout.js", "text/javascript")]
-[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve-layout.min.js", "text/javascript")]
-[assembly: WebResource("RandomSiteControls.FancyBox.Resources.jquery.fancybox-1.3.8.min.js", "text/javascript")]
-[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve.css", "text/css", PerformSubstitution = true)]
-[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fancybox-steve.min.css", "text/css", PerformSubstitution = true)]
-[assembly: WebResource("RandomSiteControls.FancyBox.Resources.fblayouts.gif", "image/gif")]
-[assembly: WebResource("RandomSiteControls.FancyBox.Resources.close-icon.png", "image/png")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css", "text/css")]

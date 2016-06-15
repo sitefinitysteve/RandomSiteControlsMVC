@@ -56,6 +56,20 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
+        [ObjectInfo(Description = "Default Cache time for widgets", Title = "Cache Timeout Minutes")]
+        [ConfigurationProperty("CacheTimeout", IsRequired = true, DefaultValue = 30)]
+        public int CacheTimeoutMinutes
+        {
+            get
+            {
+                return (int) this["CacheTimeout"];
+            }
+            set
+            {
+                this["CacheTimeout"] = value;
+            }
+        }
+
         [ObjectInfo(Description = "Default Tabstrip to use, Kendo, Bootstrap, or Custom (see docs)", Title = "Tabstrip Theme")]
         [ConfigurationProperty("TabstripTheme", IsRequired = true, DefaultValue = "Bootstrap")]
         public string TabstripTheme

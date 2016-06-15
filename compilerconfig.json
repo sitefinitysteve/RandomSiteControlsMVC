@@ -10,5 +10,13 @@
   {
     "outputFile": "MVC/Views/TabStrip/Resources/kendoui.es5.js",
     "inputFile": "MVC/Views/TabStrip/Resources/kendoui.js"
+  },
+  {
+    "outputFile": "MVC/Views/DocumentTree/Resources/documenttree.es5.js",
+    "inputFile": "MVC/Views/DocumentTree/Resources/documenttree.js"
+  },
+  {
+    "outputFile": "MVC/Views/DocumentTree/Resources/documenttree.css",
+    "inputFile": "MVC/Views/DocumentTree/Resources/documenttree.less"
   }
 ]
