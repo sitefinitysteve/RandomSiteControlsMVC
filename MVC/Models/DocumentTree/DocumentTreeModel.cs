@@ -12,6 +12,7 @@ namespace RandomSiteControlsMVC.MVC.Models.DocumentTree
             this.Nodes = new List<DocumentTreeNode>();
         }
 
+        public int ExpandLevelDepth {get;set;}
         public StyleEnum RenderMode { get; set; }
         public List<DocumentTreeNode> Nodes { get; set; }
     }

@@ -84,7 +84,7 @@ var $sanitizeMinErr = angular.$$minErr('$sanitize');
      </script>
      <div ng-controller="ExampleController">
         Snippet: <textarea ng-model="snippet" cols="60" rows="3"></textarea>
-       <table>
+       <uib-table>
          <tr>
            <td>Directive</td>
            <td>How</td>
@@ -112,7 +112,7 @@ var $sanitizeMinErr = angular.$$minErr('$sanitize');
            <td><pre>&lt;div ng-bind="snippet"&gt;<br/>&lt;/div&gt;</pre></td>
            <td><div ng-bind="snippet"></div></td>
          </tr>
-       </table>
+       </uib-table>
        </div>
    </file>
    <file name="protractor.js" type="protractor">
@@ -560,7 +560,7 @@ angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
        </script>
        <div ng-controller="ExampleController">
        Snippet: <textarea ng-model="snippet" cols="60" rows="3"></textarea>
-       <table>
+       <uib-table>
          <tr>
            <td>Filter</td>
            <td>Source</td>
@@ -589,7 +589,7 @@ angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
            <td><pre>&lt;div ng-bind="snippet"&gt;<br>&lt;/div&gt;</pre></td>
            <td><div ng-bind="snippet"></div></td>
          </tr>
-       </table>
+       </uib-table>
      </file>
      <file name="protractor.js" type="protractor">
        it('should linkify the snippet with urls', function() {

@@ -10,11 +10,11 @@ namespace RandomSiteControlsMVC.MVC.Models.TabStrip
     {
         public TabStripModel()
         {
-            this.Tabs = new List<Tab>();
+            this.Tabs = new List<uib-tab>();
         }
 
         public string ClassName { get; set; }
         public string TabPosition { get; set; }
-        public List<Tab> Tabs { get; set; }
+        public List<uib-tab> Tabs { get; set; }
     }
 }

@@ -162,6 +162,7 @@
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.css">
       <DependentUpon>documenttree.less</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Scripts\DocumentTree\designerview-simple.js" />
     <Content Include="MVC\Views\DocumentTree\Resources\documenttree.es5.js">
       <DependentUpon>documenttree.js</DependentUpon>
     </Content>
@@ -194,6 +195,8 @@
     <Content Include="MVC\Views\TabStrip\Resources\tabstrip.less" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.less" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.json" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@
 @Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
 @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")
 
-<div class="sfs-document-tree @(Model.RenderMode.ToString().ToLower())" data-mode="@Model.RenderMode" style="visibility: hidden">
+<div class="sfs-document-tree @(Model.RenderMode.ToString().ToLower())" data-mode="@Model.RenderMode" data-expand-levels="@Model.ExpandLevelDepth" style="visibility: hidden">
     <ul class="root">
         @foreach (var node in Model.Nodes)
         {

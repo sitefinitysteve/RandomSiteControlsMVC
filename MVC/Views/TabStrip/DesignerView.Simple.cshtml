@@ -8,8 +8,8 @@
 
 @Html.Script(ScriptRef.KendoWeb, RSCUtil.SfsConfig.KendoScriptPlaceholder)
 
-<tabset class="nav-tabs-wrapper">
-    <tab heading="Tabs">
+<uib-tabset class="nav-tabs-wrapper">
+    <uib-tab heading="Tabs">
         <div class="row ng-cloak padding">
             <div class="col-md-5">
                 <ul class="list-group">
@@ -45,8 +45,8 @@
 
             </div>
         </div>
-    </tab>
-    <tab heading="Options">
+    </uib-tab>
+    <uib-tab heading="Options">
         <div class="padding">
             <div ng-show="properties.CurrentTheme.PropertyValue == 'Kendo'">
                 @* CUSTOM KENDO PROPERTIES *@
@@ -72,8 +72,8 @@
                 <div class="text-muted"><strong>(Optional)</strong> {{ origin }}/page?<strong>food</strong>=bread.  The key is "food", set the value "bread" on the tab</div>
             </div>
         </div>
-    </tab>
-</tabset>
+    </uib-tab>
+</uib-tabset>
 
 
 <style>

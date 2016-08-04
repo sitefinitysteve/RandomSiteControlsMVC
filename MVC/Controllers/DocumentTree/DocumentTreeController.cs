@@ -31,6 +31,7 @@ namespace SitefinityWebApp.Mvc.Controllers
             var model = new DocumentTreeModel();
 
             model.RenderMode = this.RenderMode;
+            model.ExpandLevelDepth = this.ExpandLevelDepth;
             model.Nodes.AddRange(this.SetTreeNodeDocumentLibrariesAndFolders());
 
             return View("Default", model);
@@ -269,6 +270,16 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
         }
 
+        int _expandLevelsToInclude = 2;
+        public int ExpandLevelDepth
+        {
+            get { return _expandLevelsToInclude; }
+            set
+            {
+                _expandLevelsToInclude = value;
+            }
+        }
+        
 
         private Guid _folderId = Guid.Empty;
         public Guid FolderId
