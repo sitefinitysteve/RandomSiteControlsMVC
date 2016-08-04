@@ -143,9 +143,9 @@ namespace SitefinityWebApp.Mvc.Controllers
 
         #endregion
 
-        private List<uib-tab> DeserializeTabs()
+        private List<Tab> DeserializeTabs()
         {
-            return ServiceStack.Text.JsonSerializer.DeserializeFromString<List<uib-tab>>(this.SerializedTabs);
+            return ServiceStack.Text.JsonSerializer.DeserializeFromString<List<Tab>>(this.SerializedTabs);
         }
 
     }
