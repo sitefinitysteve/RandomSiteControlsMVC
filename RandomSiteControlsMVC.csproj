@@ -163,9 +163,9 @@
       <DependentUpon>documenttree.less</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC\Scripts\DocumentTree\designerview-simple.js" />
-    <Content Include="MVC\Views\DocumentTree\Resources\documenttree.es5.js">
+    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.es5.js">
       <DependentUpon>documenttree.js</DependentUpon>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.es5.min.js">
       <DependentUpon>documenttree.es5.js</DependentUpon>
     </EmbeddedResource>
@@ -173,31 +173,29 @@
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.min.css">
       <DependentUpon>documenttree.css</DependentUpon>
     </EmbeddedResource>
-    <Content Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
       <DependentUpon>bootstrap.js</DependentUpon>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.es5.min.js">
       <DependentUpon>bootstrap.es5.js</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.js" />
-    <Content Include="MVC\Views\TabStrip\Resources\bootstrap.min.js">
-      <DependentUpon>bootstrap.js</DependentUpon>
-    </Content>
-    <Content Include="MVC\Views\TabStrip\Resources\kendoui.es5.js">
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.es5.js">
       <DependentUpon>kendoui.js</DependentUpon>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.es5.min.js">
       <DependentUpon>kendoui.es5.js</DependentUpon>
     </EmbeddedResource>
-    <Content Include="MVC\Views\TabStrip\Resources\tabstrip.css">
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\tabstrip.css">
       <DependentUpon>tabstrip.less</DependentUpon>
-    </Content>
-    <Content Include="MVC\Views\TabStrip\Resources\tabstrip.less" />
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\tabstrip.less" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.less" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
     <None Include="README.md" />
+    <None Include="Settings.aiis" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
@@ -213,6 +211,11 @@
     <EmbeddedResource Include="MVC\Scripts\Markdown\designerview-simple.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Name="RandomSiteControlsMVC" />
+    </VisualStudio>
+  </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

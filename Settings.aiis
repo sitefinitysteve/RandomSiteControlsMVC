@@ -178,10 +178,10 @@
     "PromptNameOnAddElement": true,
     "DefaultWPFApplication": null,
     "UseLegacySilverlightFindLogic": false,
-    "ProjectGuid": "b8363416-9664-4e0e-8a58-8a28de59c66f",
+    "ProjectGuid": "dd3a385e-3ad6-461b-b300-87181988837c",
     "SourceControlRepository": null,
     "IsOnline": false,
-    "ProjectLanguage": 2,
+    "ProjectLanguage": 1,
     "ProjectReferences": [
       "System",
       "System.Core",
