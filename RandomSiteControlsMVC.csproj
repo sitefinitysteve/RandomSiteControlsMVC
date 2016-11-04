@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Web\bin\Microsoft.IdentityModel.dll</HintPath>
@@ -88,6 +92,9 @@
       <HintPath>..\Web\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Telerik.Sitefinity.Frontend.Media">
+      <HintPath>..\Web\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Sitefinity.Model">
       <HintPath>..\Web\bin\Telerik.Sitefinity.Model.dll</HintPath>
       <Private>False</Private>
@@ -112,6 +119,7 @@
     <Compile Include="Extensions\GuidExtensions.cs" />
     <Compile Include="Extensions\HierarchicalTaxonExtensions.cs" />
     <Compile Include="Extensions\MarkupExtensions.cs" />
+    <Compile Include="Extensions\MVCHtmlExtensions.cs" />
     <Compile Include="Extensions\PublishingExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TaxonExtensions.cs" />
@@ -128,6 +136,8 @@
     <Compile Include="MVC\Models\ContentLiteral\ContentLiteralModel.cs" />
     <Compile Include="MVC\Models\DocumentTree\DocumentTreeNode.cs" />
     <Compile Include="MVC\Models\DocumentTree\StyleEnum.cs" />
+    <Compile Include="MVC\Models\InlineMarkupHelpers\SfDocLink.cs" />
+    <Compile Include="MVC\Models\InlineMarkupHelpers\SfImageLink.cs" />
     <Compile Include="MVC\Models\Markdown\MarkdownModel.cs" />
     <Compile Include="MVC\Models\TabStrip\Tab.cs" />
     <Compile Include="MVC\Models\TabStrip\TabStripModel.cs" />
@@ -194,8 +204,8 @@
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.less" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
+    <None Include="packages.config" />
     <None Include="README.md" />
-    <None Include="Settings.aiis" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
