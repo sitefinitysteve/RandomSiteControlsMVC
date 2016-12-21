@@ -1,6 +1,21 @@
 ﻿.sfPageEditor.zeLayoutMode .sf_colsIn.tab-configurator .zeDockZoneEmpty {
   display: none;
 }
+.sfPageEditor.zeContentMode .sfs-tabstrip {
+  border-top: 1px solid #c4c4c4;
+  padding-top: 7px;
+}
+.sfPageEditor .tab-configurator > .RadDockZone > div.RadDock:not([behaviourobjecttype='SitefinityWebApp.Mvc.Controllers.TabStripController']) .rdMiddle {
+  background-color: red !important;
+}
+.sfPageEditor .tab-configurator > .RadDockZone > div.RadDock:not([behaviourobjecttype='SitefinityWebApp.Mvc.Controllers.TabStripController']) .rdMiddle .rdCenter:after {
+  content: "Only place Tabstrip controllers in this layout zone please, please move this above the grey line";
+  color: #FFF;
+  font-weight: bold;
+}
+.sfPageEditor .tab-configurator > .RadDockZone > div.RadDock:not([behaviourobjecttype='SitefinityWebApp.Mvc.Controllers.TabStripController']) .rdMiddle .rdContent {
+  display: none;
+}
 .sfPageEditor .k-tabstrip-wrapper {
   margin-bottom: 0 !important;
 }

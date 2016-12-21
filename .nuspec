@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>RandomSiteControlsMVC</id>
-    <version>9.1.6110.1</version>
+    <version>9.2.6202.0</version>
     <authors>Steve McNiven-Scott</authors>
     <description>
         A random bunch of MVC Feather controls and extensions to improve your sitefinity experience
@@ -16,7 +16,7 @@
     </summary>
 	  <projectUrl>https://github.com/sitefinitysteve/RandomSiteControlsMVC</projectUrl>
     <dependencies>
-      <dependency id="HtmlAgilityPack"/>
+      <dependency id="HtmlAgilityPack" version="1.4.9.5" />
     </dependencies>
   </metadata>
 </package>

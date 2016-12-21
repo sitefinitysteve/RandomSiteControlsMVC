@@ -9,12 +9,36 @@
 
     &.zeContentMode {
         .sfs-tabstrip {
+            border-top: 1px solid #c4c4c4;
+            padding-top: 7px;
+
             .tab-panels{
                 //margin-top: -23px;
                 //margin-left: 2px;
             }
         }
 
+    }
+
+    .tab-configurator{
+        > .RadDockZone{
+            > div.RadDock:not([behaviourobjecttype='SitefinityWebApp.Mvc.Controllers.TabStripController']){
+                .rdMiddle{
+                    background-color: red !important;
+
+                    .rdCenter{
+                        &:after{
+                            content: "Only place Tabstrip controllers in this layout zone please, please move this above the grey line";
+                            color: #FFF;
+                            font-weight: bold;
+                        }
+                    }
+                    .rdContent{
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 
 
