@@ -28,7 +28,8 @@ namespace Telerik.Sitefinity
 
         public static IHtmlString EnhanceRaw(string html, string imageViewPath = "/Views/Image/Image.Inline.cshtml", string documentViewPath = "/Views/Document/DocumentLink.Inline.cshtml")
         {
-            var result = String.Empty;
+            //Resolve [OpenAccess provider style links first]
+            html = LinkParser.ResolveLinks(html, DynamicLinksParser.GetContentUrl, null, false);
 
             if (html.Contains(_mediaItemPrefix))
             {
@@ -39,6 +40,7 @@ namespace Telerik.Sitefinity
 
                     //Parse images
                     var images = doc.DocumentNode.SelectNodes("//img[contains(@src, '" + _mediaItemPrefix + "')]");
+
                     if (images != null)
                     {
                         foreach (var node in images)
@@ -95,13 +97,14 @@ namespace Telerik.Sitefinity
                     */
 
                     var fixedHtml = doc.DocumentNode.OuterHtml;
-                    result = LinkParser.ResolveLinks(fixedHtml, DynamicLinksParser.GetContentUrl, null, false);
+                    //result = LinkParser.ResolveLinks(fixedHtml, DynamicLinksParser.GetContentUrl, null, false);
 
-                    return MvcHtmlString.Create(result);
+                    var finishedHtml = MvcHtmlString.Create(fixedHtml);
+                    return finishedHtml;
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex);
+                    Telerik.Microsoft.Practices.EnterpriseLibrary.Logging.Logger.Writer.Write(ex);
                     //Problem, just show something
                     return MvcHtmlString.Create(html);
                 }
