@@ -8,11 +8,12 @@
 
 <div ng-cloak class="clearfix sf-code">
     <div class="ng-cloak">
-        <textarea sf-code-area
+        <textarea id="code" sf-code-area
                   sf-type="htmlmixed"
                   sf-tab-mode="classic"
                   sf-line-numbers="true"
                   sf-match-brackets="true"
+                  sf-line-wrapping="false"
                   sf-model="properties.HtmlContent.PropertyValue"
                   placeholder="Enter Content..."></textarea>
     </div>
@@ -26,5 +27,15 @@
 
     .sf-backend-wrp .modal-body{
         border-bottom: 1px solid #e5e5e5;
+    }
+
+    .CodeMirror-scroll {
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    .modal-body{
+        overflow-y:scroll;
     }
 </style>

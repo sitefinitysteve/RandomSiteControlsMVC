@@ -2,7 +2,18 @@
     angular.module('designer').requires.push('sfCodeArea');
 
     angular.module('designer').controller('SimpleCtrl', ['$scope', 'propertyService', function ($scope, propertyService) {
-        $('.modal-dialog').scope().size = 'lg';
+        //Fill the screen
+        $('.sf-backend-wrp').addClass('modal-fluid');;
+
+        setTimeout(function () {
+            var myCodeMirror = $('.CodeMirror')[0].CodeMirror;
+
+            //Resize editor
+            var modalHeight = $(".modal-body").outerHeight() + "px"; //Bit of padding
+            $(".CodeMirror-scroll").attr("style", "min-height: " + modalHeight );
+
+            myCodeMirror.refresh();
+        }, 200);
 
         propertyService.get()
             .then(function (data) {
