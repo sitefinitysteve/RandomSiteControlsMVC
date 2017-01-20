@@ -23,6 +23,22 @@ namespace SitefinityWebApp.Mvc.Controllers
         /// </summary>
         public ActionResult Index()
         {
+            string themeName;
+            var model = this.GetModel(out themeName);
+
+            return View(themeName, model);
+        }
+
+        protected override void HandleUnknownAction(string actionName)
+        {
+            string themeName;
+            var model = this.GetModel(out themeName);
+
+            View(themeName, model).ExecuteResult(this.ControllerContext);
+        }
+
+        private TabStripModel GetModel(out string themeName)
+        {
             var model = new TabStripModel();
             model.TabPosition = this.TabPosition;
             model.ClassName = this.ClassName;
@@ -68,7 +84,7 @@ namespace SitefinityWebApp.Mvc.Controllers
                 model.Tabs.AddRange(tabs);
             }
 
-            var themeName = String.Empty;
+            themeName = String.Empty;
             if (!String.IsNullOrEmpty(ThemeOverride))
             {
                 themeName = this.ThemeOverride;
@@ -82,7 +98,7 @@ namespace SitefinityWebApp.Mvc.Controllers
                     themeName = "Kendo";
             }
 
-            return View(themeName, model);
+            return model;
         }
 
         string _tabs = "[]";

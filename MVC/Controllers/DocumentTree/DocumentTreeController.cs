@@ -28,18 +28,24 @@ namespace SitefinityWebApp.Mvc.Controllers
 
         public ActionResult Index()
         {
+            DocumentTreeModel model = GetModel();
+
+            return View("Default", model);
+        }
+
+        private DocumentTreeModel GetModel()
+        {
             var model = new DocumentTreeModel();
 
             model.RenderMode = this.RenderMode;
             model.ExpandLevelDepth = this.ExpandLevelDepth;
             model.Nodes.AddRange(this.SetTreeNodeDocumentLibrariesAndFolders());
-
-            return View("Default", model);
+            return model;
         }
 
         protected override void HandleUnknownAction(string actionName)
         {
-            View("Default").ExecuteResult(this.ControllerContext);
+            View("Default", this.GetModel()).ExecuteResult(this.ControllerContext);
         }
 
         private void CreateCacheKey()
@@ -279,7 +285,7 @@ namespace SitefinityWebApp.Mvc.Controllers
                 _expandLevelsToInclude = value;
             }
         }
-        
+
 
         private Guid _folderId = Guid.Empty;
         public Guid FolderId

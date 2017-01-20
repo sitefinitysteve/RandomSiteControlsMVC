@@ -16,17 +16,23 @@ namespace SitefinityWebApp.Mvc.Controllers
     {
         public ActionResult Index()
         {
-            var model = new ContentLiteralModel();
-
-            model.Content = this.HtmlContent;
-            model.UseWrapper = this.UseWrapper;
+            ContentLiteralModel model = GetModel();
 
             return View("Default", model);
         }
 
+        private ContentLiteralModel GetModel()
+        {
+            var model = new ContentLiteralModel();
+
+            model.Content = this.HtmlContent;
+            model.UseWrapper = this.UseWrapper;
+            return model;
+        }
+
         protected override void HandleUnknownAction(string actionName)
         {
-            View("Default").ExecuteResult(this.ControllerContext);
+            View("Default", this.GetModel()).ExecuteResult(this.ControllerContext);
         }
 
         #region PROPERTIES

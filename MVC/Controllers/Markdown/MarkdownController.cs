@@ -20,6 +20,18 @@ namespace SitefinityWebApp.Mvc.Controllers
     {
         public ActionResult Index()
         {
+            MarkdownModel model = GetModel();
+
+            return View("Default", model);
+        }
+
+        protected override void HandleUnknownAction(string actionName)
+        {
+            View("Default", this.GetModel()).ExecuteResult(this.ControllerContext);
+        }
+
+        private MarkdownModel GetModel()
+        {
             var model = new MarkdownModel();
 
             if (!this.IsEmpty)
@@ -28,8 +40,7 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
 
             model.UseWrapper = this.UseWrapper;
-
-            return View("Default", model);
+            return model;
         }
 
         //From ServiceStack HtmlHelper
@@ -47,11 +58,6 @@ namespace SitefinityWebApp.Mvc.Controllers
                 Logger.Writer.Write(ex);
                 return "Error Rendering Markdown";
             }
-        }
-
-        protected override void HandleUnknownAction(string actionName)
-        {
-            View("Default").ExecuteResult(this.ControllerContext);
         }
 
 
