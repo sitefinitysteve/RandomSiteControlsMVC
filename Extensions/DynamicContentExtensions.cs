@@ -204,7 +204,7 @@ namespace Telerik.Sitefinity
 
                 if (hasChildren)
                 {
-                    dynamicModuleManager.LoadChildItemsHierarchy(dataItem);
+                    //dynamicModuleManager.LoadChildItemsHierarchy(dataItem);
 
                     var items = dynamicModuleManager.GetChildItems(dataItem, type);
                     return items;
