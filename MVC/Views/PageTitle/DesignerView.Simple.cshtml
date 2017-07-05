@@ -1,0 +1,16 @@
+﻿@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity;
+
+<div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" ng-model="properties.Title.PropertyValue" class="form-control" />
+    <div class="text-muted">Override the current dynamic title</div>
+</div>
+
+@if (RSCUtil.SfsConfig.PageTitleElement.UseSubTitle)
+{
+<div class="form-group">
+    <label for="subtitle">Sub Title</label>
+    <input type="text" id="subtitle" ng-model="properties.SubTitle.PropertyValue" class="form-control" />
+</div>
+}

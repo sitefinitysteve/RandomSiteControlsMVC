@@ -1,0 +1,50 @@
+﻿@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+ 
+<div class="row" style="margin-bottom: 20px;">
+    <div class="col-md-12">
+        <div class="form-group">
+            <div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" ng-class="{'btn-primary': isActive('ROADMAP')}" ng-click="setActive('ROADMAP')">ROADMAP</button>
+                    <button type="button" class="btn btn-default" ng-class="{'btn-primary': isActive('SATELLITE')}" ng-click="setActive('SATELLITE')">SATELLITE</button>
+                    <button type="button" class="btn btn-default" ng-class="{'btn-primary': isActive('HYBRID')}" ng-click="setActive('HYBRID')">HYBRID</button>
+                    <button type="button" class="btn btn-default" ng-class="{'btn-primary': isActive('TERRAIN')}" ng-click="setActive('TERRAIN')">TERRAIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-bottom: 20px;">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Address</label>
+            <input type="text" class="form-control" value="" ng-model="properties.LocationAddress.PropertyValue" ng-change="updateLocation()">
+            <p class="text-muted" ng-if="validAddress == true">
+                (<span ng-bind="properties.Latitude.PropertyValue"></span>,&nbsp;<span ng-bind="properties.Longitude.PropertyValue"></span>)
+            </p>
+            <p class="text-danger" ng-if="validAddress == false">
+                <span>Invalid Address</span>
+            </p>
+            <p class="text-muted">Ex: 1200 Main Street West, Hamilton ON</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Height</label>
+            <input type="text" class="form-control" value="" ng-model="properties.Height.PropertyValue">
+            <p class="text-muted">Size in pixels. Ex: 300px</p>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Zoom</label>
+            <input type="text" class="form-control" value="" ng-model="properties.ZoomLevel.PropertyValue" ng-change="updateZoom()">
+            <p class="text-muted">Map zoom, higher is closer</p>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div id="preview-area" class="sfRightCol">
+            <div id="map_canvas_preview" class="map-canvas" style="margin-left: 10px; width:100%; height:200px;border: 1px solid #c0c0c0;"></div>
+        </div>
+    </div>
+</div>

@@ -37,8 +37,8 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("10.0.6400.1")]
-[assembly: AssemblyFileVersion("10.0.6400.1")]
+[assembly: AssemblyVersion("10.0.6412.0")]
+[assembly: AssemblyFileVersion("10.0.6412.0")]
 
 //INSTALLER
 [assembly: PreApplicationStartMethod(typeof(Installer), "PreApplicationStart")]
@@ -54,6 +54,7 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.GoogleMap.Resources.googlemap.es5.min.js", "text/javascript")]
 
 //Styles
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css", "text/css")]

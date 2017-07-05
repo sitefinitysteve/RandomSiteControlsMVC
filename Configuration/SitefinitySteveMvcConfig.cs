@@ -105,5 +105,31 @@ namespace RandomSiteControlsMVC.Configuration
                 this["disqus"] = value;
             }
         }
+
+        [ConfigurationProperty("googlemaps")]
+        public GoogleMapsElement GoogleMaps
+        {
+            get
+            {
+                return (GoogleMapsElement)this["googlemaps"];
+            }
+            set
+            {
+                this["googlemaps"] = value;
+            }
+        }
+
+        [ConfigurationProperty("pagetitle")]
+        public PageTitleElement PageTitleElement
+        {
+            get
+            {
+                return (PageTitleElement)this["pagetitle"];
+            }
+            set
+            {
+                this["pagetitle"] = value;
+            }
+        }
     }
 }

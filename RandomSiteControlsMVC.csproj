@@ -110,6 +110,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\PageTitleElement.cs" />
+    <Compile Include="Configuration\GoogleMapsElement.cs" />
     <Compile Include="Configuration\DisqusConfig.cs" />
     <Compile Include="Configuration\HttpHeaderElement.cs" />
     <Compile Include="Configuration\SitefinitySteveMvcConfig.cs" />
@@ -131,21 +133,32 @@
     <Compile Include="Installer.cs" />
     <Compile Include="MVC\Controllers\ContentLiteral\ContentLiteralController.cs" />
     <Compile Include="MVC\Controllers\DocumentTree\DocumentTreeController.cs" />
+    <Compile Include="MVC\Controllers\GoogleMap\GoogleMapController.cs" />
     <Compile Include="MVC\Controllers\Markdown\MarkdownController.cs" />
+    <Compile Include="MVC\Controllers\PageTitle\PageTitleController.cs" />
     <Compile Include="MVC\Controllers\TabStrip\TabStripController.cs" />
     <Compile Include="MVC\Models\DocumentTree\DocumentTreeModel.cs" />
     <Compile Include="MVC\Models\ContentLiteral\ContentLiteralModel.cs" />
     <Compile Include="MVC\Models\DocumentTree\DocumentTreeNode.cs" />
     <Compile Include="MVC\Models\DocumentTree\StyleEnum.cs" />
+    <Compile Include="MVC\Models\GoogleMap\GoogleMapModel.cs" />
     <Compile Include="MVC\Models\InlineMarkupHelpers\SfDocLink.cs" />
     <Compile Include="MVC\Models\InlineMarkupHelpers\SfImageLink.cs" />
     <Compile Include="MVC\Models\Markdown\MarkdownModel.cs" />
+    <Compile Include="MVC\Models\PageTitle\PageTitleModel.cs" />
     <Compile Include="MVC\Models\TabStrip\Tab.cs" />
     <Compile Include="MVC\Models\TabStrip\TabStripModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\RSCUtil.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MVC\Views\GoogleMap\Resources\googlemap.es5.js">
+      <DependentUpon>googlemap.js</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\GoogleMap\Resources\googlemap.es5.min.js">
+      <DependentUpon>googlemap.es5.js</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\GoogleMap\Resources\googlemap.js" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\tabstrip.min.css">
       <DependentUpon>tabstrip.css</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +218,13 @@
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.less" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\PageTitle\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\PageTitle\DesignerView.Simple.json" />
+    <EmbeddedResource Include="MVC\Views\PageTitle\PageTitle.cshtml" />
+    <EmbeddedResource Include="MVC\Scripts\GoogleMap\designerview-simple.js" />
+    <EmbeddedResource Include="MVC\Views\GoogleMap\Default.cshtml" />
+    <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.json" />
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>

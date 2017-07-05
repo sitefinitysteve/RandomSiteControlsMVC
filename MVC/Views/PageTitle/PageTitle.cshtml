@@ -1,0 +1,19 @@
+@model RandomSiteControlsMVC.Mvc.Models.PageTitleModel
+@using Telerik.Sitefinity;
+
+<div class="row page-title-wrapper @(!String.IsNullOrEmpty(Model.SubTitle) ? "subtitle" : "")">
+    <div class="col-xs-12">
+        <h1 class="page-title">
+            <span class="titletext">@Html.Raw(Model.Title)</span>
+        </h1>
+        @if (RSCUtil.SfsConfig.PageTitleElement.UseSubTitle)
+        {
+            if (!String.IsNullOrEmpty(Model.SubTitle))
+            {
+            <h2 class="subtitle">
+                <span class="titletext">@Html.Raw(Model.SubTitle)</span>
+            </h2>
+            }
+        }
+    </div>
+</div>

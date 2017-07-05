@@ -18,5 +18,9 @@
   {
     "outputFile": "MVC/Views/DocumentTree/Resources/documenttree.css",
     "inputFile": "MVC/Views/DocumentTree/Resources/documenttree.less"
+  },
+  {
+    "outputFile": "MVC/Views/GoogleMap/Resources/googlemap.es5.js",
+    "inputFile": "MVC/Views/GoogleMap/Resources/googlemap.js"
   }
 ]
