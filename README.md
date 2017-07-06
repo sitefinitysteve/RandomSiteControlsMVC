@@ -11,8 +11,10 @@ RandomSiteControls re-written in pure MVC for Sitefinity Feather
 
 [![Feature Preview](https://img.youtube.com/vi/4pOJaRzoFJM/0.jpg)](https://www.youtube.com/watch?v=4pOJaRzoFJM)
 ### Widgets
-* Content html
+* Content html (literal)
 * Content markdown
+* Google map
+* Page title
 * Tabstrip (Kendo, Bootstrap): Change the site default at /Sitefinity/Administration/Settings/Advanced/SitefinitySteveMVC 
 
 ### Modules
@@ -38,7 +40,6 @@ I'm using a Javascript converter in the designer, but using the ServiceStack mar
 * Disqus
 * Modal popup\Fancybox?
 * Document Tree List
-* Page Title
 * Placeholder
 
 ## Migrating from the old hybrid version

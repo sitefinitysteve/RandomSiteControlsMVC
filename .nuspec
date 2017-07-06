@@ -2,12 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>RandomSiteControlsMVC</id>
-    <version>10.0.6400.1</version>
+    <version>10.0.6412.0</version>
     <authors>Steve McNiven-Scott</authors>
     <description>
         A random bunch of MVC Feather controls and extensions to improve your sitefinity experience
 		- Tabstrip, Kendo or Bootstrap
 		- Markdown Editor
+    - Google maps widget
+    - Page Title widget
 		- HTML Literal Editor (No designer or markup mangling)
 		- HttpModule to remove IIS sensitive header info
     </description>
