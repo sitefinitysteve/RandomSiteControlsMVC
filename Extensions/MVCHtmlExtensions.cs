@@ -54,6 +54,23 @@ namespace Telerik.Sitefinity
                                 {
                                     var markup = SFSHtml.GetRazorViewAsString(new ImageController(), imageRef.DataItem, imageViewPath);
                                     var newNode = HtmlNode.CreateNode(markup);
+
+                                    //Reapply all the attributes that were on the original node
+                                    foreach (var attribute in node.Attributes.Where(x => x.Name != "src" && x.Name != "title" && x.Name != "alt"))
+                                    {
+                                        if (newNode.Attributes[attribute.Name] != null)
+                                        {
+                                            //Merge
+                                            var newNodeValue = newNode.GetAttributeValue(attribute.Name, "");
+                                            newNode.SetAttributeValue(attribute.Name, newNodeValue + " " + attribute.Value);
+                                        }
+                                        else
+                                        {
+                                            //Just add
+                                            newNode.SetAttributeValue(attribute.Name, attribute.Value);
+                                        }
+                                    }
+
                                     node.ParentNode.ReplaceChild(newNode, node);
                                 }
 
@@ -78,6 +95,24 @@ namespace Telerik.Sitefinity
                                 {
                                     var markup = SFSHtml.GetRazorViewAsString(new DocumentController(), docRef.DataItem, documentViewPath);
                                     var newNode = HtmlNode.CreateNode(markup);
+
+
+                                    //Reapply all the attributes that were on the original node
+                                    foreach (var attribute in node.Attributes.Where(x => x.Name != "src" && x.Name != "title" && x.Name != "alt"))
+                                    {
+                                        if (newNode.Attributes[attribute.Name] != null)
+                                        {
+                                            //Merge
+                                            var newNodeValue = newNode.GetAttributeValue(attribute.Name, "");
+                                            newNode.SetAttributeValue(attribute.Name, newNodeValue + " " + attribute.Value);
+                                        }
+                                        else
+                                        {
+                                            //Just add
+                                            newNode.SetAttributeValue(attribute.Name, attribute.Value);
+                                        }
+                                    }
+
                                     node.ParentNode.ReplaceChild(newNode, node);
                                 }
                             }
