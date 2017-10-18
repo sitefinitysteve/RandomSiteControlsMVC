@@ -151,6 +151,20 @@ namespace Telerik.Sitefinity
             }
         }
 
+        /// <summary>
+        /// Sitefinity Steve Helper
+        /// This is designed to automatically call the LinkParser to resolve sitefinity images and documents in the html content
+        /// </summary>
+        /// <param name="html">Rad\Kendo editor content field</param>
+        /// <param name="resolveSitefinityContent">Should the method resolve the possible content links</param>
+        /// <returns></returns>
+        public static IHtmlString Raw(this HtmlHelper helper, object html, bool resolveSitefinityContent)
+        {
+            var content = resolveSitefinityContent ? LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false) : html.ToString();
+
+            return new System.Web.Mvc.MvcHtmlString(content);
+        }
+
         public static string GetRazorViewAsString(Controller controller, object model, string viewPath)
         {
             var st = new StringWriter();

@@ -35,13 +35,19 @@ namespace RandomSiteControlsMVC.MVC.Models.InlineMarkupHelpers
         #region Methods
         private void ResolveMediaItem()
         {
-            var librariesManager = LibrariesManager.GetManager();
-
-            var document = librariesManager.GetDocuments().FirstOrDefault(x => x.ItemDefaultUrl == this.ItemUrl);
-
-            if (document != null)
+            foreach (var provider in LibrariesManager.ProvidersCollection)
             {
-                this.DataItem = document;
+                var librariesManager = LibrariesManager.GetManager(provider.Name);
+
+                if (librariesManager != null)
+                {
+                    var document = librariesManager.GetDocuments().FirstOrDefault(x => x.ItemDefaultUrl == this.ItemUrl);
+
+                    if (document != null)
+                    {
+                        this.DataItem = document;
+                    }
+                }
             }
         }
 

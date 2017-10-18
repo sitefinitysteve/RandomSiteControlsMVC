@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="HtmlAgilityPack, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.5.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -78,33 +79,39 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.OpenAccess, Version=2016.1.224.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
+    <Reference Include="Telerik.OpenAccess, Version=2016.2.822.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Web\bin\Telerik.OpenAccess.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\10.1.6500.0\_EmptyProject\bin\Telerik.OpenAccess.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Telerik.Sitefinity">
-      <HintPath>..\Web\bin\Telerik.Sitefinity.dll</HintPath>
+    <Reference Include="Telerik.Sitefinity, Version=10.0.6401.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sitefinity\10.1.6500.0\_EmptyProject\bin\Telerik.Sitefinity.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Frontend">
-      <HintPath>..\Web\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
+    <Reference Include="Telerik.Sitefinity.Frontend, Version=1.9.800.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sitefinity\10.1.6500.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Frontend.Media">
-      <HintPath>..\Web\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
+    <Reference Include="Telerik.Sitefinity.Frontend.Media, Version=1.9.800.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sitefinity\10.1.6500.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Model">
-      <HintPath>..\Web\bin\Telerik.Sitefinity.Model.dll</HintPath>
+    <Reference Include="Telerik.Sitefinity.Model, Version=10.0.6401.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sitefinity\10.1.6500.0\_EmptyProject\bin\Telerik.Sitefinity.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Mvc">
-      <HintPath>..\Web\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
+    <Reference Include="Telerik.Sitefinity.Mvc, Version=1.9.800.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sitefinity\10.1.6500.0\_EmptyProject\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Utilities">
-      <HintPath>..\Web\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
+    <Reference Include="Telerik.Sitefinity.Utilities, Version=10.0.6401.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sitefinity\10.1.6500.0\_EmptyProject\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
