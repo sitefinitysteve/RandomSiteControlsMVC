@@ -151,16 +151,9 @@ namespace Telerik.Sitefinity
             }
         }
 
-        /// <summary>
-        /// Sitefinity Steve Helper
-        /// This is designed to automatically call the LinkParser to resolve sitefinity images and documents in the html content
-        /// </summary>
-        /// <param name="html">Rad\Kendo editor content field</param>
-        /// <param name="resolveSitefinityContent">Should the method resolve the possible content links</param>
-        /// <returns></returns>
-        public static IHtmlString Raw(this HtmlHelper helper, object html, bool resolveSitefinityContent)
+        public static IHtmlString Raw(object html)
         {
-            var content = resolveSitefinityContent ? LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false) : html.ToString();
+            var content = LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false);
 
             return new System.Web.Mvc.MvcHtmlString(content);
         }
@@ -176,6 +169,47 @@ namespace Telerik.Sitefinity
             razor.Render(new ViewContext(controllerContext, razor, new ViewDataDictionary(model), new TempDataDictionary(), st), st);
 
             return st.ToString();
+        }
+    }
+}
+
+namespace Telerik.Sitefinity.Frontend.Mvc.Helpers
+{
+    public static class MvcExtensions
+    {
+        /// <summary>
+        /// Sitefinity Steve Helper
+        /// This is designed to automatically call the LinkParser to resolve sitefinity images and documents in the html content
+        /// ** IMPORTANT ** Extension methods do not acce
+        /// </summary>
+        /// <param name="html">Rad\Kendo editor content field</param>
+        /// <param name="resolveSitefinityContent">Should the method resolve the possible content links</param>
+        /// <returns></returns>
+        public static IHtmlString Raw(this HtmlHelper helper, object html, bool resolveContent)
+        {
+            var content = resolveContent ? LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false) : html.ToString();
+
+            return new System.Web.Mvc.MvcHtmlString(content);
+        }
+
+        /// <summary>
+        /// Resolved sfhref links in Sitefinity LongText content
+        /// </summary>
+        /// <param name="html"></param>
+        /// <returns></returns>
+        public static IHtmlString ResolveSitefinityContentLinks(this string html)
+        {
+            return new System.Web.Mvc.MvcHtmlString(LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false));
+        }
+
+        /// <summary>
+        /// Resolved sfhref links in Sitefinity LongText content
+        /// </summary>
+        /// <param name="html"></param>
+        /// <returns></returns>
+        public static IHtmlString ResolveSitefinityContentLinks(this Lstring html)
+        {
+            return MvcExtensions.ResolveSitefinityContentLinks(html.ToString());
         }
     }
 }
