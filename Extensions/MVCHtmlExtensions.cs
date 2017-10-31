@@ -19,14 +19,23 @@ using Telerik.Sitefinity.Frontend.Media.Mvc.Models.Image;
 using Telerik.Sitefinity.Mvc;
 using System.Diagnostics;
 using RandomSiteControlsMVC.MVC.Models.InlineMarkupHelpers;
+using Telerik.Sitefinity.Modules.Libraries;
+using Telerik.Sitefinity.Services;
 
 namespace Telerik.Sitefinity
 {
+    public enum RawContentResolveType
+    {
+        Default,
+        None,
+        Enhanced
+    }
+
     public static class SFSHtml
     {
         private const string _mediaItemPrefix = "sfvrsn";
 
-        public static IHtmlString EnhanceRaw(string html, string imageViewPath = "/Views/Image/Image.Inline.cshtml", string documentViewPath = "/Views/Document/DocumentLink.Inline.cshtml")
+        private static string EnhanceRaw(string html, string imageViewPath, string documentViewPath)
         {
             //Resolve [OpenAccess provider style links first]
             html = LinkParser.ResolveLinks(html, DynamicLinksParser.GetContentUrl, null, false);
@@ -46,11 +55,11 @@ namespace Telerik.Sitefinity
                         foreach (var node in images)
                         {
                             //Find the id
-                            var imageRef = new SfImageLink(node.GetAttributeValue("src", "#"));
+                            var imageRef = new SfImageLink(node.GetAttributeValue("src", "#"), node.GetAttributeValue("title", ""), node.GetAttributeValue("alt", ""));
 
                             if (imageRef.FoundDataItem())
                             {
-                                if (HttpContext.Current != null)
+                                if (SystemManager.CurrentHttpContext != null)
                                 {
                                     var markup = SFSHtml.GetRazorViewAsString(new ImageController(), imageRef.DataItem, imageViewPath);
                                     var newNode = HtmlNode.CreateNode(markup);
@@ -98,7 +107,7 @@ namespace Telerik.Sitefinity
 
 
                                     //Reapply all the attributes that were on the original node
-                                    foreach (var attribute in node.Attributes.Where(x => x.Name != "src" && x.Name != "title" && x.Name != "alt"))
+                                    foreach (var attribute in node.Attributes.Where(x => x.Name != "src" && x.Name != "href" && x.Name != "title" && x.Name != "alt"))
                                     {
                                         if (newNode.Attributes[attribute.Name] != null)
                                         {
@@ -131,23 +140,19 @@ namespace Telerik.Sitefinity
                     }
                     */
 
-                    var fixedHtml = doc.DocumentNode.OuterHtml;
-                    //result = LinkParser.ResolveLinks(fixedHtml, DynamicLinksParser.GetContentUrl, null, false);
-
-                    var finishedHtml = MvcHtmlString.Create(fixedHtml);
-                    return finishedHtml;
+                    return doc.DocumentNode.OuterHtml;
                 }
                 catch (Exception ex)
                 {
                     Telerik.Microsoft.Practices.EnterpriseLibrary.Logging.Logger.Writer.Write(ex);
                     //Problem, just show something
-                    return MvcHtmlString.Create(html);
+                    return html;
                 }
             }
             else
             {
                 //No version
-                return MvcHtmlString.Create(html);
+                return html;
             }
         }
 
@@ -170,46 +175,22 @@ namespace Telerik.Sitefinity
 
             return st.ToString();
         }
-    }
-}
 
-namespace Telerik.Sitefinity.Frontend.Mvc.Helpers
-{
-    public static class MvcExtensions
-    {
-        /// <summary>
-        /// Sitefinity Steve Helper
-        /// This is designed to automatically call the LinkParser to resolve sitefinity images and documents in the html content
-        /// ** IMPORTANT ** Extension methods do not acce
-        /// </summary>
-        /// <param name="html">Rad\Kendo editor content field</param>
-        /// <param name="resolveSitefinityContent">Should the method resolve the possible content links</param>
-        /// <returns></returns>
-        public static IHtmlString Raw(this HtmlHelper helper, object html, bool resolveContent)
+        public static IHtmlString Raw(this HtmlHelper helper, object html, RawContentResolveType resolveType, string imageViewPath = "/Views/Image/Image.Inline.cshtml", string documentViewPath = "/Views/Document/DocumentLink.Inline.cshtml")
         {
-            var content = resolveContent ? LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false) : html.ToString();
+            var content = html.ToString();
+
+            switch (resolveType)
+            {
+                case RawContentResolveType.Default:
+                    content = LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false);
+                    break;
+                case RawContentResolveType.Enhanced:
+                    content = SFSHtml.EnhanceRaw(html.ToString(), imageViewPath, documentViewPath);
+                    break;
+            }
 
             return new System.Web.Mvc.MvcHtmlString(content);
-        }
-
-        /// <summary>
-        /// Resolved sfhref links in Sitefinity LongText content
-        /// </summary>
-        /// <param name="html"></param>
-        /// <returns></returns>
-        public static IHtmlString ResolveSitefinityContentLinks(this string html)
-        {
-            return new System.Web.Mvc.MvcHtmlString(LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false));
-        }
-
-        /// <summary>
-        /// Resolved sfhref links in Sitefinity LongText content
-        /// </summary>
-        /// <param name="html"></param>
-        /// <returns></returns>
-        public static IHtmlString ResolveSitefinityContentLinks(this Lstring html)
-        {
-            return MvcExtensions.ResolveSitefinityContentLinks(html.ToString());
         }
     }
 }
