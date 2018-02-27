@@ -169,6 +169,7 @@
     <Compile Include="Helpers\RSCUtil.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
     <Content Include="MVC\Views\WidgetFinder\Resources\widgetfinder.css">
       <DependentUpon>widgetfinder.less</DependentUpon>
     </Content>
@@ -196,9 +197,6 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <EmbeddedResource Include="MVC\Views\ContentLiteral\Default.cshtml" />
-    <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.cshtml" />
-    <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\Markdown\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.json" />
@@ -253,12 +251,12 @@
     <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\WidgetFinder\Default.cshtml" />
+    <EmbeddedResource Include="MVC\Views\ContentLiteral\Default.cshtml" />
+    <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.json" />
     <None Include="MVC\Views\WidgetFinder\Resources\widgetfinder.less" />
     <None Include="packages.config" />
     <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,19 +1,49 @@
-﻿(function ($) {
-    angular.module('designer').requires.push('sfCodeArea');
+﻿var require = { paths: { 'vs': '/adminapp/assets/js/monaco-editor/vs/' } };
 
+(function ($) {
     angular.module('designer').controller('SimpleCtrl', ['$scope', 'propertyService', function ($scope, propertyService) {
         //Fill the screen
         $('.sf-backend-wrp').addClass('modal-fluid');;
 
-        setTimeout(function () {
-            var myCodeMirror = $('.CodeMirror')[0].CodeMirror;
+        var contentHtmlEditor;
 
-            //Resize editor
-            var modalHeight = $(".modal-body").outerHeight() + "px"; //Bit of padding
-            $(".CodeMirror-scroll").attr("style", "min-height: " + modalHeight );
+        $scope.waitForMonaco = function () {
+            if (typeof monaco !== "undefined") {
+                //variable exists, do what you want
+                //Resize editor zone
+                $scope.resizeMonacoEditorWindow();
 
-            myCodeMirror.refresh();
-        }, 200);
+                contentHtmlEditor = monaco.editor.create(document.getElementById('content-html-container'), {
+                    language: 'html',
+                    automaticLayout: true,
+                    autoIndent: true
+                });
+
+                contentHtmlEditor.setValue($scope.properties.HtmlContent.PropertyValue);
+
+                $(window).resize(function () {
+                    $scope.resizeMonacoEditorWindow();
+                });
+            }
+            else {
+                setTimeout($scope.waitForMonaco, 250);
+            }
+        }
+
+        $scope.resizeMonacoEditorWindow = function() {
+            //Resize editor zone
+            var height = $("#viewsPlaceholder").closest(".modal-body").height();
+            $("#content-html-container").height(height);
+            console.log("Resizing editor: " + height);
+            if (contentHtmlEditor) { 
+                contentHtmlEditor.editor.layout();
+            }
+        }
+
+        addMonacoStyleSheet("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.css");
+        addMonacoScript("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.js");
+        addMonacoScript("/adminapp/assets/js/monaco-editor/vs/loader.js");
+        $scope.waitForMonaco();
 
         propertyService.get()
             .then(function (data) {
@@ -28,6 +58,7 @@
             })
             .then(function () {
                 $scope.feedback.savingHandlers.push(function () {
+                    $scope.properties.HtmlContent.PropertyValue = contentHtmlEditor.getValue();
                 });
             })
             .finally(function () {
@@ -35,3 +66,15 @@
             });
     }]);
 })(jQuery);
+
+function addMonacoScript(src) {
+    var s = document.createElement('script');
+    s.setAttribute('src', src);
+    document.body.appendChild(s);
+}
+
+function addMonacoStyleSheet(src) {
+    var s = document.createElement('link');
+    s.setAttribute('href', src);
+    document.head.appendChild(s);
+}
