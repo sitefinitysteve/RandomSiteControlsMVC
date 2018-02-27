@@ -22,5 +22,9 @@
   {
     "outputFile": "MVC/Views/GoogleMap/Resources/googlemap.es5.js",
     "inputFile": "MVC/Views/GoogleMap/Resources/googlemap.js"
+  },
+  {
+    "outputFile": "MVC/Views/WidgetFinder/Resources/widgetfinder.css",
+    "inputFile": "MVC/Views/WidgetFinder/Resources/widgetfinder.less"
   }
 ]

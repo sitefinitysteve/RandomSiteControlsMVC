@@ -1,0 +1,69 @@
+﻿@model RandomSiteControlsMVC.MVC.Models.WidgetFinder.WidgetFinderModel
+
+@using Telerik.Sitefinity.Pages.Model;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Web;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity;
+@using Telerik.Sitefinity.Mvc;
+@using RandomSiteControlsMVC.Helpers;
+@using Telerik.Sitefinity.Services;
+
+@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.WidgetFinder.Resources.widgetfinder.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+@Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.WidgetFinder.Resources.widgetfinder.min.css"), "head")
+
+<div class="widget-finder-wrapper">
+    <div class="row">
+        <div class="col-md-8">
+            <div>
+                <div class="input-group">
+                    <input ID="controlTextBox" type="text" class="form-control" placeholder="Widget Name..." value="@Model.SelectedControl" />
+                    <span class="input-group-btn">
+                        <input ID="goButton" type="button" class="btn btn-primary" onclick="doSearch()" value="Find widgets" />
+                    </span>
+                </div>
+            </div>
+
+            <hr />
+
+            <ul class="list-group">
+                @foreach (var p in Model.FoundPages)
+                {
+                    var url = p.GetUrl().Replace("~", "");
+
+                    <li class="list-group-item clearfix">
+                        <div class="pull-left">
+                            <a href="@url" target="_blank">
+                                @p.Title
+                            </a>
+                            <div class="text-muted">
+                                @url
+                            </div>
+                        </div>
+                        <a href="@url/Action/Edit" class="pull-right btn btn-default" target="_blank">edit</a>
+                    </li>
+                }
+            </ul>
+
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Found widgets</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        @foreach (var c in Model.Controls)
+                        {
+                            if (c != null)
+                            {
+                                <li runat="server" class="list-group-item">
+                                    <a href="?control=@c.ToString()">@c.ToString()</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

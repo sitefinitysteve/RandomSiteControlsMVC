@@ -143,6 +143,7 @@
     <Compile Include="Helpers\Reference.cs" />
     <Compile Include="HttpModules\RemoveHttpHeadersModule.cs" />
     <Compile Include="Installer.cs" />
+    <Compile Include="MVC\Controllers\WidgetFinder\WidgetFinderController.cs" />
     <Compile Include="MVC\Controllers\List\ListController.cs" />
     <Compile Include="MVC\Controllers\ContentLiteral\ContentLiteralController.cs" />
     <Compile Include="MVC\Controllers\DocumentTree\DocumentTreeController.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="MVC\Controllers\Markdown\MarkdownController.cs" />
     <Compile Include="MVC\Controllers\PageTitle\PageTitleController.cs" />
     <Compile Include="MVC\Controllers\TabStrip\TabStripController.cs" />
+    <Compile Include="MVC\Models\WidgetFinder\WidgetFinderModel.cs" />
     <Compile Include="MVC\Models\DocumentTree\DocumentTreeModel.cs" />
     <Compile Include="MVC\Models\ContentLiteral\ContentLiteralModel.cs" />
     <Compile Include="MVC\Models\DocumentTree\DocumentTreeNode.cs" />
@@ -167,6 +169,16 @@
     <Compile Include="Helpers\RSCUtil.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MVC\Views\WidgetFinder\Resources\widgetfinder.css">
+      <DependentUpon>widgetfinder.less</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="MVC\Views\WidgetFinder\Resources\widgetfinder.min.css">
+      <DependentUpon>widgetfinder.css</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\WidgetFinder\Resources\widgetfinder.min.js">
+      <DependentUpon>widgetfinder.js</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\WidgetFinder\Resources\widgetfinder.js" />
     <EmbeddedResource Include="MVC\Views\GoogleMap\Resources\googlemap.es5.js">
       <DependentUpon>googlemap.js</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +252,8 @@
     <EmbeddedResource Include="MVC\Views\GoogleMap\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.json" />
+    <EmbeddedResource Include="MVC\Views\WidgetFinder\Default.cshtml" />
+    <None Include="MVC\Views\WidgetFinder\Resources\widgetfinder.less" />
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>

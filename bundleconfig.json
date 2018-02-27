@@ -4,5 +4,11 @@
     "inputFiles": [
       "MVC/Views/TabStrip/Resources/bootstrap.js"
     ]
+  },
+  {
+    "outputFileName": "MVC/Views/WidgetFinder/Resources/widgetfinder.min.js",
+    "inputFiles": [
+      "MVC/Views/WidgetFinder/Resources/widgetfinder.js"
+    ]
   }
 ]
