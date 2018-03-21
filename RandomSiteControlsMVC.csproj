@@ -160,9 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
-    <Content Include="MVC\Views\WidgetFinder\Resources\widgetfinder.css">
+    <EmbeddedResource Include="MVC\Views\WidgetFinder\Resources\widgetfinder.css">
       <DependentUpon>widgetfinder.less</DependentUpon>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\WidgetFinder\Resources\widgetfinder.min.css">
       <DependentUpon>widgetfinder.css</DependentUpon>
     </EmbeddedResource>

@@ -12,14 +12,16 @@
                 //variable exists, do what you want
                 //Resize editor zone
                 $scope.resizeMonacoEditorWindow();
-
+                
                 contentHtmlEditor = monaco.editor.create(document.getElementById('content-html-container'), {
                     language: 'html',
                     automaticLayout: true,
                     autoIndent: true
                 });
 
-                contentHtmlEditor.setValue($scope.properties.HtmlContent.PropertyValue);
+                if ($scope.properties) {
+                    contentHtmlEditor.setValue($scope.properties.HtmlContent.PropertyValue);
+                }
 
                 $(window).resize(function () {
                     $scope.resizeMonacoEditorWindow();
@@ -35,20 +37,24 @@
             var height = $("#viewsPlaceholder").closest(".modal-body").height();
             $("#content-html-container").height(height);
             console.log("Resizing editor: " + height);
-            if (contentHtmlEditor) { 
-                contentHtmlEditor.editor.layout();
-            }
         }
 
-        addMonacoStyleSheet("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.css");
-        addMonacoScript("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.js");
-        addMonacoScript("/adminapp/assets/js/monaco-editor/vs/loader.js");
+        if (typeof monaco === "undefined") {
+            addMonacoStyleSheet("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.css");
+            addMonacoScript("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.js");
+            addMonacoScript("/adminapp/assets/js/monaco-editor/vs/loader.js");
+        }
+
         $scope.waitForMonaco();
 
         propertyService.get()
             .then(function (data) {
                 if (data) {
                     $scope.properties = propertyService.toAssociativeArray(data.Items);
+
+                    if (contentHtmlEditor) {
+                        contentHtmlEditor.setValue($scope.properties.HtmlContent.PropertyValue);
+                    }
                 }
             },
             function (data) {
