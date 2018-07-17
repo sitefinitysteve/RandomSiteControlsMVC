@@ -19,7 +19,7 @@
     </summary>
 	  <projectUrl>https://github.com/sitefinitysteve/RandomSiteControlsMVC</projectUrl>
     <dependencies>
-      <dependency id="HtmlAgilityPack" version="1.5.1" />
+      <dependency id="HtmlAgilityPack" version="1.8.5" />
     </dependencies>
   </metadata>
 </package>

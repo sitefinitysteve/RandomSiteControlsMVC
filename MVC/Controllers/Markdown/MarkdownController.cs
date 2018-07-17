@@ -22,12 +22,12 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             MarkdownModel model = GetModel();
 
-            return View("Default", model);
+            return View(this.Template, model);
         }
 
         protected override void HandleUnknownAction(string actionName)
         {
-            View("Default", this.GetModel()).ExecuteResult(this.ControllerContext);
+            View(this.Template, this.GetModel()).ExecuteResult(this.ControllerContext);
         }
 
         private MarkdownModel GetModel()
@@ -43,15 +43,21 @@ namespace SitefinityWebApp.Mvc.Controllers
             return model;
         }
 
-        //From ServiceStack HtmlHelper
         protected string GetHtml()
         {
             try
             {
-                var helper = new ServiceStack.Html.HtmlHelper();
-                var html = helper.RenderMarkdownToHtml(this.Markdown);
+                var options = new MarkdownOptions
+                {
+                    AutoHyperlink = true,
+                    LinkEmails = true,
+                    StrictBoldItalic = true
+                };
 
-                return html.ToHtmlString();
+                Markdown mark = new Markdown(options);
+                var html = mark.Transform(this.Markdown);
+
+                return html;
             }
             catch (Exception ex)
             {
@@ -59,7 +65,6 @@ namespace SitefinityWebApp.Mvc.Controllers
                 return "Error Rendering Markdown";
             }
         }
-
 
         #region PROPERTIES
         string _content = String.Empty;
@@ -71,6 +76,17 @@ namespace SitefinityWebApp.Mvc.Controllers
                 _content = value;
             }
         }
+
+        private string _template = "Default";
+        public string Template
+        {
+            get { return _template; }
+            set
+            {
+                _template = value;
+            }
+        }
+        
 
         bool _useWrapper = true;
         public bool UseWrapper
@@ -102,3 +118,4 @@ namespace SitefinityWebApp.Mvc.Controllers
         #endregion
     }
 }
+
