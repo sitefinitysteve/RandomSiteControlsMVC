@@ -10,7 +10,7 @@ using RandomSiteControlsMVC.MVC.Models.Markdown;
 using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
 using ServiceStack.Formats;
 using ServiceStack;
-using MarkdownSharp;
+using HeyRed.MarkdownSharp;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
