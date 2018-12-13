@@ -26,5 +26,9 @@
   {
     "outputFile": "MVC/Views/WidgetFinder/Resources/widgetfinder.css",
     "inputFile": "MVC/Views/WidgetFinder/Resources/widgetfinder.less"
+  },
+  {
+    "outputFile": "MVC/Views/Twitter/Resources/twitter.es5.js",
+    "inputFile": "MVC/Views/Twitter/Resources/twitter.js"
   }
 ]

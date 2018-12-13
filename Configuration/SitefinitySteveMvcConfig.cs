@@ -106,6 +106,20 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
+        [ConfigurationProperty("twitter")]
+        public TwitterConfigElement Twitter
+        {
+            get
+            {
+                return (TwitterConfigElement)this["twitter"];
+            }
+            set
+            {
+                this["twitter"] = value;
+            }
+        }
+
+
         [ConfigurationProperty("googlemaps")]
         public GoogleMapsElement GoogleMaps
         {

@@ -11,6 +11,9 @@ using Telerik.Sitefinity.Data;
 using Telerik.Sitefinity.Modules.Pages.Configuration;
 using ServiceStack;
 using ServiceStack.Formats;
+using Telerik.Sitefinity.Publishing;
+using Telerik.Sitefinity.Publishing.Pipes;
+using Telerik.Sitefinity.Services;
 
 namespace RandomSiteControlsMVC
 {
@@ -29,6 +32,9 @@ namespace RandomSiteControlsMVC
         public static void Bootstrapper_Initialized(object sender, Telerik.Sitefinity.Data.ExecutedEventArgs e)
         {
             Telerik.Sitefinity.Configuration.Config.RegisterSection<RandomSiteControlsMVC.Configuration.SitefinitySteveMvcConfig>();
+
+            //Register ServiceStack route
+            SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
 
             //Add Tools
             InstallVirtualPaths(); // See that method for VIRTUAL PATHS installation code
