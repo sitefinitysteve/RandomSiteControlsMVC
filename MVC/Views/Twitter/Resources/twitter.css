@@ -1,0 +1,131 @@
+﻿.twitter-feed .tweet {
+  position: relative;
+  min-height: 51px;
+  padding: 9px 12px;
+  border-bottom: 1px solid #e6ecf0;
+}
+.twitter-feed .tweet > .context {
+  margin-left: 58px;
+}
+.twitter-feed .tweet > .context.retweetedby a {
+  color: #657786 !important;
+  font-size: 12px;
+  margin-top: -3px;
+  margin-bottom: 3px;
+}
+.twitter-feed .tweet .content {
+  margin-left: 58px;
+}
+.twitter-feed .tweet .content .stream-item-header {
+  display: flex;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group {
+  color: #14171a;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group .FullNameGroup {
+  display: flex;
+  max-width: 100%;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group .FullNameGroup .fullname {
+  word-break: break-all;
+  color: #14171a;
+  font-size: 14px;
+  font-weight: bold;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group .FullNameGroup .u-textTruncate {
+  max-width: 100%;
+  overflow: hidden!important;
+  text-overflow: ellipsis!important;
+  white-space: nowrap!important;
+  word-wrap: normal!important;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group .username {
+  font-size: 14px;
+  color: #657786;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group .UserBadges {
+  font-size: 0.9em;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group .UserBadges .Icon {
+  font-size: 1.2em;
+  padding-left: 3px;
+  padding-right: 2px;
+  vertical-align: top;
+}
+.twitter-feed .tweet .content .stream-item-header .account-group .UserBadges .Icon img {
+  height: 13px;
+}
+.twitter-feed .tweet .content .stream-item-header .avatar {
+  float: left;
+  margin-top: 3px;
+  margin-left: -58px;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+}
+.twitter-feed .tweet .content .stream-item-header .TweetTextSize {
+  font-size: 14px;
+  line-height: 20px;
+}
+.twitter-feed .tweet .content .stream-item-footer {
+  display: table;
+  width: 100%;
+  font-size: 12px;
+  padding-top: 1px;
+}
+.twitter-feed .tweet .content .stream-item-footer .ProfileTweet-actionList {
+  font-size: 0;
+  height: 18px;
+  line-height: 1;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+.twitter-feed .tweet .content .stream-item-footer .ProfileTweet-actionList .ProfileTweet-action {
+  display: inline-block;
+  min-width: 80px;
+}
+.twitter-feed .tweet .content .stream-item-footer .ProfileTweet-actionList .ProfileTweet-action .ProfileTweet-actionCount {
+  color: #657786;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 6px;
+  position: relative;
+  vertical-align: text-bottom;
+}
+.twitter-feed .tweet .QuoteTweet {
+  margin-top: 12px;
+  border: solid 1px #e6ecf0;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 12px;
+}
+.twitter-feed .tweet .QuoteTweet .tweet-content {
+  text-decoration: none;
+  color: #14171a;
+}
+.twitter-feed .tweet .QuoteTweet .tweet-content .QuoteTweet-authorAndText {
+  vertical-align: top !important;
+}
+.twitter-feed .tweet .QuoteTweet .tweet-content .QuoteTweet-authorAndText .QuoteTweet-originalAuthor {
+  position: relative;
+  z-index: 1;
+  display: flex;
+}
+.twitter-feed .tweet .QuoteTweet .tweet-content .QuoteTweet-authorAndText .QuoteTweet-text {
+  margin-top: 1px;
+  max-height: 80px;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.twitter-feed .tweet .u-hiddenVisually {
+  display: none;
+}

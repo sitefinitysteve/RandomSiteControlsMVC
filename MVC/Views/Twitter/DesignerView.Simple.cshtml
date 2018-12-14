@@ -1,0 +1,43 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using RandomSiteControlsMVC.MVC.Controllers;
+
+<form>
+    <div class="form-group">
+        <label for="heading-text">
+            Mode
+        </label>
+        <select id="templateName" ng-model="properties.Mode.PropertyValue" class="form-control">
+            @foreach (var viewName in (TwitterModeEnum[])Enum.GetValues(typeof(TwitterModeEnum)))
+            {
+                <option value="@viewName">@viewName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="heading-text">
+            Tweet count
+        </label>
+        <input id="heading-text" type="text" class="form-control" ng-model="properties.Count.PropertyValue" />
+    </div>
+
+    <div class="form-group" ng-show="properties.Mode.PropertyValue == 'UserTimeline'">
+        <label for="heading-text">
+            Screen name
+        </label>
+        <input id="heading-text" type="text" class="form-control" ng-model="properties.ScreenName.PropertyValue" />
+        <div class="text-muted">
+
+        </div>
+    </div>
+
+    <expander expander-title='@Html.Resource("MoreOptions")'>
+        <div class="form-group">
+            <label for="cssClass">
+                Class name
+            </label>
+            <input id="cssClass" type="text" ng-model="properties.CssClass.PropertyValue" class="form-control" />
+        </div>
+    </expander>
+</form>

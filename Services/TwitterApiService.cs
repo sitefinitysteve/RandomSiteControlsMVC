@@ -12,6 +12,7 @@ using ServiceStack;
 using Telerik.Sitefinity.DynamicModules.Model;
 using TweetSharp;
 using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
+using System.Net;
 
 namespace RandomSiteControlsMVC.Services
 {
@@ -39,7 +40,7 @@ namespace RandomSiteControlsMVC.Services
             return "I am alive";
         }
 
-        public object Get(TwitterHomeTimelineRequest request)
+        public List<TwitterStatus> Get(TwitterHomeTimelineRequest request)
         {
             if (!this.IsSetup)
                 throw new KeyNotFoundException(_noKeysExceptionMessage);
@@ -49,31 +50,23 @@ namespace RandomSiteControlsMVC.Services
 
             var cacheKey = "twitter-list-timeline-{0}".Arrange(take);
 
-            try
+            if (!RSCUtil.Cache.Contains(cacheKey))
             {
-                if (!RSCUtil.Cache.Contains(cacheKey))
-                {
-                    var service = new TwitterService(RSCUtil.SfsConfig.Twitter.ConsumerKey, RSCUtil.SfsConfig.Twitter.ConsumerSecret);
-                    service.AuthenticateWith(RSCUtil.SfsConfig.Twitter.AccessToken, RSCUtil.SfsConfig.Twitter.AccessTokenSecret);
-
-                    tweets.AddRange(service.ListTweetsOnHomeTimeline(new ListTweetsOnHomeTimelineOptions() { Count = take }));
-
-                    RSCUtil.AddToCache(tweets, cacheKey, TimeSpan.FromMinutes(RSCUtil.SfsConfig.Twitter.CacheTimeoutMinutes));
-                }
-                else
-                {
-                    tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
-                }
+                TwitterService service = this.GetService();
+                var result = service.ListTweetsOnHomeTimeline(new ListTweetsOnHomeTimelineOptions() { Count = take });
+                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
             }
-            catch (Exception ex)
+            else
             {
-                Logger.Writer.Write(ex);
+                tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
             }
-
+            
+            
             return tweets;
-
         }
-        public object Get(TwitterRetweetTimelineRequest request)
+
+
+        public List<TwitterStatus> Get(TwitterRetweetTimelineRequest request)
         {
             if (!this.IsSetup)
                 throw new KeyNotFoundException(_noKeysExceptionMessage);
@@ -83,31 +76,21 @@ namespace RandomSiteControlsMVC.Services
 
             var cacheKey = "twitter-retweet-timeline-{0}".Arrange(take);
 
-            try
+            if (!RSCUtil.Cache.Contains(cacheKey))
             {
-                if (!RSCUtil.Cache.Contains(cacheKey))
-                {
-                    var service = new TwitterService(RSCUtil.SfsConfig.Twitter.ConsumerKey, RSCUtil.SfsConfig.Twitter.ConsumerSecret);
-                    service.AuthenticateWith(RSCUtil.SfsConfig.Twitter.AccessToken, RSCUtil.SfsConfig.Twitter.AccessTokenSecret);
-
-                    tweets.AddRange(service.ListRetweetsOfMyTweets(new ListRetweetsOfMyTweetsOptions() { Count = take }));
-
-                    RSCUtil.AddToCache(tweets, cacheKey, TimeSpan.FromMinutes(RSCUtil.SfsConfig.Twitter.CacheTimeoutMinutes));
-                }
-                else
-                {
-                    tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
-                }
+                TwitterService service = this.GetService();
+                var result = service.ListRetweetsOfMyTweets(new ListRetweetsOfMyTweetsOptions() { Count = take });
+                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
             }
-            catch (Exception ex)
+            else
             {
-                Logger.Writer.Write(ex);
+                tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
             }
 
             return tweets;
 
         }
-        public object Get(TwitterUserTimelineRequest request)
+        public List<TwitterStatus> Get(TwitterUserTimelineRequest request)
         {
             if (!this.IsSetup)
                 throw new KeyNotFoundException(_noKeysExceptionMessage);
@@ -117,35 +100,25 @@ namespace RandomSiteControlsMVC.Services
 
             var cacheKey = "twitter-list-user-timeline-{0}-{1}".Arrange(take, request.ScreenName);
 
-            try
+            if (!RSCUtil.Cache.Contains(cacheKey))
             {
-                if (!RSCUtil.Cache.Contains(cacheKey))
+                TwitterService service = this.GetService();
+                var result = service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions()
                 {
-                    var service = new TwitterService(RSCUtil.SfsConfig.Twitter.ConsumerKey, RSCUtil.SfsConfig.Twitter.ConsumerSecret);
-                    service.AuthenticateWith(RSCUtil.SfsConfig.Twitter.AccessToken, RSCUtil.SfsConfig.Twitter.AccessTokenSecret);
-
-                    tweets.AddRange(service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions() {
-                        Count = take,
-                        ScreenName = request.ScreenName
-                    }));
-
-                    RSCUtil.AddToCache(tweets, cacheKey, TimeSpan.FromMinutes(RSCUtil.SfsConfig.Twitter.CacheTimeoutMinutes));
-                }
-                else
-                {
-                    tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
-                }
+                    Count = take,
+                    ScreenName = request.ScreenName
+                });
+                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
             }
-            catch (Exception ex)
+            else
             {
-                Logger.Writer.Write(ex);
+                tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
             }
-
 
             return tweets;
 
         }
-        public object Get(TwitterMentionsTimelineRequest request)
+        public List<TwitterStatus> Get(TwitterMentionsTimelineRequest request)
         {
             if (!this.IsSetup)
                 throw new KeyNotFoundException(_noKeysExceptionMessage);
@@ -155,30 +128,45 @@ namespace RandomSiteControlsMVC.Services
 
             var cacheKey = "twitter-list-mentioningme-{0}".Arrange(take);
 
-            try
+            if (!RSCUtil.Cache.Contains(cacheKey))
             {
-                if (!RSCUtil.Cache.Contains(cacheKey))
-                {
-                    var service = new TwitterService(RSCUtil.SfsConfig.Twitter.ConsumerKey, RSCUtil.SfsConfig.Twitter.ConsumerSecret);
-                    service.AuthenticateWith(RSCUtil.SfsConfig.Twitter.AccessToken, RSCUtil.SfsConfig.Twitter.AccessTokenSecret);
-
-                    tweets.AddRange(service.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions() { Count = take }));
-
-                    RSCUtil.AddToCache(tweets, cacheKey, TimeSpan.FromMinutes(RSCUtil.SfsConfig.Twitter.CacheTimeoutMinutes));
-                }
-                else
-                {
-                    tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
-                }
+                TwitterService service = this.GetService();
+                var result = service.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions() { Count = take });
+                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
             }
-            catch (Exception ex)
+            else
             {
-                Logger.Writer.Write(ex);
+                tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
             }
 
             return tweets;
 
         }
+
+        #region HELPERS
+
+        private void HandleTwitterStatusCallback(List<TwitterStatus> tweets, string cacheKey, TwitterService service, IEnumerable<TwitterStatus> result)
+        {
+            if (service.Response.StatusCode == HttpStatusCode.OK)
+            {
+                tweets.AddRange(result);
+
+                RSCUtil.AddToCache(tweets, cacheKey, TimeSpan.FromMinutes(RSCUtil.SfsConfig.Twitter.CacheTimeoutMinutes));
+            }
+            else
+            {
+                Logger.Writer.Write(service.Response.Error.Message);
+                throw new UnauthorizedAccessException(service.Response.Error.Message);
+            }
+        }
+
+        private TwitterService GetService()
+        {
+            var service = new TwitterService(RSCUtil.SfsConfig.Twitter.ConsumerKey, RSCUtil.SfsConfig.Twitter.ConsumerSecret);
+            service.AuthenticateWith(RSCUtil.SfsConfig.Twitter.AccessToken, RSCUtil.SfsConfig.Twitter.AccessTokenSecret);
+            return service;
+        }
+        
 
         private int SanitizeTakeCount(int take)
         {
@@ -192,6 +180,7 @@ namespace RandomSiteControlsMVC.Services
                 return !String.IsNullOrEmpty(RSCUtil.SfsConfig.Twitter.ConsumerKey) && !String.IsNullOrEmpty(RSCUtil.SfsConfig.Twitter.ConsumerSecret) && !String.IsNullOrEmpty(RSCUtil.SfsConfig.Twitter.AccessToken) && !String.IsNullOrEmpty(RSCUtil.SfsConfig.Twitter.AccessTokenSecret);
             }
         }
+        #endregion
     }
     #endregion
 

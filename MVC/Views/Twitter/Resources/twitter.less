@@ -1,0 +1,157 @@
+﻿.twitter-feed {
+    .tweet{
+        position: relative;
+        min-height: 51px;
+        padding: 9px 12px;
+        border-bottom: 1px solid #e6ecf0;
+
+        >.context{
+            margin-left: 58px;
+
+            &.retweetedby a{
+                color: #657786 !important;
+                font-size: 12px;
+                margin-top: -3px;
+                margin-bottom: 3px;
+            }
+        }
+
+        .content{
+            margin-left: 58px;
+
+            .stream-item-header{
+                display: flex;
+
+                .account-group{
+                    color: #14171a;
+                    display: -moz-inline-box;
+                    display: -ms-inline-flexbox;
+                    display: inline-flex;
+                    flex-shrink: 1;
+                    overflow: hidden;
+
+                    .FullNameGroup{
+                        display: flex;
+                        max-width: 100%;
+
+                        .fullname {
+                            word-break: break-all;
+                            color: #14171a;
+                            font-size: 14px;
+                            font-weight: bold;
+                        }
+
+                        .u-textTruncate {
+                            max-width: 100%;
+                            overflow: hidden!important;
+                            text-overflow: ellipsis!important;
+                            white-space: nowrap!important;
+                            word-wrap: normal!important;
+                        }
+                    }
+
+                    .username{
+                        font-size: 14px;
+                        color: #657786;
+                    }
+
+                    .UserBadges {
+                        font-size: .9em;
+
+                        .Icon{
+                            font-size: 1.2em;
+                            padding-left: 3px;
+                            padding-right: 2px;
+                            vertical-align: top;
+
+                            img{
+                                height: 13px;
+                            }
+                        }
+                    }
+                }
+
+                .avatar{
+                    float: left;
+                    margin-top: 3px;
+                    margin-left: -58px;
+                    position: absolute;
+                    width: 48px;
+                    height: 48px;
+                }
+
+                .TweetTextSize{
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+
+            .stream-item-footer{
+                display: table;
+                width: 100%;
+                font-size: 12px;
+                padding-top: 1px;
+
+                .ProfileTweet-actionList {
+                    font-size: 0;
+                    height: 18px;
+                    line-height: 1;
+                    margin-bottom: 2px;
+                    margin-top: 10px;
+
+                    .ProfileTweet-action{
+                        display: inline-block;
+                        min-width: 80px;
+
+                        .ProfileTweet-actionCount {
+                            color: #657786;
+                            display: inline-block;
+                            font-size: 12px;
+                            font-weight: bold;
+                            line-height: 1;
+                            margin-left: 6px;
+                            position: relative;
+                            vertical-align: text-bottom;
+                        }
+                    }
+                }
+            }
+        }
+
+        .QuoteTweet {
+            margin-top: 12px;
+            border: solid 1px #e6ecf0;
+            cursor: pointer;
+            border-radius: 12px;
+            padding: 12px;
+
+            .tweet-content{
+                text-decoration: none;
+                color: #14171a;
+
+                .QuoteTweet-authorAndText{
+                    vertical-align: top !important;
+
+                    .QuoteTweet-originalAuthor{
+                        position: relative;
+                        z-index: 1;
+                        display: flex;
+                    }
+
+                    .QuoteTweet-text{
+                        margin-top: 1px;
+                        max-height: 80px;
+                        max-width: 100%;
+                        overflow: hidden;
+                        white-space: pre-wrap;
+                        word-wrap: break-word;
+                    }
+                }
+            }
+        }
+
+        .u-hiddenVisually{
+            display: none;
+        }
+    }
+}

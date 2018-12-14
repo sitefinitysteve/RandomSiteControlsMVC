@@ -33,7 +33,11 @@ namespace RandomSiteControlsMVC.MVC.Controllers
 
         private TwitterModel GetModel()
         {
-            return new TwitterModel();
+            var model = new TwitterModel(this.Mode, this.Count, this.ScreenName);
+
+            model.CssClass = this.CssClass;
+
+            return model;
         }
 
 
@@ -42,7 +46,38 @@ namespace RandomSiteControlsMVC.MVC.Controllers
             View(this.Template, this.GetModel()).ExecuteResult(this.ControllerContext);
         }
 
-        private string _template = "Default";
+    
+        private TwitterModeEnum _mode = TwitterModeEnum.HomeTimeline;
+        public TwitterModeEnum Mode
+        {
+            get { return _mode; }
+            set
+            {
+                _mode = value;
+            }
+        }
+
+        private int _count = 10;
+        public int Count
+        {
+            get { return _count; }
+            set
+            {
+                _count = value;
+            }
+        }
+
+        private string _screenName;
+        public string ScreenName
+        {
+            get { return _screenName; }
+            set
+            {
+                _screenName = value;
+            }
+        }
+
+        private string _template = "Tweets";
         public string Template
         {
             get { return _template; }
@@ -51,6 +86,7 @@ namespace RandomSiteControlsMVC.MVC.Controllers
                 _template = value;
             }
         }
+        
 
         private int _cacheTimeout = 15;
         public int CacheTimeoutMins
@@ -61,7 +97,18 @@ namespace RandomSiteControlsMVC.MVC.Controllers
                 _cacheTimeout = value;
             }
         }
+
+        private string _cssClass;
+        public string CssClass
+        {
+            get { return _cssClass; }
+            set
+            {
+                _cssClass = value;
+            }
+        }
         
+
 
         public bool IsEmpty
         {
