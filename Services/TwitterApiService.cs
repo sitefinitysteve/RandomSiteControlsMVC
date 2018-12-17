@@ -143,6 +143,31 @@ namespace RandomSiteControlsMVC.Services
 
         }
 
+        public List<TwitterStatus> Get(TwitterTweetRequest request)
+        {
+            if (!this.IsSetup)
+                throw new KeyNotFoundException(_noKeysExceptionMessage);
+
+            List<TwitterStatus> tweets = new List<TwitterStatus>();
+
+            var cacheKey = "twitter-tweet-{0}".Arrange(request.Id);
+
+            if (!RSCUtil.Cache.Contains(cacheKey))
+            {
+                TwitterService service = this.GetService();
+                var result = service.GetTweet(new GetTweetOptions() { Id = request.Id });
+
+                this.HandleTwitterStatusCallback(tweets, cacheKey, service, new List<TwitterStatus>() { result });
+            }
+            else
+            {
+                tweets = (List<TwitterStatus>)RSCUtil.Cache[cacheKey];
+            }
+
+            return tweets;
+
+        }
+
         #region HELPERS
 
         private void HandleTwitterStatusCallback(List<TwitterStatus> tweets, string cacheKey, TwitterService service, IEnumerable<TwitterStatus> result)
@@ -202,6 +227,12 @@ namespace RandomSiteControlsMVC.Services
                 _take = value;
             }
         }        
+    }
+
+    [Route("/sfs/twitter/tweet/{id}")]
+    public class TwitterTweetRequest : IReturn<List<TwitterStatus>>
+    {
+        public Int64 Id { get; set; }
     }
 
     [Route("/sfs/twitter/list/retweets")]

@@ -17,7 +17,8 @@ namespace RandomSiteControlsMVC.MVC.Controllers
     {
         UserTimeline,
         HomeTimeline,
-        MentioningMe
+        MentioningMe,
+        SpecificTweet
     }
 
     [EnhanceViewEnginesAttribute]
@@ -33,9 +34,15 @@ namespace RandomSiteControlsMVC.MVC.Controllers
 
         private TwitterModel GetModel()
         {
-            var model = new TwitterModel(this.Mode, this.Count, this.ScreenName);
+            var model = new TwitterModel(this.Mode, this.Count, this.ScreenName, this.TweetId);
 
             model.CssClass = this.CssClass;
+
+            if(model.Tweets.Count == 0)
+            {
+                //Try again
+                model = new TwitterModel(this.Mode, this.Count, this.ScreenName, this.TweetId);
+            }
 
             return model;
         }
@@ -46,7 +53,8 @@ namespace RandomSiteControlsMVC.MVC.Controllers
             View(this.Template, this.GetModel()).ExecuteResult(this.ControllerContext);
         }
 
-    
+
+        
         private TwitterModeEnum _mode = TwitterModeEnum.HomeTimeline;
         public TwitterModeEnum Mode
         {
@@ -86,7 +94,18 @@ namespace RandomSiteControlsMVC.MVC.Controllers
                 _template = value;
             }
         }
+
+        private Int64 _tweetId = -1;
+        public Int64 TweetId
+        {
+            get { return _tweetId; }
+            set
+            {
+                _tweetId = value;
+            }
+        }
         
+
 
         private int _cacheTimeout = 15;
         public int CacheTimeoutMins

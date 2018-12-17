@@ -15,7 +15,7 @@ namespace RandomSiteControlsMVC.MVC.Models.Twitter
 {
     public class TwitterModel
     {
-        public TwitterModel(TwitterModeEnum mode, int count, string screenName)
+        public TwitterModel(TwitterModeEnum mode, int count, string screenName, Int64 tweetId = -1)
         {
             this.Mode = mode;
 
@@ -28,6 +28,12 @@ namespace RandomSiteControlsMVC.MVC.Models.Twitter
             {
                 switch (mode)
                 {
+                    case TwitterModeEnum.SpecificTweet:
+                        if (tweetId != -1)
+                        {
+                            this.Tweets.AddRange(service.Get(new TwitterTweetRequest() { Id = tweetId }));
+                        }
+                        break;
                     case TwitterModeEnum.HomeTimeline:
                         this.Tweets.AddRange(service.Get(new TwitterHomeTimelineRequest() { Take = count + 1 }));
                         break;
