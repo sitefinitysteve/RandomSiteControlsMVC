@@ -5,77 +5,104 @@
 @using RandomSiteControlsMVC.Helpers;
 @using Telerik.Sitefinity;
 
-@Html.StyleSheet("/Mvc/Views/Twitter/Resources/twitter.min.css", "head")
+@*@Html.StyleSheet("/Mvc/Views/Twitter/Resources/twitter.min.css", "head")*@
+@Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.Twitter.Resources.twitter.min.css"), "head")
 
 @if (Model.Tweets.Count > 0)
 {
-<div class="twitter-feed @Model.CssClass">
-    @foreach (var t in Model.Tweets)
-    {
-        var isRetweet = t.RetweetedStatus == null ? false : true;
-        var author = t.RetweetedStatus == null ? t.Author : t.RetweetedStatus.Author;
-        var user = t.RetweetedStatus == null ? t.User : t.RetweetedStatus.User;
+    <div class="twitter-feed @Model.CssClass">
+        @foreach (var t in Model.Tweets)
+        {
+            var isRetweet = t.RetweetedStatus == null ? false : true;
+            var author = t.RetweetedStatus == null ? t.Author : t.RetweetedStatus.Author;
+            var user = t.RetweetedStatus == null ? t.User : t.RetweetedStatus.User;
+            var media = t.Entities.Where(x => x.EntityType == TweetSharp.TwitterEntityType.Media);
 
-        <div class="tweet">
-            @if (t.RetweetedStatus != null)
-            {
-            <div class="context retweetedby">
-                <a class="profile-link" href="https://www.twitter.com/@t.Author.ScreenName" rel="noopener">
-                    @t.Author.ScreenName Retweeted
-                </a>
-            </div>
-            }
-            <div class="content">
-                <div class="stream-item-header">
-                    @*User Title*@
-                    <a class="account-group" href="https://www.twitter.com/@(author.ScreenName)">
-                        <img alt="@author.ScreenName" class="avatar rounded-circle" src="@author.ProfileImageUrl.Replace("http:","https:").Replace("_normal","_bigger")">
-                        <span class="FullNameGroup">
-                            <strong class="fullname u-textTruncate">@user.Name</strong>
-                            @if (user.IsVerified.HasValue && user.IsVerified.Value)
-                            {
-                                <span class="UserBadges">
-                                    <span class="Icon">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified" />
-                                    </span>
-                                </span>
-                            }
-                            <span class="UserNameBreak">&nbsp;</span>
-                        </span>
-                        <span class="username u-dir u-textTruncate" dir="ltr" data-aria-label-part="">@@@(user.ScreenName)</span>
-                    </a>
-                </div>
-                @*Tweet body*@
-                <div class="TweetTextSize">
-                    @Html.Raw(t.TextAsHtml)
-                </div>
-                @if (t.IsQuoteStatus && t.QuotedStatus != null)
+            <div class="tweet">
+                @if (t.RetweetedStatus != null)
                 {
-                    <div class="QuoteTweet">
-                        <div class="tweet-content">
-                            <div class="QuoteTweet-authorAndText">
-                                <div class="QuoteTweet-originalAuthor">
+                    <div class="context retweetedby">
+                        <a class="profile-link" href="https://www.twitter.com/@t.Author.ScreenName" rel="noopener">
+                            @t.Author.ScreenName Retweeted
+                        </a>
+                    </div>
+                }
+                <div class="content">
+                    <div class="stream-item-header">
+                        @*User Title*@
+                        <a class="account-group" href="https://www.twitter.com/@(author.ScreenName)">
+                            <img alt="@author.ScreenName" class="avatar rounded-circle" src="@author.ProfileImageUrl.Replace("http:","https:").Replace("_normal","_bigger")">
+                            <span class="FullNameGroup">
+                                <strong class="fullname u-textTruncate">@user.Name</strong>
+                                @if (user.IsVerified.HasValue && user.IsVerified.Value)
+                                {
+                                    <span class="UserBadges">
+                                        <span class="Icon">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified" />
+                                        </span>
+                                    </span>
+                                }
+                                <span class="UserNameBreak">&nbsp;</span>
+                            </span>
+                            <span class="username u-dir u-textTruncate" dir="ltr" data-aria-label-part="">@@@(user.ScreenName)</span>
+                        </a>
+                    </div>
+                    @*Tweet body*@
+                    <div class="TweetTextSize">
+                        @Html.Raw(t.TextAsHtml)
+                    </div>
+                    @if (t.IsQuoteStatus && t.QuotedStatus != null)
+                    {
+                        <div class="QuoteTweet">
+                            <div class="tweet-content">
+                                <div class="QuoteTweet-authorAndText">
+                                    <div class="QuoteTweet-originalAuthor">
 
-                                </div>
-                                <div class="QuoteTweet-text">
-                                    @Html.Raw(t.QuotedStatus.Text)
+                                    </div>
+                                    <div class="QuoteTweet-text">
+                                        @Html.Raw(t.QuotedStatus.Text)
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                }
-                <div class="stream-item-footer">
-                    <div class="ProfileTweet-actionList">
-                        <div class="ProfileTweet-actionCount ">
-                            @t.RetweetCount
-                        </div>
-                        <div class="ProfileTweet-actionCount ">
-                            @t.FavoriteCount
-                        </div>
-                    </div>
+                    }
+                    @if (media.Count() > 0)
+                    {
+                        foreach (TweetSharp.TwitterMedia m in media)
+                        {
+                            if (m.MediaType == TweetSharp.TwitterMediaType.Photo)
+                            {
+                                <div class="AdaptiveMediaOuterContainer">
+                                    <div class="AdaptiveMedia is-square">
+                                        <div class="AdaptiveMedia-container">
+                                            <div class="AdaptiveMedia-singlePhoto" style="padding-top: calc(0.5409153952843273 * 100% - 0.5px);">
+                                                <div class="AdaptiveMedia-photoContainer js-adaptive-photo " style="background-color:rgba(64,64,10,1.0);">
+                                                    <img src="@m.MediaUrlHttps" alt="" style="width: 100%; top: -0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                    @*To impliment later... missing images*@
+                    @*<div class="stream-item-footer">
+                            <div class="ProfileTweet-actionList">
+                                <div class="ProfileTweet-action">
+                                    <div class="ProfileTweet-actionCount ">
+                                        @(t.RetweetCount > 0 ? t.RetweetCount.ToString() : "")
+                                    </div>
+                                </div>
+                                <div class="ProfileTweet-action">
+                                    <div class="ProfileTweet-actionCount ">
+                                        @(t.FavoriteCount > 0 ? t.FavoriteCount.ToString() : "")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
                 </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 }

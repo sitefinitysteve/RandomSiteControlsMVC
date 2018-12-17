@@ -189,9 +189,9 @@
     <Compile Include="Services\TwitterApiService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MVC\Views\Twitter\Resources\twitter.min.css">
+    <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.min.css">
       <DependentUpon>twitter.css</DependentUpon>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
     <EmbeddedResource Include="MVC\Views\WidgetFinder\Resources\widgetfinder.css">
       <DependentUpon>widgetfinder.less</DependentUpon>
@@ -276,13 +276,13 @@
     <EmbeddedResource Include="MVC\Views\ContentLiteral\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.json" />
-    <Content Include="MVC\Views\Twitter\DesignerView.Simple.cshtml" />
-    <Content Include="MVC\Views\Twitter\DesignerView.Simple.json" />
-    <Content Include="MVC\Views\Twitter\Resources\twitter.css">
+    <EmbeddedResource Include="MVC\Views\Twitter\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\Twitter\DesignerView.Simple.json" />
+    <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.css">
       <DependentUpon>twitter.less</DependentUpon>
-    </Content>
-    <Content Include="MVC\Views\Twitter\Resources\twitter.less" />
-    <Content Include="MVC\Views\Twitter\Tweets.cshtml" />
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.less" />
+    <EmbeddedResource Include="MVC\Views\Twitter\Tweets.cshtml" />
     <None Include="MVC\Views\WidgetFinder\Resources\widgetfinder.less" />
     <None Include="packages.config" />
     <None Include="README.md" />

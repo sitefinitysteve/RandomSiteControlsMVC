@@ -5,6 +5,10 @@
         padding: 9px 12px;
         border-bottom: 1px solid #e6ecf0;
 
+        &:last-child{
+            border-bottom: none;
+        }
+
         >.context{
             margin-left: 58px;
 
@@ -93,7 +97,6 @@
                 padding-top: 1px;
 
                 .ProfileTweet-actionList {
-                    font-size: 0;
                     height: 18px;
                     line-height: 1;
                     margin-bottom: 2px;
@@ -106,12 +109,38 @@
                         .ProfileTweet-actionCount {
                             color: #657786;
                             display: inline-block;
-                            font-size: 12px;
+                            font-size: 12px; 
                             font-weight: bold;
                             line-height: 1;
                             margin-left: 6px;
                             position: relative;
                             vertical-align: text-bottom;
+                        }
+                    }
+                }
+            }
+
+            .AdaptiveMediaOuterContainer{
+                margin-top: 10px;
+
+                .AdaptiveMedia{
+                    border: 1px solid rgba(0,0,0,0.1);
+                    /*max-height: 506px;
+                    max-width: 506px;*/
+                    border-radius: 12px;
+                    display: inline-block;
+                    overflow: hidden;
+                    position: relative;
+                    vertical-align: top;
+                    width: 100%;
+
+                    .AdaptiveMedia-singlePhoto {
+                        .AdaptiveMedia-photoContainer {
+                            bottom: 0;
+                            left: 0;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
                         }
                     }
                 }

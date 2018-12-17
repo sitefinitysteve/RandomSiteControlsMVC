@@ -15,7 +15,18 @@
         </select>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-show="properties.Mode.PropertyValue == 'SpecificTweet'">
+        <label for="heading-text">
+            Tweet Id
+        </label>
+        <input id="heading-text" type="text" class="form-control" ng-model="properties.TweetId.PropertyValue" />
+        <div class="text-muted">
+            Get this from the browser url when you click on a tweet, example<br />
+            https://twitter.com/stevemcniven/status/<strong>1073618189756653574</strong>
+        </div>
+    </div>
+
+    <div class="form-group" ng-hide="properties.Mode.PropertyValue == 'SpecificTweet'">
         <label for="heading-text">
             Tweet count
         </label>
