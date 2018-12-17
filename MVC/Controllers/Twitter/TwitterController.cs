@@ -137,6 +137,12 @@ namespace RandomSiteControlsMVC.MVC.Controllers
             }
         }
 
-        public string EmptyLinkText => "Missing Twitter API Keys, please set in the backend /Sitefinity/Administration/Settings/Advanced/SitefinitySteveMvc";
+        public string EmptyLinkText
+        {
+            get
+            {
+                return "Missing Twitter API Keys, please set in the backend /Sitefinity/Administration/Settings/Advanced/SitefinitySteveMvc";
+            }
+        }
     }
 }
