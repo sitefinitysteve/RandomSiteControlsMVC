@@ -32,38 +32,36 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\TweetMoaSharp.5.2.0\lib\4.5\Hammock.ClientProfile.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RandomSiteControlsDependancies\Hammock.ClientProfile.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\HtmlAgilityPack.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\HtmlAgilityPack.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\ServiceStack.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\ServiceStack.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ServiceStack.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\ServiceStack.Common.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\ServiceStack.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\ServiceStack.Interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\ServiceStack.Text.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\ServiceStack.Text.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -94,46 +92,47 @@
     </Reference>
     <Reference Include="Telerik.Sitefinity, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Frontend, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Frontend.Media, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Model, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.Model.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Mvc, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Personalization, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Personalization.Impl, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.Impl.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.Impl.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Utilities, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.1.6800.0\_EmptyProject\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
+      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="TweetSharp, Version=5.2.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\TweetMoaSharp.5.2.0\lib\4.5\TweetSharp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RandomSiteControlsDependancies\TweetSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -213,7 +212,9 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\tabstrip.min.css">
       <DependentUpon>tabstrip.css</DependentUpon>
     </EmbeddedResource>
-    <None Include=".nuspec" />
+    <None Include=".nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="app.config" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />

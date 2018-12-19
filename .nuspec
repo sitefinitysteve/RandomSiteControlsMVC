@@ -19,5 +19,13 @@
         A random bunch of MVC Feather controls and extensions to improve your sitefinity experience
     </summary>
 	  <projectUrl>https://github.com/sitefinitysteve/RandomSiteControlsMVC</projectUrl>
+    <references>
+      <reference file="TweetSharp.dll" />
+      <reference file="Hammock.ClientProfile.dll" />
+    </references>
   </metadata>
+  <files>
+    <file src="C:\Dropbox\Projects\SitefinitySteve\RandomSiteControlsDependancies\tweetmoasharp-5.2.0\TweetSharp.dll" target="lib" />
+    <file src="C:\Dropbox\Projects\SitefinitySteve\RandomSiteControlsDependancies\tweetmoasharp-5.2.0\Hammock.ClientProfile.dll" target="lib" />
+  </files>
 </package>
