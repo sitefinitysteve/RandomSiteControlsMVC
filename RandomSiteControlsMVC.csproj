@@ -151,6 +151,7 @@
     <Compile Include="Extensions\MarkupExtensions.cs" />
     <Compile Include="Extensions\MVCHtmlExtensions.cs" />
     <Compile Include="Extensions\PublishingExtensions.cs" />
+    <Compile Include="Extensions\ReferenceExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TaxonExtensions.cs" />
     <Compile Include="Extensions\UserExtensions.cs" />
