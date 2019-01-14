@@ -87,48 +87,31 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.OpenAccess">
-      <HintPath>..\Web\bin\Telerik.OpenAccess.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.OpenAccess.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Frontend, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity.Frontend">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Frontend.Media, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity.Frontend.Media">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Model, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Model.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity.Model">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Mvc, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity.Mvc">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Personalization, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity.Personalization">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Personalization.Impl, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.Impl.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity.Personalization.Impl">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.Impl.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Sitefinity.Utilities, Version=10.2.6600.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Sitefinity\11.2.6900.0\_EmptyProject\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Telerik.Sitefinity.Utilities">
+      <HintPath>..\..\..\Sitefinity\11.0.6700.0\_EmptyProject\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="TweetSharp, Version=5.2.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

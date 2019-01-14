@@ -11,6 +11,7 @@
       - Twitter
       - Google maps widget
       - Page Title widget
+      - Versioned Css\Js MVC Link helpers
       - HTML Literal Editor (No designer or markup mangling, uses inbrowser VSCode editor)
       - Widget finder
       - HttpModule to remove IIS sensitive header info
