@@ -11,6 +11,7 @@ using Telerik.Sitefinity.Taxonomies.Model;
 using Telerik.OpenAccess;
 using Telerik.Sitefinity.Taxonomies;
 using Telerik.Sitefinity.Utilities.TypeConverters;
+using Telerik.Sitefinity.Frontend.Mvc.Models;
 
 namespace Telerik.Sitefinity
 {
@@ -242,6 +243,23 @@ namespace Telerik.Sitefinity
 
             var myFilteredCollection = dynamicModuleManager.GetDataItems(type);
             return myFilteredCollection;
+        }
+
+        /// <summary>
+        /// Convert to fully dynamic object, saves headaches of .GetValue
+        /// </summary>
+        public static ItemViewModel ToItemViewModel(this IDataItem item)
+        {
+            return new ItemViewModel(item);
+        }
+
+        /// <summary>
+        /// Convert to fully dynamic object, saves headaches of .GetValue
+        /// Alias to ToItemViewModel
+        /// </summary>
+        public static ItemViewModel ToModuleDynamicObject(this IDataItem item)
+        {
+            return item.ToItemViewModel();
         }
     }
 }

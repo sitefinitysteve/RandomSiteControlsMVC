@@ -70,6 +70,20 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
+        [ObjectInfo(Description = "Default Cache time for checking CSS or JS using Html.ScriptVersioned", Title = "Cache Timeout Minutes for ScriptVersioned and StyleSheetVersioned")]
+        [ConfigurationProperty("CacheTimeoutMinutesForFileVersions", IsRequired = true, DefaultValue = 5)]
+        public int CacheTimeoutMinutesForFileVersions
+        {
+            get
+            {
+                return (int)this["CacheTimeoutMinutesForFileVersions"];
+            }
+            set
+            {
+                this["CacheTimeoutMinutesForFileVersions"] = value;
+            }
+        }
+
         [ObjectInfo(Description = "Default Tabstrip to use, Kendo, Bootstrap, or Custom (see docs)", Title = "Tabstrip Theme")]
         [ConfigurationProperty("TabstripTheme", IsRequired = true, DefaultValue = "Bootstrap")]
         public string TabstripTheme

@@ -17,10 +17,10 @@ namespace Telerik.Sitefinity.Frontend.Mvc.Helpers
         /// <summary>
         /// 🔥 From SitefinitySteve
         /// </summary>
-        public static MvcHtmlString ScriptVersioned(this HtmlHelper helper, string filename)
+        public static MvcHtmlString ScriptVersioned(this HtmlHelper helper, string scriptPath)
         {
-            string version = GetVersion(helper, filename);
-            return MvcHtmlString.Create("<script type='text/javascript' src='{0}?v={1}'></script>".Arrange(filename, version));
+            string version = GetVersion(helper, scriptPath);
+            return MvcHtmlString.Create("<script type='text/javascript' src='{0}?v={1}'></script>".Arrange(scriptPath, version));
         }
 
         /// <summary>
@@ -32,22 +32,22 @@ namespace Telerik.Sitefinity.Frontend.Mvc.Helpers
             return MvcHtmlString.Create("<link href='{0}?v={1}' rel='stylesheet' type='text/css' />".Arrange(filename, version));
         }
 
-        private static string GetVersion(this HtmlHelper helper, string filename)
+        private static string GetVersion(this HtmlHelper helper, string ScriptPath)
         {
             var context = helper.ViewContext.RequestContext.HttpContext;
 
-            if (context.Cache[filename] == null)
+            if (context.Cache[ScriptPath] == null)
             {
-                var physicalPath = context.Server.MapPath(filename);
+                var physicalPath = context.Server.MapPath(ScriptPath);
                 var version = new System.IO.FileInfo(physicalPath).LastWriteTime.ToString("MMddHHmmss");
-                context.Cache.Add(filename, version, null,
-                  DateTime.Now.AddMinutes(5), TimeSpan.Zero,
+                context.Cache.Add(ScriptPath, version, null,
+                  DateTime.Now.AddMinutes(RSCUtil.SfsConfig.CacheTimeoutMinutesForFileVersions), TimeSpan.Zero,
                   CacheItemPriority.Normal, null);
                 return version;
             }
             else
             {
-                return context.Cache[filename] as string;
+                return context.Cache[ScriptPath] as string;
             }
         }
     }

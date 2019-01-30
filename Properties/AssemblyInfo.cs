@@ -37,8 +37,8 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("11.2.6900.10")]
-[assembly: AssemblyFileVersion("11.2.6900.10")]
+[assembly: AssemblyVersion("11.2.6900.11")]
+[assembly: AssemblyFileVersion("11.2.6900.11")]
 
 //INSTALLER
 [assembly: PreApplicationStartMethod(typeof(Installer), "PreApplicationStart")]
