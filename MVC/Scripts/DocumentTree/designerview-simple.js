@@ -21,7 +21,7 @@
                     $scope.properties = propertyService.toAssociativeArray(data.Items);
 
                     $scope.selectedLibraryId = $.parseJSON($scope.properties.LibraryId.PropertyValue);
-                    $scope.selectedLibrary = $.parseJSON($scope.properties.SelectedLibraryName.PropertyValue);rary.PropertyValue);
+                    $scope.selectedLibrary = $.parseJSON($scope.properties.SelectedLibraryName.PropertyValue);
                 }
             },
             function (data) {
