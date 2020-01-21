@@ -33,12 +33,15 @@ namespace RandomSiteControlsMVC
         {
             Telerik.Sitefinity.Configuration.Config.RegisterSection<RandomSiteControlsMVC.Configuration.SitefinitySteveMvcConfig>();
 
-            //Register ServiceStack route
-            SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
+            if (e.CommandName == "Bootstrapped")
+            {
+                //Register ServiceStack route
+                SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
 
-            //Add Tools
-            InstallVirtualPaths(); // See that method for VIRTUAL PATHS installation code
-            InstallLayouts();
+                //Add Tools
+                InstallVirtualPaths(); // See that method for VIRTUAL PATHS installation code
+                InstallLayouts();
+            }
         }
 
         private static void InstallLayouts()
@@ -130,8 +133,12 @@ namespace RandomSiteControlsMVC
                     ResourceLocation = "RandomSiteControlsMVC"
                 };
 
-                virtualPathConfig.VirtualPaths.Add(newVirtualPathNode);
-                Config.GetManager().SaveSection(virtualPathConfig);
+                var manager = Config.GetManager();
+                using (new ElevatedModeRegion(manager))
+                {
+                    virtualPathConfig.VirtualPaths.Add(newVirtualPathNode);
+                    manager.SaveSection(virtualPathConfig);
+                }
             }
         }
     }
