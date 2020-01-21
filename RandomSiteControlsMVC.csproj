@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hammock.ClientProfile">
-      <HintPath>..\..\Dropbox\Projects\SitefinitySteve\RandomSiteControlsDependancies\tweetmoasharp-5.2.0\Hammock.ClientProfile.dll</HintPath>
+    <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\tweetmoasharp-5.2.0\Hammock.ClientProfile.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\SitefinitySteveWeb\bin\HtmlAgilityPack.dll</HintPath>
@@ -42,24 +43,20 @@
       <HintPath>packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ServiceStack, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\ServiceStack.dll</HintPath>
+    <Reference Include="ServiceStack">
+      <HintPath>Assemblies\ServiceStack.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ServiceStack.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\ServiceStack.Common.dll</HintPath>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>Assemblies\ServiceStack.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\ServiceStack.Interfaces.dll</HintPath>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>Assemblies\ServiceStack.Interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\ServiceStack.Text.dll</HintPath>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>Assemblies\ServiceStack.Text.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -81,46 +78,45 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.OpenAccess, Version=2016.2.822.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.OpenAccess.dll</HintPath>
+    <Reference Include="Telerik.OpenAccess">
+      <HintPath>Assemblies\Telerik.OpenAccess.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Telerik.Sitefinity, Version=11.0.6700.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.dll</HintPath>
+    <Reference Include="Telerik.Sitefinity">
+      <HintPath>Assemblies\Telerik.Sitefinity.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Frontend">
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.dll</HintPath>
+      <HintPath>Assemblies\Telerik.Sitefinity.Frontend.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Frontend.Media">
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
+      <HintPath>Assemblies\Telerik.Sitefinity.Frontend.Media.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Model">
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.Model.dll</HintPath>
+      <HintPath>Assemblies\Telerik.Sitefinity.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Mvc">
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.Mvc.dll</HintPath>
+      <HintPath>Assemblies\Telerik.Sitefinity.Mvc.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Personalization">
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.dll</HintPath>
+      <HintPath>Assemblies\Telerik.Sitefinity.Personalization.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Personalization.Impl">
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.Personalization.Impl.dll</HintPath>
+      <HintPath>Assemblies\Telerik.Sitefinity.Personalization.Impl.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Utilities">
-      <HintPath>..\..\Dropbox\Sitefinity\12.2.7200.0\_EmptyProject\bin\Telerik.Sitefinity.Utilities.dll</HintPath>
+      <HintPath>Assemblies\Telerik.Sitefinity.Utilities.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="TweetSharp">
-      <HintPath>..\..\Dropbox\Projects\SitefinitySteve\RandomSiteControlsDependancies\tweetmoasharp-5.2.0\TweetSharp.dll</HintPath>
+    <Reference Include="TweetSharp, Version=5.2.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\tweetmoasharp-5.2.0\TweetSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
