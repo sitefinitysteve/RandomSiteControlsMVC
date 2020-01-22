@@ -24,8 +24,17 @@ RandomSiteControls re-written in pure MVC for Sitefinity Feather
 * TODO: Document
 
 ## Troubleshooting
-#### The widgets are not loading as of 12.2
-Sitefinity added a new feature, a powershell script under \Builds called ScanControllerContainerAssemblies.ps1
+#### The widgets views are not loading *as of* 12.2 
+Sitefinity added a new feature, a powershell script under \Builds called ScanControllerContainerAssemblies.ps1.  The idea is that on build it scans all the DLLs in /bin and looks for any that are SF Controllers, 
+then knows to load just those instead of everything like it used to. It's outlined in [this blog post](https://www.progress.com/blogs/performance-optimizations-in-sitefinity-12-2_).  The problem is
+if you aren't using the EXACT version of Sitefinity this DLL was built against, RandomSiteControlsMVC doesn't get picked up and added to that .json file, and thus SF doesn't load any of the views.
+
+The fix is to replace the default ScanControllerContainerAssemblies.ps1 with mine here: https://github.com/sitefinitysteve/RandomSiteControlsMVC/blob/master/Build/ScanControllerContainerAssemblies.ps1
+
+All it does differently is pick up any DLLs having this assembly mismatch against a Telerik.Sitefinity .dll and just add it to this .json file.
+
+I'm trying to get Telerik\Progress to fix the script so it'll do something to this effect automatically.
+
 
 #### How do I modify your views
 Feather has you covered, just make the controller name in ~/MVC/Views/Widget and go nuts.  Example ~/MVC/Views/TabStrip/Bootstrap.cshtml
