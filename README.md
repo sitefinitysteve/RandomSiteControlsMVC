@@ -24,6 +24,9 @@ RandomSiteControls re-written in pure MVC for Sitefinity Feather
 * TODO: Document
 
 ## Troubleshooting
+#### The widgets are not loading as of 12.2
+Sitefinity added a new feature, a powershell script under \Builds called ScanControllerContainerAssemblies.ps1
+
 #### How do I modify your views
 Feather has you covered, just make the controller name in ~/MVC/Views/Widget and go nuts.  Example ~/MVC/Views/TabStrip/Bootstrap.cshtml
 

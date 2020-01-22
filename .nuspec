@@ -26,7 +26,7 @@
     </references>
   </metadata>
   <files>
-    <file src="C:\Dropbox\Projects\SitefinitySteve\RandomSiteControlsDependancies\tweetmoasharp-5.2.0\TweetSharp.dll" target="lib" />
-    <file src="C:\Dropbox\Projects\SitefinitySteve\RandomSiteControlsDependancies\tweetmoasharp-5.2.0\Hammock.ClientProfile.dll" target="lib" />
+    <file src="..\Assemblies\tweetmoasharp-5.2.0\TweetSharp.dll" target="lib" />
+    <file src="..\Assemblies\tweetmoasharp-5.2.0\Hammock.ClientProfile.dll" target="lib" />
   </files>
 </package>
