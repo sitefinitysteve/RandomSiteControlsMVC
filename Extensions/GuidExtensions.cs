@@ -11,6 +11,7 @@ using Telerik.Sitefinity.Modules.Pages;
 using Telerik.Sitefinity.Pages.Model;
 using Telerik.Sitefinity.SitefinityExceptions;
 using Telerik.Sitefinity.Utilities.TypeConverters;
+using Telerik.Sitefinity.Data.Linq.Dynamic;
 
 namespace Telerik.Sitefinity
 {
@@ -107,7 +108,39 @@ namespace Telerik.Sitefinity
             return item;
         }
 
-		public enum FilterOperatorEnum
+        /// <summary>
+        /// Converts the Guid[] type to the DynamicContent objects
+        /// ** Sitefinitysteve.com Extension **
+        /// </summary>
+        public static IQueryable<DynamicContent> GetDynamicContentItemsWithTags(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator)
+        {
+            return tagIds.GetDynamicContentItemsWithTaxa(type, filterOperator, "Tags");
+        }
+
+        /// <summary>
+        /// Converts the Guid[] type to the DynamicContent objects
+        /// ** Sitefinitysteve.com Extension **
+        /// </summary>
+        public static IQueryable<DynamicContent> GetDynamicContentItemsWithCategories(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator)
+        {
+            return tagIds.GetDynamicContentItemsWithTaxa(type, filterOperator, "Category");
+        }
+
+        /// <summary>
+        /// Converts the Guid[] type to the DynamicContent objects
+        /// ** Sitefinitysteve.com Extension **
+        /// </summary>
+        public static IQueryable<DynamicContent> GetDynamicContentItemsWithTaxa(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator, string taxonName)
+        {
+            var expression = tagIds.GenerateFilterExpression(taxonName, filterOperator);
+
+            DynamicModuleManager manager = DynamicModuleManager.GetManager();
+            var contentType = TypeResolutionService.ResolveType(type);
+
+            return manager.GetDataItems(contentType).Where(expression);
+        }
+
+        public enum FilterOperatorEnum
 		{
 			AND,
 			OR
