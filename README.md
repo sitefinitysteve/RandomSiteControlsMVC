@@ -60,6 +60,20 @@ I'm using a Javascript converter in the designer, but using the ServiceStack mar
 * Search your project for "RandomSiteControls" and remove all the old refs.  Toolbox.config and VirtualPaths.config will need to be edited
 * Find\Replace for "RandomSiteControlsUtil" to "RSCUtil"
 
+## Setting up the demo project
+* Database is in \App_Data\_database, attach it to SQL
+* Create the Data config file in \App_Data\Sitefinity\Configuration\Data.Config
+```
+<?xml version="1.0" encoding="utf-8"?>
+<dataConfig xmlns:config="urn:telerik:sitefinity:configuration" xmlns:type="urn:telerik:sitefinity:configuration:type" config:version="13.0.7327.0">
+	<connectionStrings>
+		<add connectionString="data source=(local);UID=sa;PWD=YOURSAPASSWORD;initial catalog=rscdemo" name="Sitefinity" />
+	</connectionStrings>
+</dataConfig>
+```
+* Change the password to whatever your SQL PW is
+
+
 ## Author
 [Created by Sitefinity Steve](https://www.sitefinitysteve.com)
 
