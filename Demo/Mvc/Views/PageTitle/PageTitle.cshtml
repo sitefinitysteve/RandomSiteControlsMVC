@@ -1,0 +1,20 @@
+﻿@model RandomSiteControlsMVC.Mvc.Models.PageTitleModel
+@using Telerik.Sitefinity;
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            @if (RSCUtil.SfsConfig.PageTitleElement.UseSubTitle)
+            {
+                <div class="page-title-right">
+                    @Html.Action("Index", "Breadcrumb")
+                </div>
+            }
+            
+            <h1 class="page-title">
+                @Html.Raw(Model.Title)
+            </h1>
+        </div>
+    </div>
+</div>

@@ -23,7 +23,7 @@ namespace RandomSiteControlsMVC.Mvc.Controllers
         {
             PageTitleModel model = GetModel(title, subTitle);
 
-            return View("PageTitle", model);
+            return View(this.TemplateName, model);
         }
 
         public PageTitleModel GetModel(string title = "", string subTitle = "")
@@ -59,7 +59,9 @@ namespace RandomSiteControlsMVC.Mvc.Controllers
 
         protected override void HandleUnknownAction(string actionName)
         {
-            View("PageTitle", this.GetModel()).ExecuteResult(this.ControllerContext);
+            View(this.TemplateName, this.GetModel()).ExecuteResult(this.ControllerContext);
         }
+
+        public string TemplateName { get; set; } = "PageTitle";
     }
 }

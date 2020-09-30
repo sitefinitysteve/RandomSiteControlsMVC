@@ -1154,6 +1154,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="AzureWebRole.cs" />
+    <Compile Include="Mvc\Controllers\HeaderTitleController.cs" />
+    <Compile Include="Mvc\Models\HeaderTitle\HeaderTitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1182,7 +1184,9 @@
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-2+3+2+3+2.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-3+3+3+3.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-3+6+3.html" />
+    <Content Include="ResourcePackages\RSC\GridSystem\Templates\card-flat.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-3+9.html" />
+    <Content Include="ResourcePackages\RSC\GridSystem\Templates\card-h-f.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-4+4+4.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-4+8.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-6+6.html" />
@@ -1343,8 +1347,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Sitefinity\" />
-    <Folder Include="Mvc\Controllers\" />
-    <Folder Include="Mvc\Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Data\GeoLocation\GeoLite2-City.mmdb" />
@@ -1454,6 +1456,8 @@
     <Content Include="ResourcePackages\RSC\MVC\Views\VideoGallery\List.OverlayGallery.cshtml" />
     <Content Include="ResourcePackages\RSC\MVC\Views\VideoGallery\List.VideoGallery.cshtml" />
     <Content Include="ResourcePackages\RSC\MVC\Views\Video\Video.Default.cshtml" />
+    <Content Include="Mvc\Views\PageTitle\PageTitle.cshtml" />
+    <Content Include="Mvc\Views\HeaderTitle\HeaderTitle.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

@@ -13,25 +13,20 @@
 @Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.GoogleMap.Resources.googlemap.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
 
 
-@if (Model.HasApiKey)
-{
-    <div class="googlemap-widget" data-zoom="@Model.Zoom" data-lat="@Model.Lat" data-long="@Model.Long" data-maptype="@Model.MapType" data-description="@Model.Description">
-        <div class="map-view-panel" style="width: @Model.Width; height: @Model.Height;">
-            <div class="map-canvas loading" style="width:100%; height:100%">
-                @if (Telerik.Sitefinity.Services.SystemManager.IsDesignMode)
-                {
-                    <div class="button-wrapper">
-                        <a href="#" onclick="sfsReloadGoogleMaps(); return false" class="btn btn-xs btn-primary">Reload</a>
-                    </div>
-                }
-            </div>
+
+<div class="googlemap-widget" data-zoom="@Model.Zoom" data-lat="@Model.Lat" data-long="@Model.Long" data-maptype="@Model.MapType" data-description="@Model.Description">
+    <div class="map-view-panel" style="width: @Model.Width; height: @Model.Height;">
+        <div class="map-canvas loading" style="width:100%; height:100%">
+            @if (Telerik.Sitefinity.Services.SystemManager.IsDesignMode)
+            {
+                <div class="button-wrapper">
+                    <a href="#" onclick="sfsReloadGoogleMaps(); return false" class="btn btn-xs btn-primary">Reload</a>
+                </div>
+            }
         </div>
     </div>
-}
-else
-{
-    <h3>Please get an administrator to add your google maps API key to /Sitefinity/Administration/Settings/Advanced/SitefinitySteveMvc</h3>
-}
+</div>
+
 
 @if (Telerik.Sitefinity.Services.SystemManager.IsDesignMode)
 {

@@ -14,7 +14,7 @@
     @Html.Section("head")
     @Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/RSC/assets/hyper/css/app.min.css"), "head", true)
     @Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/RSC/assets/hyper/css/icons.min.css"), "head", true)
-    @Html.StyleSheet(Url.WidgetContent("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"), "head", true)
+    @*@Html.StyleSheet(Url.WidgetContent("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"), "head", true)*@
     
 
     @if (SystemManager.IsDesignMode)
@@ -43,9 +43,13 @@
             }
         </style>
     }
+    else
+    {
+
+    }
 </head>
 
-<body data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" data-leftbar-theme="dark">
+<body style="background-color:#fafbfe" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" data-leftbar-theme="dark">
     @Html.Section("top")
 
     <!-- Begin page -->

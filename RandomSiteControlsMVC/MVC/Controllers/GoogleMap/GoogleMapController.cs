@@ -192,7 +192,7 @@ namespace RandomSiteControlsMVC.Mvc.Controllers
         {
             get
             {
-                return "Click to edit";
+                return "Missing Google Maps API Keys, please get an administrator to add your google maps API key to /Sitefinity/Administration/Settings/Advanced/SitefinitySteveMvc";
             }
         }
         #endregion
