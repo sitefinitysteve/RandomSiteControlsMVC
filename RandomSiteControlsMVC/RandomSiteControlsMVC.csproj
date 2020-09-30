@@ -280,6 +280,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.less" />
     <EmbeddedResource Include="MVC\Views\Twitter\Tweets.cshtml" />
+    <EmbeddedResource Include="MVC\Views\TabStrip\Bootstrap3.cshtml" />
     <None Include="MVC\Views\WidgetFinder\Resources\widgetfinder.less" />
     <None Include="packages.config" />
   </ItemGroup>

@@ -26,15 +26,15 @@
             }
         </ul>
     </div>
-}
-else
-{
+    }
+    else
+    {
     <ul class="sfs-tabstrip-configurator nav nav-tabs" role="tablist" data-type="bootstrap" data-classname="@(Model.ClassName)">
         @{int i = 1;}
         @foreach (var tab in Model.Tabs)
         {
             <li role="presentation" class='nav-item '>
-                <a class="nav-link @(tab.Selected ? "active" : "")" aria-controls="@tab.Title.ToLower()" role="tab" data-toggle="tab">@tab.Title</a>
+                <a  class="nav-link @(tab.Selected ? "active" : "")" aria-controls="@tab.Title.ToLower()" role="tab" data-toggle="tab">@tab.Title</a>
             </li>
             i++;
         }

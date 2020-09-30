@@ -14,6 +14,8 @@
     @Html.Section("head")
     @Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/RSC/assets/hyper/css/app.min.css"), "head", true)
     @Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/RSC/assets/hyper/css/icons.min.css"), "head", true)
+    @Html.StyleSheet(Url.WidgetContent("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"), "head", true)
+    
 
     @if (SystemManager.IsDesignMode)
     {
@@ -21,16 +23,17 @@
             .logo {
                 position: absolute !important;
             }
+
             .left-side-menu {
                 position: absolute !important;
                 z-index: 9 !important;
             }
 
             .sfMessagePane {
-                z-index:99 !important;
+                z-index: 99 !important;
             }
 
-            .content-page{
+            .content-page {
                 padding-top: 0;
             }
         </style>
@@ -87,13 +90,9 @@
 
                 <div class="clearfix"></div>
                 <div class="help-box text-white text-center">
-                    <a href="javascript: void(0);" class="float-right close-btn text-white">
-                        <i class="mdi mdi-close"></i>
-                    </a>
                     <img src="~/ResourcePackages/RSC/assets/hyper/images/help-icon.svg" height="90" alt="Helper Icon Image">
-                    <h5 class="mt-3">Unlimited Access</h5>
-                    <p class="mb-3">Upgrade to plan to get access to unlimited reports</p>
-                    <a href="javascript: void(0);" class="btn btn-outline-light btn-sm">Upgrade</a>
+                    <p class="mb-3">If you're enjoying these widgets please consider donating to their ongoing development</p>
+                    <a href="https://www.sitefinitysteve.com/donate" class="btn btn-outline-light btn-sm">Donate 🍺</a>
                 </div>
             </div>
             <!-- Sidebar -left -->
@@ -183,35 +182,20 @@
                 <!-- end Topbar -->
             }
                 <!-- Start Content-->
-                <div class="container-fluid">
+            <div class="container-fluid">
 
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tasks</a></li>
-                                        <li class="breadcrumb-item active">Kanban Board</li>
-                                    </ol>
-                                </div>
-                                <h4 class="page-title">
-                                    Kanban Board
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
+                <!-- start page title -->
+                @Html.SfPlaceHolder("PageTitle")
+                <!-- end page title -->
 
-                    <div class="row">
-                        <div class="col-12">
-                            @Html.SfPlaceHolder("Content")
-                        </div> <!-- end col -->
-                    </div>
-                    <!-- end row-->
+                <div class="row">
+                    <div class="col-12">
+                        @Html.SfPlaceHolder("Content")
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row-->
 
-                </div> <!-- container -->
+            </div> <!-- container -->
 
             </div> <!-- content -->
             <!-- Footer Start -->
@@ -219,7 +203,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script> © RandomSiteControlsDemos - <a href="https://www.sitefinitysteve.com">sitefinitysteve.com</a>
+                            <script>document.write(new Date().getFullYear())</script> © RandomSiteControls Demos - <a href="https://www.sitefinitysteve.com">sitefinitysteve.com</a>
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-right footer-links d-none d-md-block">

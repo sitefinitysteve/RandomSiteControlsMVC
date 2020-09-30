@@ -1298,9 +1298,6 @@
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Mvc\Controllers\readme.txt" />
-    <Content Include="Mvc\Models\readme.txt" />
-    <Content Include="Mvc\Views\readme.txt" />
     <Content Include="Mvc\Views\Shared\readme.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -1346,6 +1343,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Sitefinity\" />
+    <Folder Include="Mvc\Controllers\" />
+    <Folder Include="Mvc\Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Data\GeoLocation\GeoLite2-City.mmdb" />
@@ -1455,6 +1454,7 @@
     <Content Include="ResourcePackages\RSC\MVC\Views\VideoGallery\List.OverlayGallery.cshtml" />
     <Content Include="ResourcePackages\RSC\MVC\Views\VideoGallery\List.VideoGallery.cshtml" />
     <Content Include="ResourcePackages\RSC\MVC\Views\Video\Video.Default.cshtml" />
+    <Content Include="Mvc\Views\TabStrip\Bootstrap.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
