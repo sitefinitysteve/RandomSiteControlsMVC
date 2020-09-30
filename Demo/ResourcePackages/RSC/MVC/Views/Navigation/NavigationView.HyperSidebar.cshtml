@@ -1,0 +1,71 @@
+@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Pages;
+
+@foreach (var node in Model.Nodes)
+{
+@RenderRootLevelNode(node);
+}
+
+
+@*Here is specified the rendering for the root level*@
+@helper RenderRootLevelNode(NodeViewModel node)
+{
+    if (node.ChildNodes.Count > 0)
+    {
+        <li class="side-nav-item @GetClass(node)">
+            <a class="nav-link dropdown-toggle" href="#" id='@Html.UniqueId("navbarDropdownMenuLink")' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@node.Title</a>
+            <ul class="dropdown-menu" aria-labelledby='@Html.UniqueId("navbarDropdownMenuLink")'>
+                @RenderSubLevelsRecursive(node)
+            </ul>
+        </li> 
+    }
+    else
+    {
+        <li class="side-nav-item  @GetClass(node)">
+            <a href="@node.Url" class="side-nav-link" target="@node.LinkTarget">
+                <i class="@node.CustomFields.PageIcon"></i>
+                <span> @node.Title </span>
+            </a>
+        </li>
+    }
+}
+
+@*Here is specified the rendering for all child levels*@
+@helper RenderSubLevelsRecursive(NodeViewModel node)
+{
+    foreach (var childNode in node.ChildNodes)
+    {
+        if (childNode.ChildNodes.Count > 0)
+        {
+            <li class="dropdown-submenu">
+                <a class="dropdown-item @GetClass(childNode)" href="@childNode.Url" target="@childNode.LinkTarget">
+                    @childNode.Title
+                    <span class="right-caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    @RenderSubLevelsRecursive(childNode)
+                </ul>
+            </li> 
+        }
+        else
+        {
+        <li>
+            <a class="dropdown-item @GetClass(childNode)" href="@childNode.Url" target="@childNode.LinkTarget">@childNode.Title</a>
+        </li>}
+        }
+}
+
+@*Resolves the class that will be added for each node depending whether it is selected*@
+@helper GetClass(NodeViewModel node)
+{if (node.IsCurrentlyOpened)
+    {
+@Html.HtmlSanitize("active");
+}
+else if (node.HasChildOpen)
+{
+@Html.HtmlSanitize("active");
+}
+}

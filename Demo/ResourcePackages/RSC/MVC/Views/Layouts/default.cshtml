@@ -12,30 +12,247 @@
     <title></title>
 
     @Html.Section("head")
-    @Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/Bootstrap4/assets/dist/css/main.min.css"), "head", true)
+    @Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/RSC/assets/hyper/css/app.min.css"), "head", true)
+    @Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/RSC/assets/hyper/css/icons.min.css"), "head", true)
+
+    @if (SystemManager.IsDesignMode)
+    {
+        <style>
+            .logo {
+                position: absolute !important;
+            }
+            .left-side-menu {
+                position: absolute !important;
+                z-index: 9 !important;
+            }
+
+            .sfMessagePane {
+                z-index:99 !important;
+            }
+
+            .content-page{
+                padding-top: 0;
+            }
+        </style>
+    }
 </head>
 
-<body>
+<body data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" data-leftbar-theme="dark">
     @Html.Section("top")
 
-    <div>
-        @Html.SfPlaceHolder("Contentplaceholder1")
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+
+                    <li class="side-nav-item">
+                        <a href="/" class="side-nav-link">
+                            <i class="uil-home-alt"></i>
+                            <span> Overview </span>
+                        </a>
+                    </li>
+
+                    <!--- Sidemenu -->
+                    @Html.SfPlaceHolder("SideNav")
+
+                    <li class="side-nav-title side-nav-item mt-1">Components</li>
+                    @Html.SfPlaceHolder("Components")
+                </ul>
+
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+                <div class="help-box text-white text-center">
+                    <a href="javascript: void(0);" class="float-right close-btn text-white">
+                        <i class="mdi mdi-close"></i>
+                    </a>
+                    <img src="~/ResourcePackages/RSC/assets/hyper/images/help-icon.svg" height="90" alt="Helper Icon Image">
+                    <h5 class="mt-3">Unlimited Access</h5>
+                    <p class="mb-3">Upgrade to plan to get access to unlimited reports</p>
+                    <a href="javascript: void(0);" class="btn btn-outline-light btn-sm">Upgrade</a>
+                </div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+            @if (!SystemManager.IsDesignMode)
+            {
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <div class="app-search dropdown d-none d-lg-block">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
+                            <!-- item-->
+                            <div class="dropdown-header noti-title">
+                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="uil-notes font-16 mr-1"></i>
+                                <span>Analytics Report</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="uil-life-ring font-16 mr-1"></i>
+                                <span>How can I help you?</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="uil-cog font-16 mr-1"></i>
+                                <span>User profile settings</span>
+                            </a>
+
+                            <!-- item-->
+                            <div class="dropdown-header noti-title">
+                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
+                            </div>
+
+                            <div class="notification-list">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="media">
+                                        <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
+                                        <div class="media-body">
+                                            <h5 class="m-0 font-14">Erwin Brown</h5>
+                                            <span class="font-12 mb-0">UI Designer</span>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="media">
+                                        <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
+                                        <div class="media-body">
+                                            <h5 class="m-0 font-14">Jacob Deo</h5>
+                                            <span class="font-12 mb-0">Developer</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+            }
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tasks</a></li>
+                                        <li class="breadcrumb-item active">Kanban Board</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">
+                                    Kanban Board
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            @Html.SfPlaceHolder("Content")
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row-->
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <script>document.write(new Date().getFullYear())</script> © RandomSiteControlsDemos - <a href="https://www.sitefinitysteve.com">sitefinitysteve.com</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-right footer-links d-none d-md-block">
+                                @*<a href="javascript: void(0);">About</a>*@
+                                <a href="https://github.com/sitefinitysteve/RandomSiteControlsMVC/issues">Support</a>
+                                <a href="https://www.sitefinitysteve.com/contact">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
     </div>
+    <!-- END wrapper -->
 
-    @* Inline editing scripts and helpers. They should be available only when inline editing is possible. *@
-    @Html.Section("inline-editing")
-    @if (Html.ShouldRenderInlineEditing())
-    {
-        @Html.Script(ScriptRef.MicrosoftAjax, "inline-editing", true)
-        @Html.Script(ScriptRef.MicrosoftAjaxCore, "inline-editing", true)
-        @Html.Script(ScriptRef.JQuery, "inline-editing", true)
-
-        @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.jquery.ba-outside-events.min.js"), "inline-editing", true)
-        @Html.Script(ScriptRef.KendoAll, "inline-editing", true)
-        @Html.Script(ScriptRef.KendoTimezones, "inline-editing", true)
-        @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.RequireJS.require.min.js"), "inline-editing", true)
-        @Html.InlineEditingManager(false)
-    }
+    @Html.Section("jquery")
+    @Html.Section("frameworks")
     @Html.Section("bottom")
+    
+    @if (!SystemManager.IsDesignMode)
+    {
+        Html.Script("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js", "jquery");
+        Html.Script("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", "frameworks");
+        Html.Script("/ResourcePackages/RSC/assets/hyper/js/vendor.min.js", "bottom");
+        Html.Script("/ResourcePackages/RSC/assets/hyper/js/app.min.js", "bottom");
+    }
 </body>
 </html>
