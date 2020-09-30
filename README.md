@@ -67,11 +67,11 @@ I'm using a Javascript converter in the designer, but using the ServiceStack mar
 <?xml version="1.0" encoding="utf-8"?>
 <dataConfig xmlns:config="urn:telerik:sitefinity:configuration" xmlns:type="urn:telerik:sitefinity:configuration:type" config:version="13.0.7327.0">
 	<connectionStrings>
-		<add connectionString="data source=(local);UID=sa;PWD=YOURSAPASSWORD;initial catalog=rscdemo" name="Sitefinity" />
+		<add connectionString="data source=(local);UID=rscdemo;PWD=rscdemo;initial catalog=rscdemo" name="Sitefinity" />
 	</connectionStrings>
 </dataConfig>
 ```
-* Change the password to whatever your SQL PW is
+* Change the login to whatever suits you
 
 
 ## Author

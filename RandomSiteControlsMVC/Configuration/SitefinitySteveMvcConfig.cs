@@ -29,7 +29,7 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
-        [ObjectInfo(Description = "Install VirtualPaths On Site Initalization", Title = "InstallWidgetInstallVirtualPathsOnSiteInitalizesOnSiteInitalize")]
+        [ObjectInfo(Description = "Install VirtualPaths On Site Initalization", Title = "InstallVirtualPathsOnSiteInitalize")]
         [ConfigurationProperty("InstallVirtualPathsOnSiteInitalize", IsRequired = true, DefaultValue = true)]
         public bool InstallVirtualPathsOnSiteInitalize
         {

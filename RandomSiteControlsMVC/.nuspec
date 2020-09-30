@@ -4,6 +4,7 @@
     <id>RandomSiteControlsMVC</id>
     <version>$version$</version>
     <authors>Steve McNiven-Scott</authors>
+    <tags>Sitefinity Widgets Controls Twitter GoogleMaps</tags>
     <description>
       A random bunch of MVC Feather controls and extensions to improve your sitefinity experience
       - Tabstrip, Kendo or Bootstrap
