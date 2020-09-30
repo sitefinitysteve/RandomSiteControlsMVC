@@ -88,6 +88,9 @@
 .sfs-tabstrip.loading {
   display: none;
 }
+.sfs-tabstrip .tab-pane {
+  padding-top: 20px;
+}
 .k-tabstrip-wrapper {
   margin-bottom: 20px;
 }

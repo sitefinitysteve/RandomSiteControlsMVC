@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Assemblies\tweetmoasharp-5.2.0\Hammock.ClientProfile.dll</HintPath>
+      <HintPath>Assemblies\tweetmoasharp\6.0.2\Hammock.ClientProfile.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>Assemblies\HtmlAgilityPack.dll</HintPath>
@@ -126,7 +126,7 @@
     </Reference>
     <Reference Include="TweetSharp, Version=5.2.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Assemblies\tweetmoasharp-5.2.0\TweetSharp.dll</HintPath>
+      <HintPath>Assemblies\tweetmoasharp\6.0.2\TweetSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

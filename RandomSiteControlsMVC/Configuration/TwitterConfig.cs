@@ -13,6 +13,20 @@ namespace RandomSiteControlsMVC.Configuration
         {
         }
 
+        [ObjectInfo(Description = "Enables the service, requires restarting your app", Title = "Enable")]
+        [ConfigurationProperty("Enabled", IsRequired = true, DefaultValue =false)]
+        public bool Enabled
+        {
+            get
+            {
+                return (bool)this["Enabled"];
+            }
+            set
+            {
+                this["Enabled"] = value;
+            }
+        }
+
         [ObjectInfo(Description = "https://developer.twitter.com/", Title = "ConsumerKey")]
         [ConfigurationProperty("ConsumerKey", IsRequired = true)]
         public string ConsumerKey

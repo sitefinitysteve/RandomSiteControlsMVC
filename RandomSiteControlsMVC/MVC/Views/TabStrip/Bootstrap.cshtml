@@ -33,7 +33,7 @@ else
         @{int i = 1;}
         @foreach (var tab in Model.Tabs)
         {
-            <li role="presentation" class='nav-item '>
+            <li role="presentation" class='nav-item @(tab.Selected ? "active" : "")'>
                 <a class="nav-link @(tab.Selected ? "active" : "")" aria-controls="@tab.Title.ToLower()" role="tab" data-toggle="tab">@tab.Title</a>
             </li>
             i++;

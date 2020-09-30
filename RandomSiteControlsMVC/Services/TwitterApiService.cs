@@ -37,7 +37,19 @@ namespace RandomSiteControlsMVC.Services
 
         public object Get(HelloRequest request)
         {
-            return "I am alive";
+            var service = this.GetService();
+
+            service.ListTweetsOnHomeTimeline(new ListTweetsOnHomeTimelineOptions() { Count = 1 });
+
+            if(service.Response.StatusCode == HttpStatusCode.OK)
+            {
+                return "Sitefinity Service alive, Twitter seems authenticated";
+            }
+            else
+            {
+                return $"Sitefinity Service alive, Twitter returning {service.Response.StatusCode}: {service.Response.Error.Code}: {service.Response.Error.Message}";
+            }
+            
         }
 
         public List<TwitterStatus> Get(TwitterHomeTimelineRequest request)
@@ -54,7 +66,11 @@ namespace RandomSiteControlsMVC.Services
             {
                 TwitterService service = this.GetService();
                 var result = service.ListTweetsOnHomeTimeline(new ListTweetsOnHomeTimelineOptions() { Count = take });
-                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+
+                if (result != null)
+                {
+                    this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+                }
             }
             else
             {
@@ -80,7 +96,10 @@ namespace RandomSiteControlsMVC.Services
             {
                 TwitterService service = this.GetService();
                 var result = service.ListRetweetsOfMyTweets(new ListRetweetsOfMyTweetsOptions() { Count = take });
-                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+                if (result != null)
+                {
+                    this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+                }
             }
             else
             {
@@ -108,7 +127,11 @@ namespace RandomSiteControlsMVC.Services
                     Count = take,
                     ScreenName = request.ScreenName
                 });
-                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+
+                if (result != null)
+                {
+                    this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+                }
             }
             else
             {
@@ -132,7 +155,11 @@ namespace RandomSiteControlsMVC.Services
             {
                 TwitterService service = this.GetService();
                 var result = service.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions() { Count = take });
-                this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+
+                if (result != null)
+                {
+                    this.HandleTwitterStatusCallback(tweets, cacheKey, service, result);
+                }
             }
             else
             {
@@ -157,7 +184,10 @@ namespace RandomSiteControlsMVC.Services
                 TwitterService service = this.GetService();
                 var result = service.GetTweet(new GetTweetOptions() { Id = request.Id });
 
-                this.HandleTwitterStatusCallback(tweets, cacheKey, service, new List<TwitterStatus>() { result });
+                if (result != null)
+                {
+                    this.HandleTwitterStatusCallback(tweets, cacheKey, service, new List<TwitterStatus>() { result });
+                }
             }
             else
             {

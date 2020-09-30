@@ -35,12 +35,21 @@ namespace RandomSiteControlsMVC
 
             if (e.CommandName == "Bootstrapped")
             {
-                //Register ServiceStack route
-                SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
-
                 //Add Tools
                 InstallVirtualPaths(); // See that method for VIRTUAL PATHS installation code
                 InstallLayouts();
+                InstallServices();
+            }
+        }
+
+        private static void InstallServices()
+        {
+            var sfconfig = Telerik.Sitefinity.Configuration.Config.Get<RandomSiteControlsMVC.Configuration.SitefinitySteveMvcConfig>();
+
+            if (sfconfig.Twitter.Enabled)
+            {
+                //Register ServiceStack route
+                SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
             }
         }
 

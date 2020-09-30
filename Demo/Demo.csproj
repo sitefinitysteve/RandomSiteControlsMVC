@@ -1454,7 +1454,6 @@
     <Content Include="ResourcePackages\RSC\MVC\Views\VideoGallery\List.OverlayGallery.cshtml" />
     <Content Include="ResourcePackages\RSC\MVC\Views\VideoGallery\List.VideoGallery.cshtml" />
     <Content Include="ResourcePackages\RSC\MVC\Views\Video\Video.Default.cshtml" />
-    <Content Include="Mvc\Views\TabStrip\Bootstrap.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
