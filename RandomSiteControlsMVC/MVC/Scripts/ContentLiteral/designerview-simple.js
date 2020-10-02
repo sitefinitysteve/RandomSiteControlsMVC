@@ -12,10 +12,9 @@
                 //variable exists, do what you want
                 //Resize editor zone
                 $scope.resizeMonacoEditorWindow();
-                
+
                 contentHtmlEditor = monaco.editor.create(document.getElementById('content-html-container'), {
                     language: 'html',
-                    automaticLayout: true,
                     autoIndent: true
                 });
 
@@ -32,7 +31,7 @@
             }
         }
 
-        $scope.resizeMonacoEditorWindow = function() {
+        $scope.resizeMonacoEditorWindow = function () {
             //Resize editor zone
             var height = $("#viewsPlaceholder").closest(".modal-body").height();
             $("#content-html-container").height(height);
@@ -57,11 +56,11 @@
                     }
                 }
             },
-            function (data) {
-                $scope.feedback.showError = true;
-                if (data)
-                    $scope.feedback.errorMessage = data.Detail;
-            })
+                function (data) {
+                    $scope.feedback.showError = true;
+                    if (data)
+                        $scope.feedback.errorMessage = data.Detail;
+                })
             .then(function () {
                 $scope.feedback.savingHandlers.push(function () {
                     $scope.properties.HtmlContent.PropertyValue = contentHtmlEditor.getValue();

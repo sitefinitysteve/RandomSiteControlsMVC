@@ -17,6 +17,7 @@
         };
 
         $scope.updateLocation = function () {
+            console.log("Updating Location");
             setLocation();
         }
 
@@ -30,6 +31,7 @@
 
             if (geocoder) {
                 geocoder.geocode({ 'address': address }, function (results, status) {
+                    console.log("Geocode", results, status);
                     if (status === google.maps.GeocoderStatus.OK) {
                         $scope.validAddress = true;
                         var l = results[0].geometry.location;

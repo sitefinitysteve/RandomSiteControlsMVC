@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+Sitemap: https://rscdemo.sitefinitysteve.com/sitemap/sitemap-index.xml
+Sitemap: https://rscdemo.sitefinitysteve.com/sitemap/sitemap.gz

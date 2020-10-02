@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "ResourcePackages/RSC/assets/rscdemo.min.js",
+    "inputFiles": [
+      "ResourcePackages/RSC/assets/rscdemo.js"
+    ]
+  }
+]

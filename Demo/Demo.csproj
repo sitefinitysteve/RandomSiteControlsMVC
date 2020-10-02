@@ -1154,7 +1154,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="AzureWebRole.cs" />
+    <Compile Include="Mvc\Controllers\DocLinkController.cs" />
     <Compile Include="Mvc\Controllers\HeaderTitleController.cs" />
+    <Compile Include="Mvc\Models\DocLink\DocLinkModel.cs" />
     <Compile Include="Mvc\Models\HeaderTitle\HeaderTitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1179,6 +1181,10 @@
     <Content Include="ResourcePackages\Bootstrap4\GridSystem\Templates\grid-8+4.html" />
     <Content Include="ResourcePackages\Bootstrap4\GridSystem\Templates\grid-9+3.html" />
     <Content Include="ResourcePackages\Bootstrap4\MVC\Scripts\Navigation\pills.js" />
+    <Content Include="ResourcePackages\RSC\assets\rscdemo.js" />
+    <Content Include="ResourcePackages\RSC\assets\rscdemo.min.js">
+      <DependentUpon>rscdemo.js</DependentUpon>
+    </Content>
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\container.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-12.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-2+3+2+3+2.html" />
@@ -1193,6 +1199,7 @@
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-8+4.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-9+3.html" />
     <Content Include="ResourcePackages\RSC\MVC\Scripts\Navigation\pills.js" />
+    <Content Include="robots.txt" />
     <Content Include="Sitefinity\Default.aspx" />
     <Content Include="Sitefinity\Services\Analytics\AnalyticsPermissionsService.svc" />
     <Content Include="Sitefinity\Services\Analytics\DashboardData.svc" />
@@ -1345,9 +1352,7 @@
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\Sitefinity\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App_Data\GeoLocation\GeoLite2-City.mmdb" />
     <Content Include="ResourcePackages\RSC\package-lock.json" />
@@ -1458,6 +1463,17 @@
     <Content Include="ResourcePackages\RSC\MVC\Views\Video\Video.Default.cshtml" />
     <Content Include="Mvc\Views\PageTitle\PageTitle.cshtml" />
     <Content Include="Mvc\Views\HeaderTitle\HeaderTitle.cshtml" />
+    <Content Include="App_Data\Sitefinity\Configuration\DataConfig.config" />
+    <Content Include="App_Data\Sitefinity\Configuration\ProjectConfig.config" />
+    <Content Include="App_Data\Sitefinity\Configuration\SecurityConfig.config" />
+    <Content Include="App_Data\Sitefinity\Configuration\SystemConfig.config" />
+    <Content Include="App_Data\Sitefinity\Configuration\WebSecurityConfig.config" />
+    <Content Include="Mvc\Views\DocLink\DocLink.cshtml" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

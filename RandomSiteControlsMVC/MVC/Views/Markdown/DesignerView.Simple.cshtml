@@ -12,12 +12,12 @@
             <div class="form-group">
                 <textarea ng-model="properties.Markdown.PropertyValue"
                           class="form-control editor"
-                          placeholder="Enter Markdown..."></textarea>
+                          placeholder="Enter Markdown..." style="height: 75vh !important"></textarea>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <div id="preview">
+                <div id="preview" class="form-control">
                     <div ng-bind-html="myHTML"></div>
                     @*<div markdown-to-html="myHTML"></div>*@
                 </div>
@@ -34,13 +34,55 @@
 
 <style>
     .editor {
-        min-height: 600px;
     }
 
     #preview {
-        min-height: 600px;
-        overflow-y: auto;
-        padding: 10px;
+        overflow-y: auto !important;
+        overflow: hidden;
+        padding: 10px !important;
+        height: 75vh !important;
+        cursor: not-allowed !important;
+    }
+
+    #preview blockquote {
+        margin-top: 15px !important;
+    }
+
+    #preview ul {
+        margin-top: 15px !important;
+        list-style-type: disc !important;
+        list-style-position: inside !important;
+    }
+
+    #preview ol {
+        margin-top: 15px !important;
+        list-style-type: decimal !important;
+        list-style-position: inside !important;
+    }
+
+    #preview ul ul, #preview ol ul {
+        list-style-type: circle !important;
+        list-style-position: inside !important;
+        margin-left: 15px !important;
+    }
+
+    #preview ol ol, #preview ul ol {
+        list-style-type: lower-latin !important;
+        list-style-position: inside !important;
+        margin-left: 15px !important;
+    }
+
+    #preview > div:empty:after{
+        display: flex;
+    }
+
+    #preview > div:empty:after {
+        flex-grow: 1;
+        content: "Preview Window";
+        display: block;
+        width: 100%;
         height: 100%;
+        text-align: center;
+        color: #d2d2d2d2;
     }
 </style>

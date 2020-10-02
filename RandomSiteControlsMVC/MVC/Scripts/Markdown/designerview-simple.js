@@ -1,7 +1,6 @@
 ﻿(function ($) {
     angular.module('designer').controller('SimpleCtrl', ['$scope', 'propertyService', function ($scope, propertyService) {
-        //Resize large
-        $('.modal-dialog').scope().size = 'lg';
+
 
         //Store preview
         //$scope.myHTML = "";
@@ -18,6 +17,10 @@
 
         propertyService.get()
             .then(function (data) {
+                //Fill the screen
+                console.log("Making full screen");
+                $('.sf-backend-wrp').addClass('modal-fluid');;
+
                 if (data) {
                     $scope.properties = propertyService.toAssociativeArray(data.Items);
 

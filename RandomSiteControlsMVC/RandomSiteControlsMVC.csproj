@@ -217,8 +217,8 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <EmbeddedResource Include="MVC\Views\Markdown\Default.cshtml" />
-    <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.cshtml" />
+    <Content Include="MVC\Views\Markdown\Default.cshtml" />
+    <Content Include="MVC\Views\Markdown\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\TabStrip\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\TabStrip\DesignerView.Simple.json" />
