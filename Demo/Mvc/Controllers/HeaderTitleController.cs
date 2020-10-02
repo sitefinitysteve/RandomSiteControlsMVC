@@ -7,6 +7,11 @@ using RandomSiteControlsMVC.Mvc.Models;
 using Telerik.Sitefinity.Web;
 using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 using SitefinityWebApp.Mvc.Models.HeaderTitle;
+using Telerik.Sitefinity.Security;
+using Telerik.Sitefinity.Modules.Pages;
+using Telerik.Sitefinity.Configuration;
+using Telerik.Sitefinity.Security.Configuration;
+using Telerik.Sitefinity.Security.Claims;
 
 namespace RandomSiteControlsMVC.Mvc.Controllers
 {
