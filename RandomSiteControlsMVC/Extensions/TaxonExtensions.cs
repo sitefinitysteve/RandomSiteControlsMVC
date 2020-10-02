@@ -14,7 +14,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
     {
         /// <summary>
         /// Gets a taxon attribute value
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <typeparam name="T">Type of the data</typeparam>
         /// <param name="currentTaxon">This taxon</param>
@@ -53,7 +53,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Saves an attribute to a taxon.  Do not forget to call SaveChanges on your TaxonomyManager.
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon">This taxon</param>
         /// <param name="key">Dictionary Key to store the value as</param>
@@ -76,7 +76,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// To Impliment Later
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
@@ -99,7 +99,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Checks for a key
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon">This taxon</param>
         /// <param name="key">Key to find</param>

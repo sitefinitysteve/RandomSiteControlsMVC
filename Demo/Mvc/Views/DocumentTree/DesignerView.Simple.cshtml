@@ -9,11 +9,11 @@
 @*@Html.Script(ScriptRef.KendoWeb, RSCUtil.SfsConfig.KendoScriptPlaceholder)*@
 
 <uib-tabset class="nav-tabs-wrapper">
-    <uib-tab heading="Tabs">
+    <uib-tab heading="General">
         <div class="ng-cloak">
             <div class="form-group">
                 <label for="sortOptions">Selected Library</label>
-                <sf-list-selector sf-library-selector sf-media-type="documents" sf-selected-item-id="newsSelector.selectedItemId" sf-selected-item="newsSelector.selectedItem" />
+                <sf-list-selector sf-library-selector sf-media-type="documents" sf-selected-item-id="selectedLibraryId" sf-selected-item="selectedLibrary" sf-provider="provider" sf-multiselect="false" sf-sortable="false" />
             </div>
 
             <div class="form-group">
@@ -23,6 +23,7 @@
                         <select id="sortOptions" ng-model="properties.RenderMode.PropertyValue" class="form-control">
                             <option value="TreeView"> TreeView</option>
                             <option value="PanelBar"> PanelBar</option>
+                            <option value="Html"> Html</option>
                         </select>
                     </div>
                 </div>

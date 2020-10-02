@@ -22,7 +22,7 @@ namespace Telerik.Sitefinity
     {
         /// <summary>
         /// Saves a dynamic content item without all the workflow bloat
-        /// *** SITEFINITY STEVE EXTENSION, NOT OFFICIAL TELERIK ***
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="type">Telerik.Sitefinity.DynamicTypes.Model.YOURTYPE</param>
         /// <param name="fields">BackingFields</param>
@@ -149,8 +149,8 @@ namespace Telerik.Sitefinity
 
     public static class PageExtensions{
         /// <summary>
-        /// Sitefinity Steve Extension from
-        /// https://plus.google.com/109308138315717177456/posts/CK1cANseeKP
+        /// From https://plus.google.com/109308138315717177456/posts/CK1cANseeKP
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="pageNode"></param>
         public static void UnpublishPage(this PageNode pageNode)

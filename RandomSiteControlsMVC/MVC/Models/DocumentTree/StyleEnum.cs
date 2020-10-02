@@ -9,6 +9,7 @@ namespace RandomSiteControlsMVC.MVC.Models.DocumentTree
     public enum StyleEnum
     {
         TreeView,
-        PanelBar
+        PanelBar,
+        Html
     }
 }

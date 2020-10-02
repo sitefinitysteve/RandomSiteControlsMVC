@@ -7,6 +7,13 @@ namespace Telerik.Sitefinity.Security
 {
     public static class UserExtensions
     {
+        /// <summary>
+        /// Returns a users avatar with fallback
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="defaultImageUrl">Set the default fallback</param>
+        /// <returns></returns>
         public static string GetAvatar(this Telerik.Sitefinity.Security.Model.User user, string defaultImageUrl = "")
         {
             Image image;

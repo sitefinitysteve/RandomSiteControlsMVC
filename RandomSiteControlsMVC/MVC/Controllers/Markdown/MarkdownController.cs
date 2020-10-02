@@ -77,16 +77,8 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
         }
 
-        private string _template = "Default";
-        public string Template
-        {
-            get { return _template; }
-            set
-            {
-                _template = value;
-            }
-        }
-        
+        public string Template { get; set; } = "Markdown";
+
 
         bool _useWrapper = true;
         public bool UseWrapper

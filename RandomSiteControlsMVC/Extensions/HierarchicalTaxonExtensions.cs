@@ -22,7 +22,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Gets the Root of a HierarchicalTaxon
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon">This Taxon</param>
         /// <returns>Root Taxon</returns>
@@ -45,7 +45,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Gets a list of the parent Taxon items
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon">Current Taxon</param>
         /// <returns>List of HierarchicalTaxons linked to this item.  0 index is the closest parent.</returns>
@@ -70,7 +70,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Searches from Parent to parent to match the taxon name you need, returns the first match
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon">Current Node</param>
         /// <param name="textToFind">Text to locate</param>
@@ -143,7 +143,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Flattens out a taxon tree to a list
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static IEnumerable<HierarchicalTaxon> FlattenHierarchy(this HierarchicalTaxon parent)
         {
@@ -162,7 +162,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Lets us know if a Hierarchical taxon object has a parent object
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon"></param>
         /// <returns></returns>
@@ -173,7 +173,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
 
         /// <summary>
         /// Flattens out the taxons to a delimited string
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static string FlattenToString(this IEnumerable<HierarchicalTaxon> items, char seperator = ',', bool appendSpace = true)
         {

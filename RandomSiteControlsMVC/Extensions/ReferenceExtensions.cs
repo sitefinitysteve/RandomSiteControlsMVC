@@ -15,6 +15,7 @@ namespace Telerik.Sitefinity.Frontend.Mvc.Helpers
     public static class FileReferenceExtensions
     {
         /// <summary>
+        /// /// Append cache busting version a script tag
         /// 🔥 From SitefinitySteve
         /// </summary>
         public static MvcHtmlString ScriptVersioned(this HtmlHelper helper, string scriptPath)
@@ -24,6 +25,7 @@ namespace Telerik.Sitefinity.Frontend.Mvc.Helpers
         }
 
         /// <summary>
+        /// Append cache busting version a stylesheet link
         /// 🔥 From SitefinitySteve
         /// </summary>
         public static MvcHtmlString StyleSheetVersioned(this HtmlHelper helper, string filename, bool fullyQualified = false)
@@ -32,6 +34,10 @@ namespace Telerik.Sitefinity.Frontend.Mvc.Helpers
             return MvcHtmlString.Create("<link href='{0}?v={1}' rel='stylesheet' type='text/css' />".Arrange(filename, version));
         }
 
+        /// <summary>
+        /// Returns your sitefinity version
+        /// 🔥 From SitefinitySteve
+        /// </summary>
         private static string GetVersion(this HtmlHelper helper, string ScriptPath)
         {
             var context = helper.ViewContext.RequestContext.HttpContext;

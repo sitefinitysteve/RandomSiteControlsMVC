@@ -7,6 +7,11 @@ namespace Telerik.Sitefinity
 {
     public static class StringExtensions
     {
+        /// <summary>
+        /// Capitalize the first letter of a string 
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <returns></returns>
         public static string Capitalize(this string s)
         {
             // Check for empty string.
@@ -18,6 +23,13 @@ namespace Telerik.Sitefinity
             return char.ToUpper(s[0]) + s.Substring(1);
         }
 
+        /// <summary>
+        /// Check if a string contains any of the passed in words
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <param name="str">String to check</param>
+        /// <param name="values">Words passed in</param>
+        /// <returns></returns>
         public static bool ContainsAny(this string str, params string[] values)
         {
             if (!string.IsNullOrEmpty(str) || values.Length > 0)
@@ -32,6 +44,13 @@ namespace Telerik.Sitefinity
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if a string contains all of the passed in values
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="values"></param>
+        /// <returns></returns>
         public static bool ContainsAll(this string value, params string[] values)
         {
             foreach (string one in values)

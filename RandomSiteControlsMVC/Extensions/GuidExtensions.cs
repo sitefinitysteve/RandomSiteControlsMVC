@@ -19,7 +19,7 @@ namespace Telerik.Sitefinity
     {
         /// <summary>
         /// Returns an Image object from a Guid
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static Image GetImage(this Guid imageId)
         {
@@ -34,7 +34,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Returns an Document object from a Guid
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static Document GetDocument(this Guid documentId)
         {
@@ -52,7 +52,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Returns an Album object from a Guid
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static Album GetAlbum(this Guid albumID)
         {
@@ -62,7 +62,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Returns a PageNode object from a Guid
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static PageNode GetPage(this Guid pageId)
         {
@@ -72,7 +72,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Returns a PageNode object from a Guid
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static PageData GetPageData(this Guid pageId)
         {
@@ -82,7 +82,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Converts the Guid[] type to the DynamicContent objects
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static IQueryable<DynamicContent> GetDynamicContentItems(this Guid[] contentLinks, string type)
         {
@@ -96,7 +96,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Converts the Guid[] type to the DynamicContent objects
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static DynamicContent GetDynamicContent(this Guid contentLink, string type)
         {
@@ -110,7 +110,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Converts the Guid[] type to the DynamicContent objects
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static IQueryable<DynamicContent> GetDynamicContentItemsWithTags(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator)
         {
@@ -119,7 +119,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Converts the Guid[] type to the DynamicContent objects
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static IQueryable<DynamicContent> GetDynamicContentItemsWithCategories(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator)
         {
@@ -128,7 +128,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Converts the Guid[] type to the DynamicContent objects
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static IQueryable<DynamicContent> GetDynamicContentItemsWithTaxa(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator, string taxonName)
         {
@@ -146,10 +146,11 @@ namespace Telerik.Sitefinity
 			OR
 		}
 
-		/// <summary>
-		/// Turns a guid array into a dynamic filter expression that openaccess can use
-		/// </summary>
-		public static string GenerateFilterExpression(this Guid[] elements, string fieldname, FilterOperatorEnum decision, bool wrapInBraces = true)
+        /// <summary>
+        /// Turns a guid array into a dynamic filter expression that openaccess can use
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        public static string GenerateFilterExpression(this Guid[] elements, string fieldname, FilterOperatorEnum decision, bool wrapInBraces = true)
 		{
 			string filter = String.Empty;
 
@@ -171,7 +172,7 @@ namespace Telerik.Sitefinity
         #region OBSOLETE
         /// <summary>
         /// Converts the Guid[] type to the DynamicContent objects
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         [Obsolete("Use GetDynamicContentItems", true)]
         public static IQueryable<DynamicContent> GetContentLinks(this Guid[] contentLinks, string type)
@@ -181,7 +182,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Converts the Guid[] type to the DynamicContent objects
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// [Obsolete("Use GetDynamicContent", true)]
         public static DynamicContent GetContentLink(this Guid contentLink, string type)

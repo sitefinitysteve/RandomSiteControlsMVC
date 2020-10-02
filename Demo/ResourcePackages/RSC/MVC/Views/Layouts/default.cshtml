@@ -67,12 +67,20 @@
 else
 {
 <style>
+    .doc-link {
+        max-width: 500px;
+    }
+
     .doc-link a {
         color: #FFF;
     }
 
     .doc-link a:hover {
         text-decoration: underline;
+    }
+
+    .left-side-menu{
+        padding-top: 93px;
     }
 </style>
 }
@@ -87,22 +95,22 @@ else
         <div class="left-side-menu">
 
             <!-- LOGO -->
-            <a href="/" class="logo text-center logo-light">
+            <a href="/" class="logo text-center logo-light d-sm-none d-md-none d-lg-block">
                 <span class="logo-lg">
-                    <img src="/ResourcePackages/RSC/assets/RSCLogoDark.svg" alt="RSC Logo">
+                    <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-Dark.svg" alt="RSC Logo">
                 </span>
                 <span class="logo-sm">
-                    <img src="/ResourcePackages/RSC/assets/RSCLogoLight.svg" alt="RSC Logo">
+                    <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-White.svg" alt="RSC Logo">
                 </span>
             </a>
 
             <!-- LOGO -->
-            <a href="/" class="logo text-center logo-dark">
+            <a href="/" class="logo text-center logo-dark  d-sm-none d-md-none d-lg-block" >
                 <span class="logo-lg">
-                    <img src="/ResourcePackages/RSC/assets/RSCLogoDark.svg" alt="RSC Logo">
+                    <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-Dark.svg" alt="RSC Logo">
                 </span>
                 <span class="logo-sm">
-                    <img src="/ResourcePackages/RSC/assets/RSCLogoLight.svg" alt="RSC Logo">
+                    <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-White.svg" alt="RSC Logo">
                 </span>
             </a>
 
@@ -150,6 +158,9 @@ else
                     <button class="button-menu-mobile open-left disable-btn">
                         <i class="mdi mdi-menu"></i>
                     </button>
+                    <span class="logo-sm d-lg-none">
+                        <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-White.svg" alt="RSC Logo">
+                    </span>
                 </div>
                 <!-- end Topbar -->
             }

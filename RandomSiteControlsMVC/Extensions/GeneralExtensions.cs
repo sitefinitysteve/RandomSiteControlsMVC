@@ -15,7 +15,7 @@ namespace Telerik.Sitefinity.Model
     {
         /// <summary>
         /// Gets an objects associated manager
-        /// ** Sitefinitysteve.com Extension **
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <returns>An instance of the manager of an object</returns>
         public static IManager GetContentManager(this object item){

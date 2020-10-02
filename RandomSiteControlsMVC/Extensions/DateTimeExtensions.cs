@@ -5,6 +5,17 @@ namespace System
 {
     public static class DateTimeExtensionMethods
     {
+        /// <summary>
+        /// Converts a date to english string duration
+        /// 🔥 From SitefinitySteve, StackOverflow
+        /// </summary>
+        /// <example>
+        /// One second ago
+        /// Yesteday
+        /// 5 Days Ago
+        /// </example>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static string ToTimeSpanString(this DateTime date)
         {
             var ts = new TimeSpan(DateTime.UtcNow.Ticks - date.Ticks);

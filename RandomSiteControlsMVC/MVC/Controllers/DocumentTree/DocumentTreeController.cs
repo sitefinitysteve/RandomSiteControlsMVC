@@ -57,13 +57,13 @@ namespace SitefinityWebApp.Mvc.Controllers
         public List<DocumentTreeNode> SetTreeNodeDocumentLibrariesAndFolders()
         {
             List<DocumentTreeNode> nodes = new List<DocumentTreeNode>();
-            if (RSCUtil.Cache.Contains(_cacheKey))
-            {
-                //Load Cache
-                nodes = RSCUtil.Cache[_cacheKey] as List<DocumentTreeNode>;
-            }
-            else
-            {
+            //if (RSCUtil.Cache.Contains(_cacheKey))
+            //{
+            //    //Load Cache
+            //    nodes = RSCUtil.Cache[_cacheKey] as List<DocumentTreeNode>;
+            //}
+            //else
+            //{
                 //Create Cache
                 LibrariesManager manager = new LibrariesManager();
 
@@ -91,15 +91,18 @@ namespace SitefinityWebApp.Mvc.Controllers
                 }
                 else
                 {
-                    //Libary Focused
-                    var album = manager.GetDocumentLibrary(this.LibraryId);
-                    if (album != null)
+                    if (this.LibraryId != Guid.Empty)
                     {
-                        this.ParseSingleAlbum(nodes, manager, album);
-                    }
-                    else
-                    {
-                        throw new Exception("Invalid LibraryId Specified");
+                        //Libary Focused
+                        var album = manager.GetDocumentLibrary(this.LibraryId);
+                        if (album != null)
+                        {
+                            this.ParseSingleAlbum(nodes, manager, album);
+                        }
+                        else
+                        {
+                            throw new Exception("Invalid LibraryId Specified");
+                        }
                     }
                 }
 
@@ -109,7 +112,7 @@ namespace SitefinityWebApp.Mvc.Controllers
                     RSCUtil.AddToCache(nodes, _cacheKey, TimeSpan.FromMinutes(RSCUtil.SfsConfig.CacheTimeoutMinutes));
                 }
 
-            }
+            //}
 
             //Bind to the tree
             return nodes;
@@ -265,6 +268,9 @@ namespace SitefinityWebApp.Mvc.Controllers
                 _libraryId = value;
             }
         }
+
+        public string SerializedSelectedItemId { get; set; }
+        public string SerializedSelectedItem { get; set; }
 
         string _selectedLibraryName;
         public string SelectedLibraryName

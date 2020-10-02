@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>docs.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -217,8 +218,8 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="MVC\Views\Markdown\Default.cshtml" />
-    <Content Include="MVC\Views\Markdown\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\Markdown\Markdown.cshtml" />
+    <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\Markdown\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\TabStrip\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\TabStrip\DesignerView.Simple.json" />

@@ -10,6 +10,7 @@ namespace Telerik.Sitefinity
         /// <summary>
         /// Renders the "invisible class if the string item is empty, so clearly
         /// you need to have .invisible{display:none;} in your css
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static string HideIfEmpty(this object text, bool renderSpaceBeforeClass = false)
         {
@@ -21,6 +22,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Checks to see if there is content, returns true or false, useful for Visible
+        /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
@@ -35,6 +37,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Renders passed text if item is NOT empty
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static string IfContentExists(this object text, object textToRender, object elseRender = null)
         {
@@ -51,6 +54,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Renders passed text if TRUE
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static string IsTrue(this bool value, string textToRender, string elseRender = "")
         {
@@ -66,6 +70,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Renders passed text if FALSE
+        /// 🔥 From SitefinitySteve
         /// </summary>
         public static string IsFalse(this bool value, string textToRender, string elseRender = "")
         {

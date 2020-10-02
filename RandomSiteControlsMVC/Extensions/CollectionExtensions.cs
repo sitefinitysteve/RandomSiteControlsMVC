@@ -10,7 +10,7 @@ namespace Telerik.Sitefinity
     {
         /// <summary>
         /// Shuffle the Enumerable around in a random order
-        /// ** Sitefinitysteve.com Extension, from StackOverflow **
+        /// 🔥 From SitefinitySteve, from StackOverflow 
         /// </summary>
         public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source, Random rng)
         {
@@ -25,7 +25,7 @@ namespace Telerik.Sitefinity
 
         /// <summary>
         /// Shuffle the Enumerable around in a random order, Better implimentation
-        /// ** Sitefinitysteve.com Extension, from StackOverflow **
+        /// 🔥 From SitefinitySteve, from StackOverflow 
         /// </summary>
         public static void Shuffle<T>(this IList<T> list)
         {
