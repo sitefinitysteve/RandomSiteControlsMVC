@@ -35,6 +35,11 @@ namespace Telerik.Sitefinity
     {
         private const string _mediaItemPrefix = "sfvrsn";
 
+        /// <summary>
+        /// Resolve content to SF Data
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <returns>string</returns>
         private static string EnhanceRaw(string html, string imageViewPath, string documentViewPath)
         {
             //Resolve [OpenAccess provider style links first]
@@ -156,6 +161,10 @@ namespace Telerik.Sitefinity
             }
         }
 
+        /// <summary>
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <returns>IHtmlString</returns>
         public static IHtmlString Raw(object html)
         {
             var content = LinkParser.ResolveLinks(html.ToString(), DynamicLinksParser.GetContentUrl, null, false);
@@ -163,6 +172,10 @@ namespace Telerik.Sitefinity
             return new System.Web.Mvc.MvcHtmlString(content);
         }
 
+        /// <summary>
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <returns>string</returns>
         public static string GetRazorViewAsString(Controller controller, object model, string viewPath)
         {
             var st = new StringWriter();
@@ -176,6 +189,10 @@ namespace Telerik.Sitefinity
             return st.ToString();
         }
 
+        /// <summary>
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <returns>string</returns>
         public static IHtmlString Raw(this HtmlHelper helper, object html, RawContentResolveType resolveType, string imageViewPath = "/Views/Image/Image.Inline.cshtml", string documentViewPath = "/Views/Document/DocumentLink.Inline.cshtml")
         {
             var content = html.ToString();

@@ -12,6 +12,7 @@ namespace Telerik.Sitefinity
         /// Shuffle the Enumerable around in a random order
         /// 🔥 From SitefinitySteve, from StackOverflow 
         /// </summary>
+        /// <returns>IEnumerable<T></returns>
         public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source, Random rng)
         {
             T[] elements = source.ToArray();
@@ -27,6 +28,7 @@ namespace Telerik.Sitefinity
         /// Shuffle the Enumerable around in a random order, Better implimentation
         /// 🔥 From SitefinitySteve, from StackOverflow 
         /// </summary>
+        /// <returns>void</returns>
         public static void Shuffle<T>(this IList<T> list)
         {
             int n = list.Count;
@@ -39,16 +41,16 @@ namespace Telerik.Sitefinity
                 list[n] = value;
             }
         }
-    }
 
-    public static class ThreadSafeShuffuleRandom
-    {
-        [ThreadStatic]
-        private static Random Local;
-
-        public static Random ThisThreadsRandom
+        private static class ThreadSafeShuffuleRandom
         {
-            get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
+            [ThreadStatic]
+            private static Random Local;
+
+            public static Random ThisThreadsRandom
+            {
+                get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
+            }
         }
     }
 }

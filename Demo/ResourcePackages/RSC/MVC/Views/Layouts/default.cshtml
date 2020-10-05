@@ -105,7 +105,7 @@ else
             </a>
 
             <!-- LOGO -->
-            <a href="/" class="logo text-center logo-dark  d-sm-none d-md-none d-lg-block" >
+            <a href="/" class="logo text-center logo-dark  d-sm-none d-md-none d-lg-block">
                 <span class="logo-lg">
                     <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-Dark.svg" alt="RSC Logo">
                 </span>
@@ -144,34 +144,34 @@ else
 
         <div class="content-page">
             <div class="content">
-            @if (!SystemManager.IsDesignMode)
-            {
-                <!-- Topbar Start -->
-                <div class="navbar-custom">
-                    <button class="button-menu-mobile open-left disable-btn">
-                        <i class="mdi mdi-menu"></i>
-                    </button>
-                    <span class="logo-sm d-lg-none">
-                        <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-White.svg" alt="RSC Logo">
-                    </span>
-                </div>
-                <!-- end Topbar -->
-            }
+                @if (!SystemManager.IsDesignMode)
+                {
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
+                        <button class="button-menu-mobile open-left disable-btn">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                        <span class="logo-sm d-lg-none">
+                            <img src="https://www.sitefinitysteve.com/images/home/tech/RSCLogo-White.svg" alt="RSC Logo">
+                        </span>
+                    </div>
+                    <!-- end Topbar -->
+                }
                 <!-- Start Content-->
-            <div class="container-fluid">
+                <div class="container-fluid">
 
-                <!-- start page title -->
-                @Html.SfPlaceHolder("PageTitle")
-                <!-- end page title -->
+                    <!-- start page title -->
+                    @Html.SfPlaceHolder("PageTitle")
+                    <!-- end page title -->
 
-                <div class="row">
-                    <div class="col-12">
-                        @Html.SfPlaceHolder("Content")
-                    </div> <!-- end col -->
-                </div>
-                <!-- end row-->
+                    <div class="row">
+                        <div class="col-12">
+                            @Html.SfPlaceHolder("Content")
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row-->
 
-            </div> <!-- container -->
+                </div> <!-- container -->
 
             </div> <!-- content -->
             <!-- Footer Start -->
@@ -190,10 +190,10 @@ else
                         </div>
                     </div>
                     @*<div class="row scripts hidden">
-                        <div class="col-12">
-                            @Html.SfPlaceHolder("ScriptStyles")
-                        </div>
-                    </div>*@
+                            <div class="col-12">
+                                @Html.SfPlaceHolder("ScriptStyles")
+                            </div>
+                        </div>*@
                 </div>
             </footer>
             <!-- end Footer -->
@@ -210,6 +210,7 @@ else
 
     @Html.Section("jquery")
     @Html.Section("frameworks")
+    @Html.Section("plugins")
     @Html.Section("bottom")
 
 

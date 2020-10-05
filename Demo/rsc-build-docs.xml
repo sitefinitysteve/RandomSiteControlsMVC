@@ -60,223 +60,221 @@
             SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
             </summary>
         </member>
-        <member name="M:Telerik.Sitefinity.CollectionExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)">
-            <summary>
-            Shuffle the Enumerable around in a random order
-            🔥 From SitefinitySteve, from StackOverflow 
-            </summary>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:Telerik.Sitefinity.CollectionExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)" -->
         <member name="M:Telerik.Sitefinity.CollectionExtensions.Shuffle``1(System.Collections.Generic.IList{``0})">
             <summary>
             Shuffle the Enumerable around in a random order, Better implimentation
             🔥 From SitefinitySteve, from StackOverflow 
             </summary>
+            <returns>void</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetImage(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String)">
             <summary>
             Get a single image from a content link
             🔥 From SitefinitySteve
             </summary>
-            <returns>Telerik.Sitefinity.Libraries.Model.Image object</returns>
+            <returns>Telerik.Sitefinity.Libraries.Model.Image</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetImages(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String)">
             <summary>
             Gets the images from a content link array
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable Telerik.Sitefinity.Libraries.Model.Image</returns>
+            <returns>IQueryable(Telerik.Sitefinity.Libraries.Model.Image)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetDocument(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String)">
             <summary>
             Get a single document from a content link
             🔥 From SitefinitySteve
             </summary>
-            <returns>Telerik.Sitefinity.Libraries.Model.Image object</returns>
+            <returns>Telerik.Sitefinity.Libraries.Model.Document</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetDocuments(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String)">
             <summary>
             Gets the documents from a content link array
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable Telerik.Sitefinity.Libraries.Model.Image</returns>
+            <returns>IQueryable(Telerik.Sitefinity.Libraries.Model.Document)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.Live(System.Linq.IQueryable{Telerik.Sitefinity.DynamicModules.Model.DynamicContent})">
             <summary>
             Get the Live Visible items
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable-DynamicContent-</returns>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.Master(System.Linq.IQueryable{Telerik.Sitefinity.DynamicModules.Model.DynamicContent})">
             <summary>
             Get the Master Visible items
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable-DynamicContent-</returns>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.Temp(System.Linq.IQueryable{Telerik.Sitefinity.DynamicModules.Model.DynamicContent})">
             <summary>
             Get the Temp Visible items
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable-DynamicContent-</returns>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetHierarchicalTaxons(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String,System.String)">
             <summary>
             Generic Taxon control, use GetCategories or GetTags for the defaults
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable-HierarchicalTaxon-</returns>
+            <returns>IQueryable(HierarchicalTaxon)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetFlatTaxons(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String)">
             <summary>
             Generic Taxon control, use GetCategories or GetTags for the defaults
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable-HierarchicalTaxon-</returns>
+            <returns>IQueryable(HierarchicalTaxon)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetCategories(Telerik.Sitefinity.DynamicModules.Model.DynamicContent)">
             <summary>
             Get the linked Categories
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable-HierarchicalTaxon-</returns>
+            <returns>IQueryable(HierarchicalTaxon)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetTags(Telerik.Sitefinity.DynamicModules.Model.DynamicContent)">
             <summary>
             Get the linked Tags
             🔥 From SitefinitySteve
             </summary>
-            <returns>IQueryable-HierarchicalTaxon-</returns>
-        </member>
-        <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetRelatedContentItems(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String,System.String)">
-            <summary>
-            Returns the linked DynamicContent objects
-            🔥 From SitefinitySteve
-            </summary>
-        </member>
-        <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetRelatedContentItem(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String,System.String)">
-            <summary>
-            Returns the linked DynamicContent object
-            🔥 From SitefinitySteve
-            </summary>
+            <returns>IQueryable(HierarchicalTaxon)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetChildren(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.Type)">
             <summary>
             Returns the Child Items of the current DataItem
             🔥 From SitefinitySteve
             </summary>
+            <returns>IQueryable(DynamicContent)</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetChildren(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String)">
+            <summary>
+            Returns the Child Items of the current DataItem
+            🔥 From SitefinitySteve
+            </summary>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.GetChildrenFromParent(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.Type)">
             <summary>
             Returns the Child Items of the current DataItems Parent, so like every content item on the same level as THIS item
             🔥 From SitefinitySteve
             </summary>
+            <returns>IQueryable(DynamicContent)</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.DynamicContentExtensions.RetrieveDataThroughFiltering(System.Type)">
+            <summary>
+            Get all data items of a Type
+            🔥 From SitefinitySteve
+            </summary>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.ToItemViewModel(Telerik.Sitefinity.Model.IDataItem)">
             <summary>
             Convert to fully dynamic object, saves headaches of .GetValue
             </summary>
+            <returns>ItemViewModel</returns>
         </member>
         <member name="M:Telerik.Sitefinity.DynamicContentExtensions.ToModuleDynamicObject(Telerik.Sitefinity.Model.IDataItem)">
             <summary>
             Convert to fully dynamic object, saves headaches of .GetValue
             Alias to ToItemViewModel
             </summary>
+            <returns>ItemViewModel</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Model.GeneralExtensions.GetContentManager(System.Object)">
             <summary>
             Gets an objects associated manager
             🔥 From SitefinitySteve
             </summary>
-            <returns>An instance of the manager of an object</returns>
+            <returns>IManager</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Model.GeneralExtensions.HasValue(Telerik.Sitefinity.DynamicModules.Model.DynamicContent,System.String)">
             <summary>
             Validates a DynamicContent item has a field defined, thx Stacey Schlenker for the update\testing
             </summary>
-            <param name="dataItem"></param>
-            <param name="field"></param>
-            <returns></returns>
+            <returns>bool</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetImage(System.Guid)">
             <summary>
             Returns an Image object from a Guid
             🔥 From SitefinitySteve
             </summary>
+            <returns>Telerik.Sitefinity.Libraries.Model.Image</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetDocument(System.Guid)">
             <summary>
             Returns an Document object from a Guid
             🔥 From SitefinitySteve
             </summary>
+            <returns>Telerik.Sitefinity.Libraries.Model.Document</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetAlbum(System.Guid)">
             <summary>
             Returns an Album object from a Guid
             🔥 From SitefinitySteve
             </summary>
+            <returns>Telerik.Sitefinity.Libraries.Model.Album</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetPage(System.Guid)">
             <summary>
             Returns a PageNode object from a Guid
             🔥 From SitefinitySteve
             </summary>
+            <returns>Telerik.Sitefinity.Pages.Model.PageNode</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetPageData(System.Guid)">
             <summary>
             Returns a PageNode object from a Guid
             🔥 From SitefinitySteve
             </summary>
+            <returns>Telerik.Sitefinity.Pages.Model.PageData</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetDynamicContentItems(System.Guid[],System.String)">
             <summary>
             Converts the Guid[] type to the DynamicContent objects
             🔥 From SitefinitySteve
             </summary>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetDynamicContent(System.Guid,System.String)">
             <summary>
             Converts the Guid[] type to the DynamicContent objects
             🔥 From SitefinitySteve
             </summary>
+            <returns>Telerik.Sitefinity.DynamicModules.Model.DynamicContent</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetDynamicContentItemsWithTags(System.Guid[],System.String,Telerik.Sitefinity.GuidExtensions.FilterOperatorEnum)">
             <summary>
             Converts the Guid[] type to the DynamicContent objects
             🔥 From SitefinitySteve
             </summary>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetDynamicContentItemsWithCategories(System.Guid[],System.String,Telerik.Sitefinity.GuidExtensions.FilterOperatorEnum)">
             <summary>
             Converts the Guid[] type to the DynamicContent objects
             🔥 From SitefinitySteve
             </summary>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GetDynamicContentItemsWithTaxa(System.Guid[],System.String,Telerik.Sitefinity.GuidExtensions.FilterOperatorEnum,System.String)">
             <summary>
             Converts the Guid[] type to the DynamicContent objects
             🔥 From SitefinitySteve
             </summary>
+            <returns>IQueryable(DynamicContent)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.GuidExtensions.GenerateFilterExpression(System.Guid[],System.String,Telerik.Sitefinity.GuidExtensions.FilterOperatorEnum,System.Boolean)">
             <summary>
             Turns a guid array into a dynamic filter expression that openaccess can use
             🔥 From SitefinitySteve
             </summary>
-        </member>
-        <member name="M:Telerik.Sitefinity.GuidExtensions.GetContentLinks(System.Guid[],System.String)">
-            <summary>
-            Converts the Guid[] type to the DynamicContent objects
-            🔥 From SitefinitySteve
-            </summary>
-        </member>
-        <member name="M:Telerik.Sitefinity.GuidExtensions.GetContentLink(System.Guid,System.String)">
-            <summary>
-            Converts the Guid[] type to the DynamicContent objects
-            🔥 From SitefinitySteve
-            </summary>
-            [Obsolete("Use GetDynamicContent", true)]
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxonExtensions.GetRootTaxon(Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon)">
             <summary>
@@ -284,7 +282,7 @@
             🔥 From SitefinitySteve
             </summary>
             <param name="currentTaxon">This Taxon</param>
-            <returns>Root Taxon</returns>
+            <returns>Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxonExtensions.GetParentTaxa(Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon)">
             <summary>
@@ -303,13 +301,14 @@
             <param name="textToFind">Text to locate</param>
             <param name="type">Compare type</param>
             <param name="isCaseSensitive">Case Sensitive check, doesn't apply to Contains</param>
-            <returns>Null if nothing found</returns>
+            <returns>Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxonExtensions.FlattenHierarchy(Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon)">
             <summary>
             Flattens out a taxon tree to a list
             🔥 From SitefinitySteve
             </summary>
+            <returns>IEnumerable(Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon)</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxonExtensions.HasParent(Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon)">
             <summary>
@@ -317,13 +316,14 @@
             🔥 From SitefinitySteve
             </summary>
             <param name="currentTaxon"></param>
-            <returns></returns>
+            <returns>bool</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxonExtensions.FlattenToString(System.Collections.Generic.IEnumerable{Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon},System.Char,System.Boolean)">
             <summary>
             Flattens out the taxons to a delimited string
             🔥 From SitefinitySteve
             </summary>
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.TaxonExtensions.GetValue``1(Telerik.Sitefinity.Taxonomies.Model.Taxon,System.String,System.Boolean,System.Boolean)">
             <summary>
@@ -336,7 +336,7 @@
             <param name="isJson">If the data is a complex object stored as JSON make this true to return the deserialized object</param>
             <param name="defaultValue">If the item doesn't exist, it will initalize to this</param>
             <param name="createIfDoesntExist">If the item isnt in the attribute collection, create it</param>
-            <returns></returns>
+            <returns>T</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.TaxonExtensions.SetValue(Telerik.Sitefinity.Taxonomies.Model.Taxon,System.String,System.Object,System.Boolean)">
             <summary>
@@ -347,6 +347,7 @@
             <param name="key">Dictionary Key to store the value as</param>
             <param name="value">Data to store</param>
             <param name="asJSON">If it's a complex object, convert to JSON</param>
+            <returns>void</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.TaxonExtensions.IsSimpleType(System.Type)">
             <summary>
@@ -354,7 +355,7 @@
             🔥 From SitefinitySteve
             </summary>
             <param name="type"></param>
-            <returns></returns>
+            <returns>bool</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Taxonomies.Model.TaxonExtensions.HasAttribute(Telerik.Sitefinity.Taxonomies.Model.Taxon,System.String)">
             <summary>
@@ -363,7 +364,7 @@
             </summary>
             <param name="currentTaxon">This taxon</param>
             <param name="key">Key to find</param>
-            <returns></returns>
+            <returns>bool</returns>
         </member>
         <member name="M:Telerik.Sitefinity.MarkupExtensions.HideIfEmpty(System.Object,System.Boolean)">
             <summary>
@@ -371,32 +372,60 @@
             you need to have .invisible{display:none;} in your css
             🔥 From SitefinitySteve
             </summary>
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.MarkupExtensions.HasContent(System.Object)">
             <summary>
             Checks to see if there is content, returns true or false, useful for Visible
             🔥 From SitefinitySteve
             </summary>
-            <param name="text"></param>
-            <returns></returns>
+            <returns>bool</returns>
         </member>
         <member name="M:Telerik.Sitefinity.MarkupExtensions.IfContentExists(System.Object,System.Object,System.Object)">
             <summary>
             Renders passed text if item is NOT empty
             🔥 From SitefinitySteve
             </summary>
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.MarkupExtensions.IsTrue(System.Boolean,System.String,System.String)">
             <summary>
             Renders passed text if TRUE
             🔥 From SitefinitySteve
             </summary>
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.MarkupExtensions.IsFalse(System.Boolean,System.String,System.String)">
             <summary>
             Renders passed text if FALSE
             🔥 From SitefinitySteve
             </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.SFSHtml.EnhanceRaw(System.String,System.String,System.String)">
+            <summary>
+            Resolve content to SF Data
+            🔥 From SitefinitySteve
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.SFSHtml.Raw(System.Object)">
+            <summary>
+            🔥 From SitefinitySteve
+            </summary>
+            <returns>IHtmlString</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.SFSHtml.GetRazorViewAsString(System.Web.Mvc.Controller,System.Object,System.String)">
+            <summary>
+            🔥 From SitefinitySteve
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.SFSHtml.Raw(System.Web.Mvc.HtmlHelper,System.Object,Telerik.Sitefinity.RawContentResolveType,System.String,System.String)">
+            <summary>
+            🔥 From SitefinitySteve
+            </summary>
+            <returns>string</returns>
         </member>
         <member name="T:Telerik.Sitefinity.PublishingExtensions">
             <summary>
@@ -408,23 +437,14 @@
             Saves a dynamic content item without all the workflow bloat
             🔥 From SitefinitySteve
             </summary>
-            <param name="type">Telerik.Sitefinity.DynamicTypes.Model.YOURTYPE</param>
-            <param name="fields">BackingFields</param>
-            <param name="publishItem">Should we publish it?</param>
-            <param name="identifyingFieldName">What makes this type unique, usually Title</param>
-            <param name="requireUniqueIdentifyingField">Does it have a unique field?</param>
-            <param name="createUniqueUrl"></param>
-            <param name="ownerId"></param>
-            <param name="suppressSecurity"></param>
-            <param name="publishOn">Publish on this date</param>
-            <returns></returns>
+            <returns>Telerik.Sitefinity.DynamicModules.Model.DynamicContent</returns>
         </member>
         <member name="M:Telerik.Sitefinity.PageExtensions.UnpublishPage(Telerik.Sitefinity.Pages.Model.PageNode)">
             <summary>
             From https://plus.google.com/109308138315717177456/posts/CK1cANseeKP
             🔥 From SitefinitySteve
             </summary>
-            <param name="pageNode"></param>
+            <returns>void</returns>
         </member>
         <member name="T:Telerik.Sitefinity.Frontend.Mvc.Helpers.FileReferenceExtensions">
             <summary>
@@ -434,28 +454,31 @@
         </member>
         <member name="M:Telerik.Sitefinity.Frontend.Mvc.Helpers.FileReferenceExtensions.ScriptVersioned(System.Web.Mvc.HtmlHelper,System.String)">
             <summary>
-            /// Append cache busting version a script tag
+            Append cache busting version a script tag
             🔥 From SitefinitySteve
             </summary>
+            <returns></returns>
         </member>
         <member name="M:Telerik.Sitefinity.Frontend.Mvc.Helpers.FileReferenceExtensions.StyleSheetVersioned(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)">
             <summary>
             Append cache busting version a stylesheet link
             🔥 From SitefinitySteve
             </summary>
+            <returns>MvcHtmlString</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Frontend.Mvc.Helpers.FileReferenceExtensions.GetVersion(System.Web.Mvc.HtmlHelper,System.String)">
             <summary>
             Returns your sitefinity version
             🔥 From SitefinitySteve
             </summary>
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.StringExtensions.Capitalize(System.String)">
             <summary>
             Capitalize the first letter of a string 
             🔥 From SitefinitySteve
             </summary>
-            <returns></returns>
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.StringExtensions.ContainsAny(System.String,System.String[])">
             <summary>
@@ -464,7 +487,7 @@
             </summary>
             <param name="str">String to check</param>
             <param name="values">Words passed in</param>
-            <returns></returns>
+            <returns>bool</returns>
         </member>
         <member name="M:Telerik.Sitefinity.StringExtensions.ContainsAll(System.String,System.String[])">
             <summary>
@@ -473,7 +496,7 @@
             </summary>
             <param name="value"></param>
             <param name="values"></param>
-            <returns></returns>
+            <returns>bool</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Security.UserExtensions.GetAvatar(Telerik.Sitefinity.Security.Model.User,System.String)">
             <summary>
@@ -482,7 +505,7 @@
             </summary>
             <param name="user"></param>
             <param name="defaultImageUrl">Set the default fallback</param>
-            <returns></returns>
+            <returns>string</returns>
         </member>
         <member name="M:Telerik.Sitefinity.RSCUtil.AddToCache(System.Object,System.String,System.TimeSpan)">
             <summary>
@@ -545,7 +568,7 @@
             5 Days Ago
             </example>
             <param name="date"></param>
-            <returns></returns>
+            <returns>string</returns>
         </member>
         <member name="M:SitefinityWebApp.Mvc.Controllers.TabStripController.Index">
             <summary>

@@ -25,7 +25,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon">This Taxon</param>
-        /// <returns>Root Taxon</returns>
+        /// <returns>Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon</returns>
         public static HierarchicalTaxon GetRootTaxon(this HierarchicalTaxon currentTaxon)
         {
             if (currentTaxon.Parent != null)
@@ -76,7 +76,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// <param name="textToFind">Text to locate</param>
         /// <param name="type">Compare type</param>
         /// <param name="isCaseSensitive">Case Sensitive check, doesn't apply to Contains</param>
-        /// <returns>Null if nothing found</returns>
+        /// <returns>Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon</returns>
         public static HierarchicalTaxon GetFirstParentTaxon(this HierarchicalTaxon currentTaxon, string textToFind, HierarchicalTaxonCompareType type, bool isCaseSensitive)
         {
             bool found = false;
@@ -145,6 +145,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// Flattens out a taxon tree to a list
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>IEnumerable(Telerik.Sitefinity.Taxonomies.Model.HierarchicalTaxon)</returns>
         public static IEnumerable<HierarchicalTaxon> FlattenHierarchy(this HierarchicalTaxon parent)
         {
             if (parent != null)
@@ -165,7 +166,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="currentTaxon"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         private static bool HasParent(this HierarchicalTaxon currentTaxon)
         {
             return (currentTaxon.Parent == null) ? false : true;
@@ -175,6 +176,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// Flattens out the taxons to a delimited string
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>string</returns>
         public static string FlattenToString(this IEnumerable<HierarchicalTaxon> items, char seperator = ',', bool appendSpace = true)
         {
             string result = String.Empty;

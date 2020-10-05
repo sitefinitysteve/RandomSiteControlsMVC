@@ -24,16 +24,7 @@ namespace Telerik.Sitefinity
         /// Saves a dynamic content item without all the workflow bloat
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <param name="type">Telerik.Sitefinity.DynamicTypes.Model.YOURTYPE</param>
-        /// <param name="fields">BackingFields</param>
-        /// <param name="publishItem">Should we publish it?</param>
-        /// <param name="identifyingFieldName">What makes this type unique, usually Title</param>
-        /// <param name="requireUniqueIdentifyingField">Does it have a unique field?</param>
-        /// <param name="createUniqueUrl"></param>
-        /// <param name="ownerId"></param>
-        /// <param name="suppressSecurity"></param>
-        /// <param name="publishOn">Publish on this date</param>
-        /// <returns></returns>
+        /// <returns>Telerik.Sitefinity.DynamicModules.Model.DynamicContent</returns>
         public static DynamicContent JustFingSaveIt(string type, Dictionary<string, object> fields, bool publishItem = false, string identifyingFieldName = "Title", bool requireUniqueIdentifyingField = true, bool createUniqueUrl = false, Guid ownerId = new Guid(), bool suppressSecurity = true, DateTime? publishOn = null)
         {
             //Create blank item
@@ -152,7 +143,7 @@ namespace Telerik.Sitefinity
         /// From https://plus.google.com/109308138315717177456/posts/CK1cANseeKP
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <param name="pageNode"></param>
+        /// <returns>void</returns>
         public static void UnpublishPage(this PageNode pageNode)
         {
             var pageManager = PageManager.GetManager();

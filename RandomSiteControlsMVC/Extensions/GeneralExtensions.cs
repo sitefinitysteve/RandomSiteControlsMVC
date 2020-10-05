@@ -17,7 +17,7 @@ namespace Telerik.Sitefinity.Model
         /// Gets an objects associated manager
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>An instance of the manager of an object</returns>
+        /// <returns>IManager</returns>
         public static IManager GetContentManager(this object item){
         	return ManagerBase.GetMappedManager(item.GetType());
         }
@@ -25,9 +25,7 @@ namespace Telerik.Sitefinity.Model
         /// <summary>
         /// Validates a DynamicContent item has a field defined, thx Stacey Schlenker for the update\testing
         /// </summary>
-        /// <param name="dataItem"></param>
-        /// <param name="field"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool HasValue(this DynamicContent dataItem, string field)
         {
             return App.WorkWith().DynamicData().Type(dataItem.GetType()).Get().Fields.Any(f => f.FieldName == field);

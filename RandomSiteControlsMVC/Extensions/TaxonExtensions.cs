@@ -22,7 +22,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// <param name="isJson">If the data is a complex object stored as JSON make this true to return the deserialized object</param>
         /// <param name="defaultValue">If the item doesn't exist, it will initalize to this</param>
         /// <param name="createIfDoesntExist">If the item isnt in the attribute collection, create it</param>
-        /// <returns></returns>
+        /// <returns>T</returns>
         public static T GetValue<T>(this Taxon currentTaxon, string key, bool createIfDoesntExist = false, bool isJson = false)
         {
             bool keyExists = currentTaxon.Attributes.ContainsKey(key);
@@ -59,6 +59,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// <param name="key">Dictionary Key to store the value as</param>
         /// <param name="value">Data to store</param>
         /// <param name="asJSON">If it's a complex object, convert to JSON</param>
+        /// <returns>void</returns>
         public static void SetValue(this Taxon currentTaxon, string key, object value, bool isJson = false)
         {
             string data = (isJson) ? ServiceStack.Text.JsonSerializer.SerializeToString(value) : value.ToString();
@@ -79,7 +80,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// 🔥 From SitefinitySteve
         /// </summary>
         /// <param name="type"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool IsSimpleType(
             this Type type)
                     {
@@ -103,7 +104,7 @@ namespace Telerik.Sitefinity.Taxonomies.Model
         /// </summary>
         /// <param name="currentTaxon">This taxon</param>
         /// <param name="key">Key to find</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool HasAttribute(this Taxon currentTaxon, string key){
             return currentTaxon.Attributes.ContainsKey(key);
         }

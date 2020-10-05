@@ -13,7 +13,7 @@ namespace Telerik.Sitefinity.Security
         /// </summary>
         /// <param name="user"></param>
         /// <param name="defaultImageUrl">Set the default fallback</param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public static string GetAvatar(this Telerik.Sitefinity.Security.Model.User user, string defaultImageUrl = "")
         {
             Image image;

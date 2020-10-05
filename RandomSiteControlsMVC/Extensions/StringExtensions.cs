@@ -11,7 +11,7 @@ namespace Telerik.Sitefinity
         /// Capitalize the first letter of a string 
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public static string Capitalize(this string s)
         {
             // Check for empty string.
@@ -29,7 +29,7 @@ namespace Telerik.Sitefinity
         /// </summary>
         /// <param name="str">String to check</param>
         /// <param name="values">Words passed in</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool ContainsAny(this string str, params string[] values)
         {
             if (!string.IsNullOrEmpty(str) || values.Length > 0)
@@ -50,7 +50,7 @@ namespace Telerik.Sitefinity
         /// </summary>
         /// <param name="value"></param>
         /// <param name="values"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool ContainsAll(this string value, params string[] values)
         {
             foreach (string one in values)

@@ -21,6 +21,7 @@ namespace Telerik.Sitefinity
         /// Returns an Image object from a Guid
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>Telerik.Sitefinity.Libraries.Model.Image</returns>
         public static Image GetImage(this Guid imageId)
         {
             LibrariesManager manager = LibrariesManager.GetManager();
@@ -36,6 +37,7 @@ namespace Telerik.Sitefinity
         /// Returns an Document object from a Guid
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>Telerik.Sitefinity.Libraries.Model.Document</returns>
         public static Document GetDocument(this Guid documentId)
         {
             LibrariesManager manager = LibrariesManager.GetManager();
@@ -54,6 +56,7 @@ namespace Telerik.Sitefinity
         /// Returns an Album object from a Guid
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>Telerik.Sitefinity.Libraries.Model.Album</returns>
         public static Album GetAlbum(this Guid albumID)
         {
             LibrariesManager manager = LibrariesManager.GetManager();
@@ -64,6 +67,7 @@ namespace Telerik.Sitefinity
         /// Returns a PageNode object from a Guid
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>Telerik.Sitefinity.Pages.Model.PageNode</returns>
         public static PageNode GetPage(this Guid pageId)
         {
             PageManager manager = PageManager.GetManager();
@@ -74,6 +78,7 @@ namespace Telerik.Sitefinity
         /// Returns a PageNode object from a Guid
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>Telerik.Sitefinity.Pages.Model.PageData</returns>
         public static PageData GetPageData(this Guid pageId)
         {
             PageManager manager = PageManager.GetManager();
@@ -84,6 +89,7 @@ namespace Telerik.Sitefinity
         /// Converts the Guid[] type to the DynamicContent objects
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> GetDynamicContentItems(this Guid[] contentLinks, string type)
         {
             DynamicModuleManager manager = DynamicModuleManager.GetManager();
@@ -98,6 +104,7 @@ namespace Telerik.Sitefinity
         /// Converts the Guid[] type to the DynamicContent objects
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>Telerik.Sitefinity.DynamicModules.Model.DynamicContent</returns>
         public static DynamicContent GetDynamicContent(this Guid contentLink, string type)
         {
             DynamicModuleManager manager = DynamicModuleManager.GetManager();
@@ -112,6 +119,7 @@ namespace Telerik.Sitefinity
         /// Converts the Guid[] type to the DynamicContent objects
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> GetDynamicContentItemsWithTags(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator)
         {
             return tagIds.GetDynamicContentItemsWithTaxa(type, filterOperator, "Tags");
@@ -121,6 +129,7 @@ namespace Telerik.Sitefinity
         /// Converts the Guid[] type to the DynamicContent objects
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> GetDynamicContentItemsWithCategories(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator)
         {
             return tagIds.GetDynamicContentItemsWithTaxa(type, filterOperator, "Category");
@@ -130,6 +139,7 @@ namespace Telerik.Sitefinity
         /// Converts the Guid[] type to the DynamicContent objects
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> GetDynamicContentItemsWithTaxa(this Guid[] tagIds, string type, FilterOperatorEnum filterOperator, string taxonName)
         {
             var expression = tagIds.GenerateFilterExpression(taxonName, filterOperator);
@@ -150,6 +160,7 @@ namespace Telerik.Sitefinity
         /// Turns a guid array into a dynamic filter expression that openaccess can use
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>string</returns>
         public static string GenerateFilterExpression(this Guid[] elements, string fieldname, FilterOperatorEnum decision, bool wrapInBraces = true)
 		{
 			string filter = String.Empty;
@@ -168,27 +179,5 @@ namespace Telerik.Sitefinity
 				return (wrapInBraces) ? " (" + filter + ") " : filter;
 			}
 		}
-
-        #region OBSOLETE
-        /// <summary>
-        /// Converts the Guid[] type to the DynamicContent objects
-        /// 🔥 From SitefinitySteve
-        /// </summary>
-        [Obsolete("Use GetDynamicContentItems", true)]
-        public static IQueryable<DynamicContent> GetContentLinks(this Guid[] contentLinks, string type)
-        {
-            return null;
-        }
-
-        /// <summary>
-        /// Converts the Guid[] type to the DynamicContent objects
-        /// 🔥 From SitefinitySteve
-        /// </summary>
-        /// [Obsolete("Use GetDynamicContent", true)]
-        public static DynamicContent GetContentLink(this Guid contentLink, string type)
-        {
-            return null;
-        }
-        #endregion
     }
 }

@@ -21,7 +21,7 @@ namespace Telerik.Sitefinity
         /// Get a single image from a content link
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>Telerik.Sitefinity.Libraries.Model.Image object</returns>
+        /// <returns>Telerik.Sitefinity.Libraries.Model.Image</returns>
         public static Image GetImage(this DynamicContent item, string fieldName){
             var contentLinks = (ContentLink[])item.GetValue(fieldName);
             ContentLink imageContentLink = contentLinks.FirstOrDefault();
@@ -33,7 +33,7 @@ namespace Telerik.Sitefinity
         /// Gets the images from a content link array
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable Telerik.Sitefinity.Libraries.Model.Image</returns>
+        /// <returns>IQueryable(Telerik.Sitefinity.Libraries.Model.Image)</returns>
         public static IQueryable<Image> GetImages(this DynamicContent item, string fieldName)
         {
             var contentLinks = (ContentLink[])item.GetValue(fieldName);
@@ -48,7 +48,7 @@ namespace Telerik.Sitefinity
         /// Get a single document from a content link
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>Telerik.Sitefinity.Libraries.Model.Image object</returns>
+        /// <returns>Telerik.Sitefinity.Libraries.Model.Document</returns>
         public static Document GetDocument(this DynamicContent item, string fieldName){
             var contentLinks = (ContentLink[])item.GetValue(fieldName);
             ContentLink docContentLink = contentLinks.FirstOrDefault();
@@ -60,7 +60,7 @@ namespace Telerik.Sitefinity
         /// Gets the documents from a content link array
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable Telerik.Sitefinity.Libraries.Model.Image</returns>
+        /// <returns>IQueryable(Telerik.Sitefinity.Libraries.Model.Document)</returns>
         public static IQueryable<Document> GetDocuments(this DynamicContent item, string fieldName)
         {
             var contentLinks = (ContentLink[])item.GetValue(fieldName);
@@ -75,7 +75,7 @@ namespace Telerik.Sitefinity
         /// Get the Live Visible items
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable-DynamicContent-</returns>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> Live(this IQueryable<DynamicContent> items){
             return items.Where(x => x.Status == GenericContent.Model.ContentLifecycleStatus.Live && x.Visible == true);
         }
@@ -84,7 +84,7 @@ namespace Telerik.Sitefinity
         /// Get the Master Visible items
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable-DynamicContent-</returns>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> Master(this IQueryable<DynamicContent> items)
         {
             return items.Where(x => x.Status == GenericContent.Model.ContentLifecycleStatus.Master);
@@ -94,7 +94,7 @@ namespace Telerik.Sitefinity
         /// Get the Temp Visible items
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable-DynamicContent-</returns>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> Temp(this IQueryable<DynamicContent> items)
         {
             return items.Where(x => x.Status == GenericContent.Model.ContentLifecycleStatus.Temp);
@@ -104,7 +104,7 @@ namespace Telerik.Sitefinity
         /// Generic Taxon control, use GetCategories or GetTags for the defaults
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable-HierarchicalTaxon-</returns>
+        /// <returns>IQueryable(HierarchicalTaxon)</returns>
         public static List<HierarchicalTaxon> GetHierarchicalTaxons(this DynamicContent item, string fieldName, string taxonomyName)
         {
             var categories = item.GetValue<TrackedList<Guid>>(fieldName);
@@ -121,7 +121,7 @@ namespace Telerik.Sitefinity
         /// Generic Taxon control, use GetCategories or GetTags for the defaults
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable-HierarchicalTaxon-</returns>
+        /// <returns>IQueryable(HierarchicalTaxon)</returns>
         public static List<Taxon> GetFlatTaxons(this DynamicContent item, string fieldName)
         {
             var categories = item.GetValue<TrackedList<Guid>>(fieldName);
@@ -139,7 +139,7 @@ namespace Telerik.Sitefinity
         /// Get the linked Categories
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable-HierarchicalTaxon-</returns>
+        /// <returns>IQueryable(HierarchicalTaxon)</returns>
         public static List<HierarchicalTaxon> GetCategories(this DynamicContent item)
         {
             var categories = item.GetValue<TrackedList<Guid>>("Category");
@@ -157,7 +157,7 @@ namespace Telerik.Sitefinity
         /// Get the linked Tags
         /// 🔥 From SitefinitySteve
         /// </summary>
-        /// <returns>IQueryable-HierarchicalTaxon-</returns>
+        /// <returns>IQueryable(HierarchicalTaxon)</returns>
         public static List<Taxon> GetTags(this DynamicContent item)
         {
             var tags = item.GetValue<TrackedList<Guid>>("Tags");
@@ -171,34 +171,10 @@ namespace Telerik.Sitefinity
         }
 
         /// <summary>
-        /// Returns the linked DynamicContent objects
-        /// 🔥 From SitefinitySteve
-        /// </summary>
-        [Obsolete("In Sitefinity 7 you should be using the new Related Content Fields.  Use GetRelatedItems instead and migrate your fields type if nessesary - Steve")]
-        public static IQueryable<DynamicContent> GetRelatedContentItems(this DynamicContent dataItem, string fieldName, string type)
-        {
-            var contentLinks = dataItem.GetValue<Guid[]>(fieldName);
-            var items = contentLinks.GetDynamicContentItems(type);
-
-            return items;
-        }
-
-        /// <summary>
-        /// Returns the linked DynamicContent object
-        /// 🔥 From SitefinitySteve
-        /// </summary>
-        [Obsolete("In Sitefinity 7 you should be using the new Related Content Fields.  Use GetRelatedItems instead and migrate your fields type if nessesary - Steve")]
-        public static DynamicContent GetRelatedContentItem(this DynamicContent dataItem, string fieldName, string type)
-        {
-            var contentLink = dataItem.GetValue<Guid>(fieldName);
-
-            return contentLink.GetDynamicContent(type);
-        }
-
-        /// <summary>
         /// Returns the Child Items of the current DataItem
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> GetChildren(this DynamicContent dataItem, Type type = null)
         {
             if (dataItem != null)
@@ -218,6 +194,11 @@ namespace Telerik.Sitefinity
             return new List<DynamicContent>().AsQueryable();
         }
 
+        /// <summary>
+        /// Returns the Child Items of the current DataItem
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> GetChildren(this DynamicContent dataItem, string type)
         {
             return DynamicContentExtensions.GetChildren(dataItem, TypeResolutionService.ResolveType(type));
@@ -227,6 +208,7 @@ namespace Telerik.Sitefinity
         /// Returns the Child Items of the current DataItems Parent, so like every content item on the same level as THIS item
         /// 🔥 From SitefinitySteve
         /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         public static IQueryable<DynamicContent> GetChildrenFromParent(this DynamicContent dataItem, Type type = null)
         {
             if (type == null)
@@ -241,6 +223,11 @@ namespace Telerik.Sitefinity
             }
         }
 
+        /// <summary>
+        /// Get all data items of a Type
+        /// 🔥 From SitefinitySteve
+        /// </summary>
+        /// <returns>IQueryable(DynamicContent)</returns>
         private static IQueryable<DynamicContent> RetrieveDataThroughFiltering(Type type)
         {
             DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -252,6 +239,7 @@ namespace Telerik.Sitefinity
         /// <summary>
         /// Convert to fully dynamic object, saves headaches of .GetValue
         /// </summary>
+        /// <returns>ItemViewModel</returns>
         public static ItemViewModel ToItemViewModel(this IDataItem item)
         {
             return new ItemViewModel(item);
@@ -261,6 +249,7 @@ namespace Telerik.Sitefinity
         /// Convert to fully dynamic object, saves headaches of .GetValue
         /// Alias to ToItemViewModel
         /// </summary>
+        /// <returns>ItemViewModel</returns>
         public static ItemViewModel ToModuleDynamicObject(this IDataItem item)
         {
             return item.ToItemViewModel();

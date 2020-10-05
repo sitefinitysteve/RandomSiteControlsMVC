@@ -1158,7 +1158,9 @@
     <Compile Include="Mvc\Controllers\DocLinkController.cs" />
     <Compile Include="Mvc\Controllers\HeaderTitleController.cs" />
     <Compile Include="Mvc\Models\DocLink\DocLinkModel.cs" />
+    <Compile Include="Mvc\Models\Extensions\ExtensionItem.cs" />
     <Compile Include="Mvc\Models\Extensions\ExtensionsModel.cs" />
+    <Compile Include="Mvc\Models\Extensions\SfsDocs.cs" />
     <Compile Include="Mvc\Models\HeaderTitle\HeaderTitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

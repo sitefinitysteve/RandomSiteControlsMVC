@@ -15,7 +15,7 @@ namespace System
         /// 5 Days Ago
         /// </example>
         /// <param name="date"></param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public static string ToTimeSpanString(this DateTime date)
         {
             var ts = new TimeSpan(DateTime.UtcNow.Ticks - date.Ticks);
