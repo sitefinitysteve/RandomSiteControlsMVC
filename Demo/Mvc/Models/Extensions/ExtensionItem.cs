@@ -15,7 +15,7 @@ namespace SitefinityWebApp.Mvc.Models.Extensions
 
             this.FixUpMethodName(m.Name.Replace($"M:Telerik.Sitefinity.{this.Class}.", "").Replace($"M:Telerik.Sitefinity.Model.{this.Class}.", "").Replace("Model.", "").Replace("Mvc.Helpers.", "").Replace("UserExtensions.", "").Replace("TaxonExtensions.", ""));
 
-            this.Summary = m.Summary.Replace("\n","</br/>").Replace("🔥 From SitefinitySteve, from StackOverflow", "").Replace("🔥 From SitefinitySteve", "");
+            this.Summary = m.Summary.Replace("\n","<br/>").Replace("🔥 From SitefinitySteve, from StackOverflow", "").Replace("🔥 From SitefinitySteve", "");
             this.ReturnType = m.Returns.Replace("(", "<").Replace(")", ">");
         }
 

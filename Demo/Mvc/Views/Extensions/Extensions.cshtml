@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h4 class="header-title mb-4" style="text-transform:none">@group.Key</h4>
 
-                    <table class="table" style="width: 100%;">
+                    <table class="table table-responsive" style="width: 100%;">
                         <thead>
                             <tr>
                                 <th style="width: 40%">Method</th>
@@ -31,7 +31,7 @@
                                     @m.MethodName
                                 </td>
                                 <td style="word-break: break-all">
-                                    @Html.Raw(m.Summary)
+                                    @Html.Raw(m.Summary.Replace("<br/>","").Replace("<br />", "").Replace("<br>",""))
                                 </td>
                                 <td style="word-break: break-all">
                                     @m.ReturnType
