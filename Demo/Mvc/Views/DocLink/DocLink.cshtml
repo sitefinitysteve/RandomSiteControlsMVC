@@ -1,9 +1,22 @@
 ﻿@model SitefinityWebApp.Mvc.Models.DocLink.DocLinkModel
 
-<div class="card text-white bg-danger overflow-hidden doc-link">
-    <div class="card-body">
-        <div class="toll-free-box text-center">
-            <h4> <i class="mdi mdi-file-document-outline"></i> <a href="@Model.Link" target="_blank">@Model.Text</a></h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card overflow-hidden doc-link" style=" color: #fff; background-color: #0acf97; border-color: #0acf97;">
+            <div class="card-body">
+                <div class="toll-free-box text-center">
+                    <h4> <i class="mdi mdi-download"></i> <a href="https://www.nuget.org/packages/RandomSiteControlsMVC/" target="_blank">Install Now</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-white bg-danger overflow-hidden doc-link">
+            <div class="card-body">
+                <div class="toll-free-box text-center">
+                    <h4> <i class="mdi mdi-file-document-outline"></i> <a href="@Model.Link" target="_blank">@Model.Text</a></h4>
+                </div>
+            </div>
         </div>
     </div>
 </div>
