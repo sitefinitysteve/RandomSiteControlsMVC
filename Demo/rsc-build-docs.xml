@@ -60,6 +60,12 @@
             SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
             </summary>
         </member>
+        <member name="M:RandomSiteControlsMVC.Services.UtilityServiceServicePlugin.Register(ServiceStack.IAppHost)">
+            <summary>
+            Call this at SitefinityWebApp.App_Start.RegisterServiceStackRoutes
+            SystemManager.RegisterServiceStackPlugin(new Medportal.Services.Utility.UtilityServiceServicePlugin());
+            </summary>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Telerik.Sitefinity.CollectionExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)" -->
         <member name="M:Telerik.Sitefinity.CollectionExtensions.Shuffle``1(System.Collections.Generic.IList{``0})">
             <summary>

@@ -1498,7 +1498,6 @@
     <EmbeddedResource Include="Mvc\Views\DocumentTree\DesignerView.Simple.json" />
     <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.less" />
     <Content Include="Mvc\Views\Extensions\Extensions.cshtml" />
-    <Content Include="Mvc\Views\PrintTo\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
