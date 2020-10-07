@@ -1180,7 +1180,6 @@
       <DependentUpon>documenttree.css</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mvc\Scripts\DocumentTree\designerview-simple.js" />
-    <Content Include="Mvc\Views\PrintTo\Resources\printer.js" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.min.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\js\bootstrap.min.js" />
@@ -1500,8 +1499,6 @@
     <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.less" />
     <Content Include="Mvc\Views\Extensions\Extensions.cshtml" />
     <Content Include="Mvc\Views\PrintTo\Default.cshtml" />
-    <Content Include="Mvc\Views\PrintTo\DesignerView.Simple.cshtml" />
-    <EmbeddedResource Include="Mvc\Views\PrintTo\DesignerView.Simple.json" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

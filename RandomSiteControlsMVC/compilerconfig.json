@@ -30,5 +30,9 @@
   {
     "outputFile": "MVC/Views/Twitter/Resources/twitter.es5.js",
     "inputFile": "MVC/Views/Twitter/Resources/twitter.js"
+  },
+  {
+    "outputFile": "MVC/Views/PrintTo/Resources/printer.es5.js",
+    "inputFile": "MVC/Views/PrintTo/Resources/printer.js"
   }
 ]

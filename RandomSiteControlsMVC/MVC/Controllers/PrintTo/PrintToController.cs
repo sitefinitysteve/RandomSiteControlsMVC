@@ -63,8 +63,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 
         #region PROPERTIES
         public string ElementId { get; set; }
-        public string Filename { get; set; } = "Page";
-        public string ButtonText { get; set; } = "Document1";
+        public string Filename { get; set; } = "Document1";
+        public string ButtonText { get; set; } = "Print";
         public string TemplateName { get; set; } = "Default";
         public PrintModeEnum Mode { get; set; } = PrintModeEnum.Container;
         public PrintPaperSizeEnum PaperSize { get; set; } = PrintPaperSizeEnum.Auto;

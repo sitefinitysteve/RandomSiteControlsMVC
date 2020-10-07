@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿"use strict";
+
+$(document).ready(function () {
     $(".print-button").each(function () {
         var button = $(this);
         button.on("click", function () {
@@ -34,30 +36,30 @@
             //add printable class
             selector.addClass("exporting-print-job");
 
-            var isMultipage = (multipage == 'true')
-            var isLandscape = (landscape == 'true')
+            var options = {
+                paperSize: papersize,
+                margin: { left: ml, top: mt, right: mr, bottom: mb },
+                multipage: multipage,
+                landscape: landscape
+            };
 
-            kendo.drawing.drawDOM(selector)
-                .then(function (group) {
-                    // Render the result as a PDF file
-                    return kendo.drawing.exportPDF(group, {
-                        paperSize: papersize,
-                        margin: { left: ml, top: mt, right: mr, bottom: mb },
-                        multipage: isMultipage,
-                        landscape: isLandscape
-                    });
-                })
-                .done(function (data) {
-                    // Save the PDF file
-                    kendo.saveAs({
-                        dataURI: data,
-                        fileName: filename + ".pdf",
-                        proxyURL: "/RestApi/utility/proxy/save"
-                    });
+            console.log(options);
 
-                    button.show();
-                    selector.removeClass("exporting-print-job");
+            kendo.drawing.drawDOM(selector).then(function (group) {
+                // Render the result as a PDF file
+                return kendo.drawing.exportPDF(group, options);
+            }).done(function (data) {
+                // Save the PDF file
+                kendo.saveAs({
+                    dataURI: data,
+                    fileName: filename + ".pdf",
+                    proxyURL: "/RestApi/utility/proxy/save"
                 });
+
+                button.show();
+                selector.removeClass("exporting-print-job");
+            });
         });
     });
 });
+

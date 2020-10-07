@@ -187,6 +187,7 @@
     <Compile Include="Services\UtilityService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MVC\Views\PrintTo\Resources\printer.js" />
     <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.min.css">
       <DependentUpon>twitter.css</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +286,9 @@
     <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.less" />
     <EmbeddedResource Include="MVC\Views\Twitter\Tweets.cshtml" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Bootstrap3.cshtml" />
+    <EmbeddedResource Include="MVC\Views\PrintTo\Default.cshtml" />
+    <EmbeddedResource Include="MVC\Views\PrintTo\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\PrintTo\DesignerView.Simple.json" />
     <None Include="MVC\Views\WidgetFinder\Resources\widgetfinder.less" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -295,6 +299,14 @@
     <EmbeddedResource Include="Scripts\test.js" />
     <EmbeddedResource Include="Scripts\Markdown\showdown.min.js" />
     <EmbeddedResource Include="MVC\Scripts\Markdown\designerview-simple.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MVC\Views\PrintTo\Resources\printer.es5.js">
+      <DependentUpon>printer.js</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\PrintTo\Resources\printer.es5.min.js">
+      <DependentUpon>printer.es5.js</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
