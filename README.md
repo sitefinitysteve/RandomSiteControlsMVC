@@ -15,6 +15,7 @@ RandomSiteControls re-written in pure MVC for Sitefinity Feather
 * Content markdown
 * Google map
 * Page title
+* Print to PDF
 * Tabstrip (Kendo, Bootstrap): Change the site default at /Sitefinity/Administration/Settings/Advanced/SitefinitySteveMVC 
 
 ### Modules
