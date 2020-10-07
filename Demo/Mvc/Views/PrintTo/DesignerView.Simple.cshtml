@@ -1,0 +1,87 @@
+﻿@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity;
+
+<div class="form-group">
+    <label for="title">Selection Mode</label>
+    <select class="form-control" ng-model="properties.Mode.PropertyValue">
+        <option value="Container">Current Layout</option>
+        <option value="Element">Specific element on the page</option>
+    </select>
+    <div ng-if="properties.Mode.PropertyValue == 'Container'" class="text-muted">Printing will happen in the current layout widget where this is dropped</div>
+</div>
+
+<div class="form-group" ng-if="properties.Mode.PropertyValue != 'Container'">
+    <label for="title">Element</label>
+    <input type="text" id="title" ng-model="properties.ElementId.PropertyValue" class="form-control" />
+    <div class="text-muted">Class (.myclass) or Id (#elementname)</div>
+</div>
+
+<div class="form-group">
+    <label for="title">Filename</label>
+    <input type="text" id="title" ng-model="properties.Filename.PropertyValue" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="title">Button Text</label>
+    <input type="text" id="title" ng-model="properties.ButtonText.PropertyValue" class="form-control" />
+    <div class="text-muted">Text to display in the button</div>
+</div>
+
+<div class="form-group">
+    <label for="title">Paper size</label>
+    <select class="form-control" ng-model="properties.PaperSize.PropertyValue">
+        <option>Auto</option>
+        <option>A4</option>
+        <option>Letter</option>
+        <option>Legal</option>
+        <option>Executive</option>
+        <option>Folio</option>
+        <option>Tabloid</option>
+    </select>
+</div>
+
+<div class="form-group">
+	<label>Margins</label>
+    <div class="row">
+        <div class="col-md-3">
+            <label>Top</label>
+            <input type="text" ng-model="properties.MarginTop.PropertyValue" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label>Left</label>
+            <input type="text" ng-model="properties.MarginLeft.PropertyValue" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label>Bottom</label>
+            <input type="text" ng-model="properties.MarginBottom.PropertyValue" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label>Right</label>
+            <input type="text" ng-model="properties.MarginRight.PropertyValue" class="form-control" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="title">Layout</label>
+    <select class="form-control" ng-model="properties.Landscape.PropertyValue">
+        <option value="False">Portrait</option>
+        <option value="True">Landscape</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Mutlipage</label>
+    <div class="radio">
+        <label class="full-width">
+            <input type="radio" ng-model="properties.Multipage.PropertyValue" value="True" />
+            Yes
+        </label>
+    </div>
+    <div class="radio">
+        <label class="full-width">
+            <input type="radio" ng-model="properties.Multipage.PropertyValue" value="False" />
+            No
+        </label>
+    </div>
+</div>

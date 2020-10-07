@@ -154,6 +154,7 @@
     <Compile Include="Helpers\Reference.cs" />
     <Compile Include="HttpModules\RemoveHttpHeadersModule.cs" />
     <Compile Include="Installer.cs" />
+    <Compile Include="MVC\Controllers\PrintTo\PrintToController.cs" />
     <Compile Include="MVC\Controllers\Twitter\TwitterController.cs" />
     <Compile Include="MVC\Controllers\WidgetFinder\WidgetFinderController.cs" />
     <Compile Include="MVC\Controllers\List\ListController.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="MVC\Controllers\Markdown\MarkdownController.cs" />
     <Compile Include="MVC\Controllers\PageTitle\PageTitleController.cs" />
     <Compile Include="MVC\Controllers\TabStrip\TabStripController.cs" />
+    <Compile Include="MVC\Models\PrintTo\PrintToModel.cs" />
     <Compile Include="MVC\Models\ScheduledTaskStatus\ScheduledTaskStatusModel.cs" />
     <Compile Include="MVC\Models\Twitter\TwitterModel.cs" />
     <Compile Include="MVC\Models\WidgetFinder\WidgetFinderModel.cs" />
@@ -182,6 +184,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\RSCUtil.cs" />
     <Compile Include="Services\TwitterApiService.cs" />
+    <Compile Include="Services\UtilityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.min.css">

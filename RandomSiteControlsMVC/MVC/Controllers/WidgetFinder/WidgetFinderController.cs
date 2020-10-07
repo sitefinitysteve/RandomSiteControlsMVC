@@ -9,6 +9,7 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 using RandomSiteControlsMVC.MVC.Models.WidgetFinder;
 using Telerik.Sitefinity;
 using Telerik.Sitefinity.Fluent.Pages;
+using Telerik.Sitefinity.Data;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -20,6 +21,24 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             WidgetFinderModel model = GetModel();
 
+            if (this.AllowUnauthenticated)
+            {
+                var pageManager = App.WorkWith().Pages().GetManager();
+                using (var elevatedModeRegion = new ElevatedModeRegion(pageManager))
+                {
+                    this.GetData(control, model);
+                }
+            }
+            else
+            {
+                this.GetData(control, model);
+            }
+
+            return View(this.TemplateName, model);
+        }
+
+        private void GetData(string control, WidgetFinderModel model)
+        {
             model.Controls = App.WorkWith().Pages().LocatedIn(PageLocation.Frontend)
                                 .Where(p => p.Page != null)
                                 .Get()
@@ -37,8 +56,6 @@ namespace SitefinityWebApp.Mvc.Controllers
                                     .Get()
                                     .ToList());
             }
-
-            return View("Default", model);
         }
 
         private WidgetFinderModel GetModel()
@@ -50,11 +67,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 
         protected override void HandleUnknownAction(string actionName)
         {
-            View("Default", this.GetModel()).ExecuteResult(this.ControllerContext);
+            View(this.TemplateName, this.GetModel()).ExecuteResult(this.ControllerContext);
         }
 
         #region PROPERTIES
-
+        public string TemplateName { get; set; } = "Default";
+        public bool AllowUnauthenticated { get; set; } = false;
         #endregion
     }
 }

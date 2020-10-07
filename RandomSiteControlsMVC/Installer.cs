@@ -51,6 +51,9 @@ namespace RandomSiteControlsMVC
                 //Register ServiceStack route
                 SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
             }
+
+            //Utility service, for printer
+            SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.UtilityServiceServicePlugin());
         }
 
         private static void InstallLayouts()

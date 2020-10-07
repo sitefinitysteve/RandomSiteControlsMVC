@@ -55,6 +55,16 @@
                 }
             </ul>
 
+            @if (Model.FoundPages.Count() == 0 && !String.IsNullOrEmpty(Model.SelectedControl))
+            {
+                <h3>No items here might mean you don't have access</h3>
+            }
+
+            @if (String.IsNullOrEmpty(Model.SelectedControl))
+            {
+                <h3>Select a widget from the list on the side to find out where it lives on the site</h3>
+            }
+
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
