@@ -2,5 +2,9 @@
   {
     "outputFile": "ResourcePackages/RSC/assets/rscdemo.es5.js",
     "inputFile": "ResourcePackages/RSC/assets/rscdemo.js"
+  },
+  {
+    "outputFile": "Mvc/Views/DocumentTree/Resources/documenttree.css",
+    "inputFile": "Mvc/Views/DocumentTree/Resources/documenttree.less"
   }
 ]

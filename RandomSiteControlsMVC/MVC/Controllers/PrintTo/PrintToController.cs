@@ -81,7 +81,14 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             get
             {
-                return String.IsNullOrEmpty(this.ElementId);
+                if(this.Mode == PrintModeEnum.Container)
+                {
+                    return false;
+                }
+                else
+                {
+                    return String.IsNullOrEmpty(this.ElementId);
+                }
             }
         }
 

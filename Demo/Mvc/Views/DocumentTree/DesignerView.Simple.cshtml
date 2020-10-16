@@ -8,22 +8,22 @@
 
 @*@Html.Script(ScriptRef.KendoWeb, RSCUtil.SfsConfig.KendoScriptPlaceholder)*@
 
-<uib-tabset class="nav-tabs-wrapper">
-    <uib-tab heading="General">
+@*<uib-tabset class="nav-tabs-wrapper">
+    <uib-tab heading="Tabs">*@
         <div class="ng-cloak">
             <div class="form-group">
                 <label for="sortOptions">Selected Library</label>
-                <sf-list-selector sf-library-selector sf-media-type="documents" sf-selected-item-id="selectedLibraryId" sf-selected-item="selectedLibrary" sf-provider="provider" sf-multiselect="false" sf-sortable="false" />
+                <sf-list-selector sf-library-selector sf-media-type="documents" sf-selected-item-id="librarySelector.selectedItemId" sf-selected-item="librarySelector.selectedItem" />
             </div>
 
             <div class="form-group">
                 <label for="sortOptions">Template</label>
                 <div class="row">
                     <div class="col-xs-3">
-                        <select id="sortOptions" ng-model="properties.RenderMode.PropertyValue" class="form-control">
-                            <option value="TreeView"> TreeView</option>
+                        <select id="sortOptions" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                            <option value="Simple"> Simple</option>
                             <option value="PanelBar"> PanelBar</option>
-                            <option value="Html"> Html</option>
+                            <option value="TreeView"> Treeview</option>
                         </select>
                     </div>
                 </div>
@@ -42,12 +42,16 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+            	<label>Render Selected Folder</label>
+                
+            </div>
         </div>
-    </uib-tab>
+    <!--</uib-tab>-->
     @*<uib-tab heading="Options">
 
     </uib-tab>*@
-</uib-tabset>
+<!--</uib-tabset>-->
 
 
 <style>

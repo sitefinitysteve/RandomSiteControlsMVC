@@ -1166,20 +1166,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <EmbeddedResource Include="Mvc\Scripts\DocumentTree\designerview-simple.js" />
     <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.js" />
-    <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.es5.js">
-      <DependentUpon>documenttree.js</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.es5.min.js">
-      <DependentUpon>documenttree.es5.js</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.css">
       <DependentUpon>documenttree.less</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.min.css">
       <DependentUpon>documenttree.css</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mvc\Scripts\DocumentTree\designerview-simple.js" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.min.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\js\bootstrap.min.js" />
@@ -1370,7 +1364,9 @@
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ResourcePackages\RSC\assets\hyper\js\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App_Data\GeoLocation\GeoLite2-City.mmdb" />
     <Content Include="ResourcePackages\RSC\package-lock.json" />
@@ -1493,11 +1489,16 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Mvc\Views\WidgetFinder\Default.cshtml" />
-    <Content Include="Mvc\Views\DocumentTree\Default.cshtml" />
+    <Content Include="Mvc\Views\Extensions\Extensions.cshtml" />
+    <Content Include="Mvc\Views\ContentLiteral\Default.cshtml" />
+    <Content Include="Mvc\Views\ContentLiteral\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="Mvc\Views\ContentLiteral\DesignerView.Simple.json" />
+    <Content Include="Mvc\Views\DocumentTree\Treeview.cshtml" />
     <Content Include="Mvc\Views\DocumentTree\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="Mvc\Views\DocumentTree\DesignerView.Simple.json" />
     <EmbeddedResource Include="Mvc\Views\DocumentTree\Resources\documenttree.less" />
-    <Content Include="Mvc\Views\Extensions\Extensions.cshtml" />
+    <Content Include="Mvc\Views\DocumentTree\Simple.cshtml" />
+    <Content Include="Mvc\Views\DocumentTree\Panelbar.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

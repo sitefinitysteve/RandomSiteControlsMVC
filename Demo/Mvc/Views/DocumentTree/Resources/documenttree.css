@@ -1,9 +1,15 @@
 ﻿.sfs-document-tree span.title {
-  padding-left: 8px;
+  padding-left: 5px;
 }
-.sfs-document-tree .folder {
-  font-weight: bold;
+.sfs-document-tree.simple ul {
+  padding-left: 20px;
 }
-.sfs-document-tree .folder img {
-  width: 25px;
+.sfs-document-tree.simple ul li {
+  list-style-type: none;
+}
+.sfs-document-tree.panelbar .card-body ul {
+  padding-left: 20px;
+}
+.sfs-document-tree.panelbar .card-body ul li {
+  list-style-type: none;
 }

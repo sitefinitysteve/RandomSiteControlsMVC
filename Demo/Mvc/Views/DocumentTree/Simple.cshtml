@@ -1,0 +1,59 @@
+﻿@model RandomSiteControlsMVC.MVC.Models.DocumentTree.DocumentTreeModel
+
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity;
+@using Telerik.Sitefinity.Mvc;
+@using RandomSiteControlsMVC.Helpers;
+@using Telerik.Sitefinity.Services;
+@using RandomSiteControlsMVC.MVC.Models.DocumentTree
+
+
+@Html.Script("/Mvc/Views/DocumentTree/Resources/documenttree.js", RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+@Html.StyleSheet("/Mvc/Views/DocumentTree/Resources/documenttree.min.css", "head")
+
+
+@*@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+    @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")*@
+
+<div class="sfs-document-tree simple" data-mode="simple" data-expand-levels="@Model.ExpandLevelDepth" >
+    <ul class="root">
+        @foreach (var node in Model.Nodes)
+        {
+            @RenderSubLevelsRecursive(node);
+        }
+    </ul>
+</div>
+
+@*Here is specified the rendering for the sub levels*@
+@helper RenderSubLevelsRecursive(DocumentTreeNode node)
+{
+    <li>
+        @if (node.IsFolder)
+        {
+            <div class="folder mt-1">
+                <i class="fas fa-folder-open"></i> <span class="title">@node.Title</span>
+            </div>
+        }
+        else
+        {
+            var icon = "far fa-file";
+            <a href="@node.NavigateUrl" target="@node.Target" class="document">
+                <i class="@icon ext-@node.Extension"></i>
+                <span class="title">@node.Title</span>
+            </a>
+        }
+
+
+        @if (node.Nodes.Count > 0)
+        {
+            <ul class="">
+                @foreach (var childNode in node.Nodes)
+                {
+                    @RenderSubLevelsRecursive(childNode)
+                }
+            </ul>
+        }
+    </li>
+}
+

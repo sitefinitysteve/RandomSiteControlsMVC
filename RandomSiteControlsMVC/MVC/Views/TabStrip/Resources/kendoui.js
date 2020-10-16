@@ -15,13 +15,19 @@
                 panelwrapper.unwrap();
 
                 //Initalize the tabstrip on sfs-tabstrip
-                $(this).kendoTabStrip({
-                    animation: false,
-                    tabPosition: config.data("tab-position")
-                });
+                try {
+                    $(this).kendoTabStrip({
+                        animation: false,
+                        tabPosition: config.data("tab-position")
+                    });
+
+                    
+                } catch{
+                    console.error("Likely multiple instances of jQuery are preventing kendoUI from loading, can't initalize tabstrip");
+                }
 
                 var className = config.data("classname");
-                if(className !== ""){
+                if (className !== "") {
                     wrapper.addClass(className);
                 }
 

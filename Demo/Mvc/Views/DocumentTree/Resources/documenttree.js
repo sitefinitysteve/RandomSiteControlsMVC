@@ -1,31 +1,20 @@
 ﻿$(document).ready(function () {
     $(".sfs-document-tree").each(function () {
+        var root = $(this).find(".root").first();
         var mode = $(this).data("mode");
-        var root = $(this).find(".root");
+        
+        if (mode == "treeview") {
+            try {
+                var treeview = root.kendoTreeView({
+                    animation: false
+                }).data("kendoTreeView");
 
-        if (mode === "TreeView") {
-            renderDocumentTreeAsTree(root);
-
-        } else {
-            renderDocumentTreeAsPanel(root);
+                treeview.expand(".k-item");
+            } catch{
+                console.error("Likely multiple instances of jQuery are preventing kendoUI from loading, can't initalize treeview")
+            }
         }
 
         $(this).removeAttr("style");
     });
-
-    function renderDocumentTreeAsTree(root) {
-        var treeview = root.kendoTreeView({
-            animation: false
-        }).data("kendoTreeView");
-
-        treeview.expand(".k-item");
-    }
-
-    function renderDocumentTreeAsPanel(root) {
-        var panelbar = root.kendoPanelBar({
-            animation: false
-        }).data("kendoPanelBar");
-
-        panelbar.expand(".k-item");
-    }
 });

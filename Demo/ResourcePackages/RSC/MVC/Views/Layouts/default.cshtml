@@ -71,9 +71,9 @@
                 color: #FFF;
             }
 
-            .doc-link a:hover {
-                text-decoration: underline;
-            }
+                .doc-link a:hover {
+                    text-decoration: underline;
+                }
 
             .left-side-menu {
                 padding-top: 93px;
@@ -210,12 +210,14 @@
     @Html.Section("plugins")
     @Html.Section("bottom")
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
     @if (!SystemManager.IsDesignMode)
     {
-        Html.Script("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js", "jquery");
+        Html.Script(ScriptRef.JQuery, Telerik.Sitefinity.RSCUtil.SfsConfig.jQueryScriptPlaceholder);
         Html.Script("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", "frameworks");
-        Html.Script("/ResourcePackages/RSC/assets/hyper/js/vendor.min.js", "bottom");
+        Html.Script("/ResourcePackages/RSC/assets/hyper/js/vendor.min.js", "plugins");
+
         Html.Script("/ResourcePackages/RSC/assets/hyper/js/app.min.js", "bottom");
         //Html.Script("/ResourcePackages/RSC/assets/rscdemo.min.js", "bottom");
     }

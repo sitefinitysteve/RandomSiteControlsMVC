@@ -1,0 +1,9 @@
+﻿{
+  "priority": 1,
+  "scripts": [
+
+    "Mvc/Scripts/sf-new-observer.js"
+
+  ],
+  "components": []
+}

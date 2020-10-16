@@ -171,7 +171,6 @@
     <Compile Include="MVC\Models\DocumentTree\DocumentTreeModel.cs" />
     <Compile Include="MVC\Models\ContentLiteral\ContentLiteralModel.cs" />
     <Compile Include="MVC\Models\DocumentTree\DocumentTreeNode.cs" />
-    <Compile Include="MVC\Models\DocumentTree\StyleEnum.cs" />
     <Compile Include="MVC\Models\GoogleMap\GoogleMapModel.cs" />
     <Compile Include="MVC\Models\InlineMarkupHelpers\SfDocLink.cs" />
     <Compile Include="MVC\Models\InlineMarkupHelpers\SfImageLink.cs" />
@@ -232,20 +231,7 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.js" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tab.html" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tabstrip.html" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.css">
-      <DependentUpon>documenttree.less</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Scripts\DocumentTree\designerview-simple.js" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.es5.js">
-      <DependentUpon>documenttree.js</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.es5.min.js">
-      <DependentUpon>documenttree.es5.js</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.js" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.min.css">
-      <DependentUpon>documenttree.css</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </EmbeddedResource>
@@ -263,10 +249,6 @@
       <DependentUpon>tabstrip.less</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\tabstrip.less" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\Default.cshtml" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.less" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.json" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\PageTitle\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\PageTitle\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\PageTitle\PageTitle.cshtml" />

@@ -1,0 +1,13 @@
+﻿@model RandomSiteControlsMVC.MVC.Models.ContentLiteral.ContentLiteralModel
+
+
+@if (Model.UseWrapper)
+{
+    <div class="sfContentBlock sfContentLiteral">
+        @Html.Raw(Model.Content)
+    </div>
+}
+else
+{
+    @Html.Raw(Model.Content)
+}

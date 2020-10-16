@@ -11,10 +11,14 @@
 @Html.Script(ScriptRef.JQuery, RSCUtil.SfsConfig.jQueryScriptPlaceholder)
 @Html.Script(ScriptRef.KendoWeb, RSCUtil.SfsConfig.KendoScriptPlaceholder)
 
-@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
-@Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")
+@Html.Script("/Mvc/Views/DocumentTree/Resources/documenttree.js", RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+@Html.StyleSheet("/Mvc/Views/DocumentTree/Resources/documenttree.min.css", "head")
 
-<div class="sfs-document-tree @(Model.RenderMode.ToString().ToLower())" data-mode="@Model.RenderMode" data-expand-levels="@Model.ExpandLevelDepth" style="visibility: hidden">
+
+@*@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+    @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")*@
+
+<div class="sfs-document-tree treelist" data-mode="treeview" data-expand-levels="@Model.ExpandLevelDepth" style="visibility: hidden">
     <ul class="root">
         @foreach (var node in Model.Nodes)
         {
@@ -26,19 +30,17 @@
 @*Here is specified the rendering for the sub levels*@
 @helper RenderSubLevelsRecursive(DocumentTreeNode node)
 {
-    <li >
+    <li>
         <a href="@node.NavigateUrl" target="@node.Target" class="@(!node.IsFolder ? "document" : "folder")">
             @if (node.IsFolder)
             {
-                if (!String.IsNullOrEmpty(node.ExpandedImageUrl)) {
-                    <img src="@node.ExpandedImageUrl" class="expanded-folder" />
-                }
+                <i class="fas fa-folder"></i>
             }
             else
             {
-                <i class="icon-file icon-txt icon-sm">
-                    <span class="icon-txt-@(node.Extension)">@(node.Extension)</span>
-                </i>
+                var icon = "far fa-file";
+
+                <i class="@icon ext-@node.Extension"></i>
             }
             <span class="title">@node.Title</span>
         </a>

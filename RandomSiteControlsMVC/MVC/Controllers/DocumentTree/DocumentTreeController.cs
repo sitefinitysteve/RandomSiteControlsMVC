@@ -17,6 +17,7 @@ using Telerik.Sitefinity.Security.Claims;
 using System.Collections.Generic;
 using Telerik.Sitefinity.Services;
 using Telerik.Sitefinity.Data.Linq.Dynamic;
+using ServiceStack;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -24,20 +25,36 @@ namespace SitefinityWebApp.Mvc.Controllers
     [ControllerToolboxItem(Name = "DocumentTreeMVC", Title = "Document Tree", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfListitemsIcn sfMvcIcn")]
     public class DocumentTreeController : Controller, ICustomWidgetVisualization
     {
-        private string _cacheKey = "DocumentFolderList-LibId:{0}-FolderId:{1}-IsAnon:{2}-UserId:{3}";
-
         public ActionResult Index()
         {
-            DocumentTreeModel model = GetModel();
+            DocumentTreeModel model = this.GetModel();
 
-            return View("Default", model);
+            return View(this.TemplateName, model);
         }
 
         private DocumentTreeModel GetModel()
         {
+            if (!String.IsNullOrEmpty(this.SerializedSelectedItemId))
+            {
+                dynamic item = DynamicJson.Deserialize(this.SerializedSelectedItem);
+                if (Guid.Parse(item.RootId) == Guid.Empty)
+                {
+                    //Album
+                    this.LibraryId = new Guid(this.SerializedSelectedItemId);   
+                }
+                else
+                {
+                    //Folder
+                    this.LibraryId = new Guid(item.RootId);
+                    this.FolderId = new Guid(item.Id);
+                }
+
+                this.SelectedLibraryName = item.Title;
+            }
+
             var model = new DocumentTreeModel();
 
-            model.RenderMode = this.RenderMode;
+            model.RenderParent = this.RenderParent;
             model.ExpandLevelDepth = this.ExpandLevelDepth;
             model.Nodes.AddRange(this.SetTreeNodeDocumentLibrariesAndFolders());
             return model;
@@ -45,74 +62,52 @@ namespace SitefinityWebApp.Mvc.Controllers
 
         protected override void HandleUnknownAction(string actionName)
         {
-            View("Default", this.GetModel()).ExecuteResult(this.ControllerContext);
-        }
-
-        private void CreateCacheKey()
-        {
-            _cacheKey = _cacheKey.Arrange(this.LibraryId, this.FolderId, this.IsAnonymous, this.UserId);
+            View(this.TemplateName, this.GetModel()).ExecuteResult(this.ControllerContext);
         }
 
 
         public List<DocumentTreeNode> SetTreeNodeDocumentLibrariesAndFolders()
         {
             List<DocumentTreeNode> nodes = new List<DocumentTreeNode>();
-            //if (RSCUtil.Cache.Contains(_cacheKey))
-            //{
-            //    //Load Cache
-            //    nodes = RSCUtil.Cache[_cacheKey] as List<DocumentTreeNode>;
-            //}
-            //else
-            //{
-                //Create Cache
-                LibrariesManager manager = new LibrariesManager();
+            LibrariesManager manager = new LibrariesManager();
 
-                //Folder Focused
-                if (this.FolderId != Guid.Empty)
+            //Folder Focused
+            if (this.FolderId != Guid.Empty)
+            {
+                var album = manager.GetDocumentLibrary(this.LibraryId);
+                if (album != null)
                 {
-                    var album = manager.GetDocumentLibrary(this.LibraryId);
-                    if (album != null)
+                    var selectedFolder = manager.GetFolder(this.FolderId);
+                    if (selectedFolder != null)
                     {
-                        var folders = manager.GetAllFolders(album);
-                        var selectedFolder = folders.FirstOrDefault(x => x.Id == this.FolderId);
-                        if (selectedFolder != null)
-                        {
-                            this.ParseSingleFolder(nodes, manager, album, selectedFolder);
-                        }
-                        else
-                        {
-                            throw new Exception("Invalid FolderId Specified or Unable to find folder");
-                        }
+                        this.ParseSingleFolder(nodes, manager, album, selectedFolder);
                     }
                     else
                     {
-                        throw new Exception("Invalid LibraryId Specified or Unable to find library");
+                        throw new Exception("Invalid FolderId Specified or Unable to find folder");
                     }
                 }
                 else
                 {
-                    if (this.LibraryId != Guid.Empty)
+                    throw new Exception("Invalid LibraryId Specified or Unable to find library");
+                }
+            }
+            else
+            {
+                if (this.LibraryId != Guid.Empty)
+                {
+                    //Libary Focused
+                    var album = manager.GetDocumentLibrary(this.LibraryId);
+                    if (album != null)
                     {
-                        //Libary Focused
-                        var album = manager.GetDocumentLibrary(this.LibraryId);
-                        if (album != null)
-                        {
-                            this.ParseSingleAlbum(nodes, manager, album);
-                        }
-                        else
-                        {
-                            throw new Exception("Invalid LibraryId Specified");
-                        }
+                        this.ParseSingleAlbum(nodes, manager, album);
+                    }
+                    else
+                    {
+                        throw new Exception("Invalid LibraryId Specified");
                     }
                 }
-
-                if (!SystemManager.IsDesignMode && RSCUtil.SfsConfig.CacheTimeoutMinutes > 0)
-                {
-                    //Add to cache
-                    RSCUtil.AddToCache(nodes, _cacheKey, TimeSpan.FromMinutes(RSCUtil.SfsConfig.CacheTimeoutMinutes));
-                }
-
-            //}
+            }
 
             //Bind to the tree
             return nodes;
@@ -125,7 +120,6 @@ namespace SitefinityWebApp.Mvc.Controllers
             DocumentTreeNode folderNode = new DocumentTreeNode();
             folderNode.Title = folder.Title;
             folderNode.Expanded = this.Expanded;
-            this.SetImage(folderNode);
             folderNode.Id = folder.Id;
             folderNode.IsFolder = true;
             folderNode.CssClass += " album";
@@ -152,7 +146,6 @@ namespace SitefinityWebApp.Mvc.Controllers
             DocumentTreeNode rootNode = new DocumentTreeNode();
             rootNode.Title = album.Title;
             rootNode.Expanded = this.Expanded;
-            this.SetImage(rootNode);
             rootNode.Id = album.Id;
             rootNode.IsFolder = true;
             rootNode.CssClass += " album";
@@ -175,7 +168,6 @@ namespace SitefinityWebApp.Mvc.Controllers
                 var folderNode = new DocumentTreeNode();
                 folderNode.Title = folder.Title;
                 folderNode.Expanded = this.Expanded;
-                this.SetImage(folderNode);
                 folderNode.Id = folder.Id;
                 folderNode.IsFolder = true;
                 folderNode.CssClass += " folder";
@@ -203,7 +195,6 @@ namespace SitefinityWebApp.Mvc.Controllers
             var folderNode = new DocumentTreeNode();
             folderNode.Expanded = this.Expanded;
             folderNode.Title = folder.Title;
-            this.SetImage(folderNode);
             folderNode.Id = folder.Id;
             folderNode.IsFolder = true;
             folderNode.CssClass += " folder";
@@ -238,21 +229,6 @@ namespace SitefinityWebApp.Mvc.Controllers
             docNode.ContentCssClass = "sfdownloadTitle";
             docNode.CssClass += " sfdownloadFile sf{0}".Arrange(doc.Extension.Replace(".", "").ToLower());
             return docNode;
-        }
-
-        private void SetImage(DocumentTreeNode node)
-        {
-            #region IMAGES
-            if (!String.IsNullOrEmpty(this.FolderImageUrl))
-            {
-                node.ImageUrl = this.FolderImageUrl;
-            }
-
-            if (!String.IsNullOrEmpty(this.FolderExpandedImageUrl))
-            {
-                node.ExpandedImageUrl = this.FolderExpandedImageUrl;
-            }
-            #endregion
         }
 
         #region PROPERTIES
@@ -326,17 +302,6 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
         }
 
-        StyleEnum _style = StyleEnum.TreeView;
-        public StyleEnum RenderMode
-        {
-            get { return _style; }
-            set
-            {
-                _style = value;
-            }
-        }
-
-
         string _folderImageUrl;
         public string FolderImageUrl
         {
@@ -405,6 +370,9 @@ namespace SitefinityWebApp.Mvc.Controllers
                 return identity.UserId;
             }
         }
+
+        public bool RenderParent { get; set; } = true;
+        public string TemplateName { get; set; } = "Treeview";
         #endregion
 
         #region ICustomWidgetVisualization
@@ -412,7 +380,7 @@ namespace SitefinityWebApp.Mvc.Controllers
         {
             get
             {
-                return this.LibraryId == Guid.Empty;
+                return String.IsNullOrEmpty(this.SerializedSelectedItemId);
             }
         }
 

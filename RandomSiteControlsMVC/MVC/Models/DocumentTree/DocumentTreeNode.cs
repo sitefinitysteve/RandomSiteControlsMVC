@@ -23,7 +23,6 @@ namespace RandomSiteControlsMVC.MVC.Models.DocumentTree
         public string CssClass { get; set; }
         public string ContentCssClass { get; set; }
         public string ImageUrl { get; set; }
-        public string ExpandedImageUrl { get; set; }
         public string Extension { get; set; }
 
         public List<DocumentTreeNode> Nodes { get; set; }
