@@ -22,7 +22,6 @@
                     <div class="col-xs-3">
                         <select id="sortOptions" ng-model="properties.TemplateName.PropertyValue" class="form-control">
                             <option value="Simple"> Simple</option>
-                            <option value="Panelbar"> Panelbar</option>
                             <option value="TreeView"> Treeview</option>
                         </select>
                     </div>
@@ -42,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group" ng-if="properties.TemplateName.PropertyValue != 'Panelbar'">
+            <div class="form-group">
                 <div class="form-check pl-0">
                     <input type="checkbox" class="form-check-input" ng-model="properties.RenderParent.PropertyValue" ng-true-value="'True'" ng-false-value="'False'" ng-checked="properties.RenderParent.PropertyValue === 'True'">
                     <label class="form-check-label" for="exampleCheck1">Render Parent Folder</label>

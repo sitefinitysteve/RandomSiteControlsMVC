@@ -9,14 +9,9 @@
 @using RandomSiteControlsMVC.MVC.Models.DocumentTree
 
 
-@Html.Script("/Mvc/Views/DocumentTree/Resources/documenttree.js", RSCUtil.SfsConfig.DefaultScriptPlaceholder)
-@Html.StyleSheet("/Mvc/Views/DocumentTree/Resources/documenttree.min.css", "head")
+@Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")
 
-
-@*@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
-    @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")*@
-
-<div class="sfs-document-tree simple" data-mode="simple" data-expand-levels="@Model.ExpandLevelDepth" >
+<div class="sfs-document-tree simple" data-mode="simple" data-expand-levels="@Model.ExpandLevelDepth">
     <ul class="root">
         @foreach (var node in Model.Nodes)
         {

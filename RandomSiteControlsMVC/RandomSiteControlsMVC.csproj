@@ -186,6 +186,12 @@
     <Compile Include="Services\UtilityService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.min.css">
+      <DependentUpon>documenttree.css</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.css">
+      <DependentUpon>documenttree.less</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\PrintTo\Resources\printer.js" />
     <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.min.css">
       <DependentUpon>twitter.css</DependentUpon>
@@ -231,7 +237,6 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.js" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tab.html" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Layouts\tabstrip.html" />
-    <EmbeddedResource Include="MVC\Scripts\DocumentTree\designerview-simple.js" />
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\bootstrap.es5.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +276,11 @@
     <EmbeddedResource Include="MVC\Views\PrintTo\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\PrintTo\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\PrintTo\DesignerView.Simple.json" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.json" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.less" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\Simple.cshtml" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\Treeview.cshtml" />
     <None Include="MVC\Views\WidgetFinder\Resources\widgetfinder.less" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -289,6 +299,9 @@
     <EmbeddedResource Include="MVC\Views\PrintTo\Resources\printer.es5.min.js">
       <DependentUpon>printer.es5.js</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MVC\Scripts\DocumentTree\designerview-simple.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
