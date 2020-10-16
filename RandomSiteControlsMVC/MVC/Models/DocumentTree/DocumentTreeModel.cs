@@ -12,6 +12,7 @@ namespace RandomSiteControlsMVC.MVC.Models.DocumentTree
             this.Nodes = new List<DocumentTreeNode>();
         }
 
+        public bool Animated { get; set; }
         public int ExpandLevelDepth {get;set;}
         public bool RenderParent { get; set; }
         public List<DocumentTreeNode> Nodes { get; set; }

@@ -1,10 +1,18 @@
 ﻿.sfs-document-tree span.title {
   padding-left: 5px;
 }
-.sfs-document-tree.simple ul {
+.sfs-document-tree .btn-link.collapsed .fa-folder-open:before {
+  content: "\f07b";
+}
+.sfs-document-tree .collapsing.disable-animation {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+.sfs-document-tree ul {
   padding-left: 20px;
 }
-.sfs-document-tree.simple ul li {
+.sfs-document-tree ul li {
   list-style-type: none;
 }
 .sfs-document-tree.panelbar .card-body ul {

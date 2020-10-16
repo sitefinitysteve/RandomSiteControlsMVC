@@ -3,25 +3,33 @@
         padding-left: 5px;
     }
 
-
-    &.simple, &.panelbar{
-        .folder{
-
-        }
-    }
-
-    &.simple {
-        ul {
-            padding-left: 20px;
-
-            li {
-                list-style-type: none;
+    .btn-link {
+        &.collapsed {
+            .fa-folder-open {
+                &:before {
+                    content: "\f07b";
+                }
             }
         }
     }
 
+    .collapsing.disable-animation {
+        -webkit-transition: none;
+        transition: none;
+        display: none;
+    }
+
+
+    ul {
+        padding-left: 20px;
+
+        li {
+            list-style-type: none;
+        }
+    }
+
     &.panelbar {
-        .card-body{
+        .card-body {
             ul {
                 padding-left: 20px;
 

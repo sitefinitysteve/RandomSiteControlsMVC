@@ -54,6 +54,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
             var model = new DocumentTreeModel();
 
+            model.Animated = this.Animated;
             model.RenderParent = this.RenderParent;
             model.ExpandLevelDepth = this.ExpandLevelDepth;
             model.Nodes.AddRange(this.SetTreeNodeDocumentLibrariesAndFolders());
@@ -301,6 +302,8 @@ namespace SitefinityWebApp.Mvc.Controllers
                 _expanded = value;
             }
         }
+
+        public bool Animated { get; set; } = false;
 
         string _folderImageUrl;
         public string FolderImageUrl
