@@ -11,6 +11,38 @@
 
 @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")
 
+@functions{
+    /// <summary>
+    /// This just converts extension names into fontawesome class names, not using fontawesome... do whatever you need
+    /// </summary>
+    public string GetIconClassName(string extension)
+    {
+
+        switch (extension)
+        {
+            case "pptx":
+                return "far fa-file-powerpoint";
+            case "ppt":
+                return "far fa-file-powerpoint";
+            case "xlsx":
+                return "far fa-file-excel";
+            case "xls":
+                return "far fa-file-excel";
+            case "docx":
+                return "far fa-file-word";
+            case "doc":
+                return "far fa-file-word";
+            case "pdf":
+                return "far fa-file-pdf";
+            case "zip":
+                return "far fa-file-archive";
+            default:
+                return "far fa-file";
+        }
+    }
+}
+
+
 <div class="sfs-document-tree simple" data-mode="simple" data-expand-levels="@Model.ExpandLevelDepth">
     <ul class="root">
         @foreach (var node in Model.Nodes)
@@ -32,7 +64,8 @@
         }
         else
         {
-            var icon = "far fa-file";
+            var icon = this.GetIconClassName(node.Extension);
+
             <a href="@node.NavigateUrl" target="@node.Target" class="document">
                 <i class="@icon ext-@node.Extension"></i>
                 <span class="title">@node.Title</span>

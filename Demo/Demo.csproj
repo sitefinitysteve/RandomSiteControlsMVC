@@ -1486,6 +1486,7 @@
     <Content Include="Mvc\Views\ContentLiteral\Default.cshtml" />
     <Content Include="Mvc\Views\ContentLiteral\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="Mvc\Views\ContentLiteral\DesignerView.Simple.json" />
+    <Content Include="Mvc\Views\DocumentTree\Treeview.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

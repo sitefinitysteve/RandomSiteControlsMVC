@@ -233,130 +233,31 @@ namespace SitefinityWebApp.Mvc.Controllers
         }
 
         #region PROPERTIES
-        private Guid _libraryId = Guid.Empty;
-        public Guid LibraryId
-        {
-            get
-            {
-                return _libraryId;
-            }
-            set
-            {
-                _libraryId = value;
-            }
-        }
-
         public string SerializedSelectedItemId { get; set; }
         public string SerializedSelectedItem { get; set; }
 
-        string _selectedLibraryName;
-        public string SelectedLibraryName
-        {
-            get { return _selectedLibraryName; }
-            set
-            {
-                _selectedLibraryName = value;
-            }
-        }
+        public string SelectedLibraryName { get; set; }
 
-        int _expandLevelsToInclude = 2;
-        public int ExpandLevelDepth
-        {
-            get { return _expandLevelsToInclude; }
-            set
-            {
-                _expandLevelsToInclude = value;
-            }
-        }
+        public int ExpandLevelDepth { get; set; } = 2;
 
 
-        private Guid _folderId = Guid.Empty;
-        public Guid FolderId
-        {
-            get
-            {
-                return _folderId;
-            }
-            set
-            {
-                _folderId = value;
-            }
-        }
+        public Guid LibraryId { get; set; } = Guid.Empty;
+        public Guid FolderId { get; set; } = Guid.Empty;
 
-        string _documentFilterExpression = "Visible == True && Status == Live";
-        public string FilterExpressionForDocuments
-        {
-            get { return _documentFilterExpression; }
-            set
-            {
-                _documentFilterExpression = value;
-            }
-        }
+        public string FilterExpressionForDocuments { get; set; } = "Visible == True && Status == Live";
 
-        bool _expanded = true;
-        public bool Expanded
-        {
-            get { return _expanded; }
-            set
-            {
-                _expanded = value;
-            }
-        }
+        public bool Expanded { get; set; } = true;
 
         public bool Animated { get; set; } = false;
 
-        string _folderImageUrl;
-        public string FolderImageUrl
-        {
-            get { return _folderImageUrl; }
-            set
-            {
-                _folderImageUrl = value;
-            }
-        }
+        public string Target { get; set; } = "_blank";
 
-        string _folderExpandedImageUrl;
-        public string FolderExpandedImageUrl
-        {
-            get { return _folderExpandedImageUrl; }
-            set
-            {
-                _folderExpandedImageUrl = value;
-            }
-        }
-
-        string _iconSize = "Small";
-        public string IconSize
-        {
-            get { return _iconSize; }
-            set
-            {
-                _iconSize = value;
-            }
-        }
-
-        string _target = "_blank";
-        public string Target
-        {
-            get { return _target; }
-            set
-            {
-                _target = value;
-            }
-        }
-
-        bool _showLineImages = false;
-        public bool ShowLineImages
-        {
-            get { return _showLineImages; }
-            set
-            {
-                _showLineImages = value;
-            }
-        }
+        public bool RenderParent { get; set; } = true;
+        public string TemplateName { get; set; } = "Treeview";
 
 
-        public bool IsAnonymous
+        #region helpers
+        protected bool IsAnonymous
         {
             get
             {
@@ -365,7 +266,7 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
         }
 
-        public Guid UserId
+        protected Guid UserId
         {
             get
             {
@@ -373,9 +274,7 @@ namespace SitefinityWebApp.Mvc.Controllers
                 return identity.UserId;
             }
         }
-
-        public bool RenderParent { get; set; } = true;
-        public string TemplateName { get; set; } = "Treeview";
+        #endregion
         #endregion
 
         #region ICustomWidgetVisualization
