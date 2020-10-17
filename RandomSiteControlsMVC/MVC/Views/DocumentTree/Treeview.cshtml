@@ -69,7 +69,7 @@
         @if (Model.RenderParent)
         {
             <div class="" id="@($"heading-{id}")">
-                <button class="btn btn-link pl-0 pr-0" data-toggle="collapse" data-target="#@(id)" aria-expanded="true" aria-controls="@(id)">
+                <button class="btn btn-link pl-0 pr-0 folder" data-toggle="collapse" data-target="#@(id)" aria-expanded="true" aria-controls="@(id)">
                     <i class="fas fa-folder-open"></i> @node.Title
                 </button>
             </div>
@@ -97,7 +97,7 @@
     <li>
         @if (node.IsFolder)
         {
-            <button class="btn btn-link pl-0 pr-0" data-toggle="collapse" data-target="#@(id)" aria-expanded="true" aria-controls="@(id)">
+            <button class="btn btn-link pl-0 pr-0 folder" data-toggle="collapse" data-target="#@(id)" aria-expanded="true" aria-controls="@(id)">
                 <i class="fas fa-folder-open"></i> @node.Title
             </button>
         }

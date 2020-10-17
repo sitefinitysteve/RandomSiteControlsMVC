@@ -9,6 +9,15 @@
   transition: none;
   display: none;
 }
+.sfs-document-tree .folder.btn {
+  color: #666;
+}
+.sfs-document-tree .folder i {
+  color: #F9D877;
+}
+.sfs-document-tree .folder .title {
+  color: #666;
+}
 .sfs-document-tree ul {
   padding-left: 20px;
 }
