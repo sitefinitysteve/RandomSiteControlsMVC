@@ -276,11 +276,11 @@
     <EmbeddedResource Include="MVC\Views\PrintTo\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\PrintTo\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\PrintTo\DesignerView.Simple.json" />
-    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.json" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\Resources\documenttree.less" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\DocumentTree\Treeview.cshtml" />
+    <EmbeddedResource Include="MVC\Views\DocumentTree\DesignerView.Simple.cshtml" />
     <None Include="MVC\Views\WidgetFinder\Resources\widgetfinder.less" />
     <None Include="packages.config" />
   </ItemGroup>

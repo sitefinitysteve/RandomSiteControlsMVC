@@ -22,7 +22,7 @@ using ServiceStack;
 namespace SitefinityWebApp.Mvc.Controllers
 {
     [EnhanceViewEnginesAttribute]
-    [ControllerToolboxItem(Name = "DocumentTreeMVC", Title = "Document Tree", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfListitemsIcn sfMvcIcn")]
+    [ControllerToolboxItem(Name = "DocumentTreeMVC", Title = "Document Tree", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfDownloadListIcn sfMvcIcn")]
     public class DocumentTreeController : Controller, ICustomWidgetVisualization
     {
         public ActionResult Index()
@@ -135,9 +135,13 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
 
             //Load Children
-            foreach (var child in folders.Where(x => x.ParentId == folder.Id))
+            var depth = 1;
+            if (depth <= this.ExpandLevelDepth)
             {
-                folderNode.Nodes.Add(this.GetChildNodes(child, folders, album, manager, docsInLibrary));
+                foreach (var child in folders.Where(x => x.ParentId == folder.Id))
+                {
+                    folderNode.Nodes.Add(this.GetChildNodes(child, folders, album, manager, docsInLibrary, depth));
+                }
             }
         }
 
@@ -182,16 +186,20 @@ namespace SitefinityWebApp.Mvc.Controllers
                 }
 
                 //Load Children
-                foreach (var child in folders.Where(x => x.ParentId == folder.Id))
+                var depth = 1;
+                if (depth < this.ExpandLevelDepth)
                 {
-                    folderNode.Nodes.Add(this.GetChildNodes(child, folders, album, manager, docsInLibrary));
+                    foreach (var child in folders.Where(x => x.ParentId == folder.Id))
+                    {
+                        folderNode.Nodes.Add(this.GetChildNodes(child, folders, album, manager, docsInLibrary, depth));
+                    }
                 }
 
                 rootNode.Nodes.Add(folderNode);
             }
         }
 
-        private DocumentTreeNode GetChildNodes(IFolder folder, IQueryable<IFolder> folders, DocumentLibrary album, LibrariesManager manager, IQueryable<Document> docsInLibrary)
+        private DocumentTreeNode GetChildNodes(IFolder folder, IQueryable<IFolder> folders, DocumentLibrary album, LibrariesManager manager, IQueryable<Document> docsInLibrary, int depth)
         {
             var folderNode = new DocumentTreeNode();
             folderNode.Expanded = this.Expanded;
@@ -209,11 +217,14 @@ namespace SitefinityWebApp.Mvc.Controllers
             }
 
             //Load Children
-            foreach (var child in folders.Where(x => x.ParentId == folder.Id))
+            depth = depth + 1;
+            if (depth < this.ExpandLevelDepth)
             {
-                folderNode.Nodes.Add(this.GetChildNodes(child, folders, album, manager, docsInLibrary));
+                foreach (var child in folders.Where(x => x.ParentId == folder.Id))
+                {
+                    folderNode.Nodes.Add(this.GetChildNodes(child, folders, album, manager, docsInLibrary, depth));
+                }
             }
-
             return folderNode;
         }
 
@@ -254,6 +265,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
         public bool RenderParent { get; set; } = true;
         public string TemplateName { get; set; } = "Treeview";
+        public string DebugName { get; set; }
 
 
         #region helpers

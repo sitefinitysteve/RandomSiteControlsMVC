@@ -74,7 +74,7 @@
                 </button>
             </div>
         }
-        <div id="@(id)" class="collapse show @(!Model.Animated ? "disable-animation" : "")" aria-labelledby="@($"heading-{id}")" data-parent="#@parentName">
+        <div id="@(id)" class="collapse show @(!Model.Animated ? "disable-animation" : "")" aria-labelledby="@($"heading-{id}")" >
             <ul class="">
                 @{
                     var childIndex = 0;
@@ -114,7 +114,7 @@
 
         @if (node.Nodes.Count > 0)
         {
-            <div id="@(id)" class="collapse show @(!Model.Animated ? "disable-animation" : "")" aria-labelledby="@($"heading-{id}")" data-parent="#@parentName">
+            <div id="@(id)" class="collapse show @(!Model.Animated ? "disable-animation" : "")" aria-labelledby="@($"heading-{id}")">
                 <ul class="">
                     @foreach (var childNode in node.Nodes)
                     {

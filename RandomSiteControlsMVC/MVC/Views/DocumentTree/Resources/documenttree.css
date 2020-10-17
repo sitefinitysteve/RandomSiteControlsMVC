@@ -21,3 +21,6 @@
 .sfs-document-tree.panelbar .card-body ul li {
   list-style-type: none;
 }
+.sfPageEditor .sfs-document-tree .collapse.show {
+  height: auto !important;
+}
