@@ -58,9 +58,12 @@
     <li>
         @if (node.IsFolder)
         {
-            <div class="folder mt-1">
-                <i class="fas fa-folder-open"></i> <span class="title">@node.Title</span>
-            </div>
+            if (Model.RenderParent)
+            {
+                <div class="folder mt-1">
+                    <i class="fas fa-folder-open"></i> <span class="title">@node.Title</span>
+                </div>
+            }
         }
         else
         {
