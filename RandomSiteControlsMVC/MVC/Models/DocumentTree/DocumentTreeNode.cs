@@ -18,6 +18,7 @@ namespace RandomSiteControlsMVC.MVC.Models.DocumentTree
         public bool Expanded { get; set; }
         public bool IsFolder { get; set; }
         public string Title { get; set; }
+        public string Filename { get; set; }
         public string NavigateUrl { get; set; }
         public string Target { get; set; }
         public string CssClass { get; set; }

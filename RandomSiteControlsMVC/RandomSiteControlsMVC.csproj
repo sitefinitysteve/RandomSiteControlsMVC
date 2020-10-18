@@ -154,6 +154,7 @@
     <Compile Include="Helpers\Reference.cs" />
     <Compile Include="HttpModules\RemoveHttpHeadersModule.cs" />
     <Compile Include="Installer.cs" />
+    <Compile Include="MVC\Controllers\DocumentTree\TitleDisplayTypeEnum.cs" />
     <Compile Include="MVC\Controllers\PrintTo\PrintToController.cs" />
     <Compile Include="MVC\Controllers\Twitter\TwitterController.cs" />
     <Compile Include="MVC\Controllers\WidgetFinder\WidgetFinderController.cs" />

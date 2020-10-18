@@ -8,8 +8,13 @@
 @using Telerik.Sitefinity.Services;
 @using RandomSiteControlsMVC.MVC.Models.DocumentTree
 
-
 @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css"), "head")
+
+@{
+    var parentName = "accordian-" + Guid.NewGuid().ToString();
+}
+
+
 
 @functions{
     /// <summary>
@@ -42,28 +47,59 @@
     }
 }
 
-
 <div class="sfs-document-tree simple" data-mode="simple" data-expand-levels="@Model.ExpandLevelDepth">
-    <ul class="root">
+    <div id="@parentName">
+        @{
+            var index = 0;
+        }
         @foreach (var node in Model.Nodes)
         {
-            @RenderSubLevelsRecursive(node);
+            @RenderRootNodes(node, parentName, index, parentName);
+            index++;
         }
-    </ul>
+    </div>
 </div>
 
-@*Here is specified the rendering for the sub levels*@
-@helper RenderSubLevelsRecursive(DocumentTreeNode node)
+
+@helper RenderRootNodes(DocumentTreeNode node, string parentName, int index, string name)
 {
+    var id = $"root-{Guid.NewGuid().ToString()}";
+
+    <div class="">
+        @if (Model.RenderParent)
+        {
+            <div class="" id="@($"heading-{id}")">
+                <div class="py-1 pl-0 pr-0 folder">
+                    <i class="fas fa-folder-open"></i> @node.Title
+                </div>
+            </div>
+        }
+        <div id="@(id)" class="" aria-labelledby="@($"heading-{id}")">
+            <ul class="">
+                @{
+                    var childIndex = 0;
+                }
+                @foreach (var childNode in node.Nodes)
+                {
+                    @RenderSubLevelsRecursive(childNode, id, index, childIndex, name)
+                    childIndex++;
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+
+@helper RenderSubLevelsRecursive(DocumentTreeNode node, string parentName, int index, int childIndex, string name)
+{
+    var id = $"child-{Guid.NewGuid().ToString()}";
+
     <li>
         @if (node.IsFolder)
         {
-            if (Model.RenderParent)
-            {
-                <div class="folder mt-1">
-                    <i class="fas fa-folder-open"></i> <span class="title">@node.Title</span>
-                </div>
-            }
+            <div class="py-1 pl-0 pr-0 folder">
+                <i class="fas fa-folder-open"></i> @node.Title
+            </div>
         }
         else
         {
@@ -78,12 +114,14 @@
 
         @if (node.Nodes.Count > 0)
         {
-            <ul class="">
-                @foreach (var childNode in node.Nodes)
-                {
-                    @RenderSubLevelsRecursive(childNode)
-                }
-            </ul>
+            <div id="@(id)" class="" aria-labelledby="@($"heading-{id}")">
+                <ul class="">
+                    @foreach (var childNode in node.Nodes)
+                    {
+                        @RenderSubLevelsRecursive(childNode, id, index, childIndex, name)
+                    }
+                </ul>
+            </div>
         }
     </li>
 }

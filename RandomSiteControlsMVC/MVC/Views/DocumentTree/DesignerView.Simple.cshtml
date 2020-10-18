@@ -39,6 +39,18 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="navLevelsToInclude">Document Display Type</label>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <select id="navLevelsToInclude" ng-model="properties.TitleDisplay.PropertyValue" class="form-control">
+                    <option value="Title">By Title</option>
+                    <option value="Filename">By Filename</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
         <div class="form-check pl-0">
             <input type="checkbox" class="form-check-input" ng-model="properties.RenderParent.PropertyValue" ng-true-value="'True'" ng-false-value="'False'" ng-checked="properties.RenderParent.PropertyValue === 'True'">
             <label class="form-check-label" for="exampleCheck1">Render Parent Folder</label>

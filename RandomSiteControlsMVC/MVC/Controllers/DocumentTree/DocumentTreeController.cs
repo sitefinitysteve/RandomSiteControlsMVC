@@ -235,11 +235,18 @@ namespace SitefinityWebApp.Mvc.Controllers
             docNode.NavigateUrl = doc.MediaUrl;
             docNode.Target = this.Target;
             docNode.Id = item.Id;
+            docNode.Filename = $"{doc.MediaFileUrlName.Value}{doc.Extension}";
             docNode.ParentId = item.ParentId;
             docNode.Extension = doc.Extension.Replace(".", "").ToLower();
             docNode.IsFolder = false;
             docNode.ContentCssClass = "sfdownloadTitle";
             docNode.CssClass += " sfdownloadFile sf{0}".Arrange(doc.Extension.Replace(".", "").ToLower());
+
+            if(this.TitleDisplay == TitleDisplayTypeEnum.Filename)
+            {
+                docNode.Title = docNode.Filename;
+            }
+
             return docNode;
         }
 
@@ -266,9 +273,10 @@ namespace SitefinityWebApp.Mvc.Controllers
         public bool RenderParent { get; set; } = true;
         public string TemplateName { get; set; } = "Treeview";
         public string DebugName { get; set; }
+        public TitleDisplayTypeEnum TitleDisplay { get; set; } = TitleDisplayTypeEnum.Title;
 
 
-        #region helpers
+    #region helpers
         protected bool IsAnonymous
         {
             get
