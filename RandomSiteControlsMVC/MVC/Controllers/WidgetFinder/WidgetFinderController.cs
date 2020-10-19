@@ -45,7 +45,7 @@ namespace SitefinityWebApp.Mvc.Controllers
                                 .SelectMany(x => x.Page.Controls)
                                 .Where(x => !x.ObjectType.Contains("GridSystem"))
                                 .Select(x => x.Caption)
-                                .ToList().Distinct();
+                                .ToList().Distinct().OrderBy(x => x);
 
             model.SelectedControl = control;
             if (!String.IsNullOrEmpty(control))

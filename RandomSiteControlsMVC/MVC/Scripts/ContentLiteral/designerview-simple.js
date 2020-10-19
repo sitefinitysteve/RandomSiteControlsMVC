@@ -39,7 +39,7 @@
         }
 
         if (typeof monaco === "undefined") {
-            addMonacoStyleSheet("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.css");
+            addMonacoStyleSheet("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.css", "vs/editor/editor.main");
             addMonacoScript("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.js");
             addMonacoScript("/adminapp/assets/js/monaco-editor/vs/loader.js");
         }
@@ -78,8 +78,12 @@ function addMonacoScript(src) {
     document.body.appendChild(s);
 }
 
-function addMonacoStyleSheet(src) {
+function addMonacoStyleSheet(src, dataname) {
     var s = document.createElement('link');
     s.setAttribute('href', src);
+    s.setAttribute('rel', 'stylesheet');
+    if (dataname) {
+        s.setAttribute('data-name', dataname);
+    }
     document.head.appendChild(s);
 }

@@ -1156,6 +1156,7 @@
     <Compile Include="AzureWebRole.cs" />
     <Compile Include="Mvc\Controllers\ExtensionsController.cs" />
     <Compile Include="Mvc\Controllers\DocLinkController.cs" />
+    <Compile Include="Mvc\Controllers\HtmlLiteralController.cs" />
     <Compile Include="Mvc\Controllers\HeaderTitleController.cs" />
     <Compile Include="Mvc\Models\DocLink\DocLinkModel.cs" />
     <Compile Include="Mvc\Models\Extensions\ExtensionItem.cs" />
@@ -1166,6 +1167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Mvc\Views\HtmlLiteral\Resources\literal.js" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.min.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\js\bootstrap.min.js" />
@@ -1486,6 +1488,7 @@
     <Content Include="Mvc\Views\ContentLiteral\Default.cshtml" />
     <Content Include="Mvc\Views\ContentLiteral\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="Mvc\Views\ContentLiteral\DesignerView.Simple.json" />
+    <Content Include="Mvc\Views\HtmlLiteral\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

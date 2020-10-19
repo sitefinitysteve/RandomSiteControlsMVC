@@ -24,6 +24,13 @@ RandomSiteControls re-written in pure MVC for Sitefinity Feather
 ### Helpers
 * TODO: Document
 
+### Demo Setup
+## Restore the database 
+
+* Restore from from /Demo/App_Data/_database using SQL 2019
+* Update the /Demo/App_Data/Configuration/Data.config connection string to be your database
+
+
 ## Troubleshooting
 #### The widgets views are not loading *as of* 12.2 
 Sitefinity added a new feature, a powershell script under \Builds called ScanControllerContainerAssemblies.ps1.  The idea is that on build it scans all the DLLs in /bin and looks for any that are SF Controllers, 
