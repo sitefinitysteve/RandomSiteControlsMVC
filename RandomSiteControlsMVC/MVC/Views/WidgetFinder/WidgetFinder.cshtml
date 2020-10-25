@@ -7,11 +7,11 @@
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
 @using Telerik.Sitefinity;
 @using Telerik.Sitefinity.Mvc;
-@using RandomSiteControlsMVC.Helpers;
 @using Telerik.Sitefinity.Services;
 
 @Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.WidgetFinder.Resources.widgetfinder.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
 @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.WidgetFinder.Resources.widgetfinder.min.css"), "head")
+
 
 <div class="widget-finder-wrapper">
     <div class="row">
@@ -61,12 +61,18 @@
                 <div class="panel-heading">Found widgets</div>
                 <div class="panel-body">
                     <ul class="list-group">
-                        @foreach (var c in Model.Controls)
+                        @foreach (var c in Model.Controls.OrderBy(x => x.Caption))
                         {
                             if (c != null)
                             {
                                 <li runat="server" class="list-group-item">
-                                    <a href="?control=@c.ToString()">@c.ToString()</a>
+                                    <a href="?control=@c.EncodedCaption()&objecttype=@c.ObjectType">
+                                        @c.Caption (@c.Count)
+                                        @if (!c.IsMVC)
+                                        {
+                                            <span class="badge">Legacy Widget</span>
+                                        }
+                                    </a>
                                 </li>
                             }
                         }

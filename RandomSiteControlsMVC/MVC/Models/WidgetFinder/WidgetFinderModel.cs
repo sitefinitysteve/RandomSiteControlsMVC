@@ -15,7 +15,7 @@ namespace RandomSiteControlsMVC.MVC.Models.WidgetFinder
         }
 
         public string SelectedControl { get; set; }
-        public IEnumerable<string> Controls { get; set; }
+        public List<WidgetGroup> Controls { get; set; } = new List<WidgetGroup>();
         public List<PageNode> FoundPages { get; set; }
     }
 }

@@ -10,14 +10,16 @@ using RandomSiteControlsMVC.MVC.Models.WidgetFinder;
 using Telerik.Sitefinity;
 using Telerik.Sitefinity.Fluent.Pages;
 using Telerik.Sitefinity.Data;
+using System.Diagnostics;
+using RandomSiteControlsMVC.MVC.Models.WidgetFinder;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
     [EnhanceViewEnginesAttribute]
-    [ControllerToolboxItem(Name = "WidgetFinderMVC", Title = "Widget Finder", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfSearchResultIcn sfMvcIcn")]
+    [ControllerToolboxItem(Name = "WidgetFinderEAMVC", Title = "Widget Finder EA", SectionName = ToolboxesConfig.ContentToolboxSectionName, CssClass = "sfSearchResultIcn sfMvcIcn")]
     public class WidgetFinderController : Controller
     {
-        public ActionResult Index(string control)
+        public ActionResult Index(string control, string objecttype)
         {
             WidgetFinderModel model = GetModel();
 
@@ -26,33 +28,41 @@ namespace SitefinityWebApp.Mvc.Controllers
                 var pageManager = App.WorkWith().Pages().GetManager();
                 using (var elevatedModeRegion = new ElevatedModeRegion(pageManager))
                 {
-                    this.GetData(control, model);
+                    this.GetData(control, objecttype, model);
                 }
             }
             else
             {
-                this.GetData(control, model);
+                this.GetData(control, objecttype, model);
             }
 
             return View(this.TemplateName, model);
         }
 
-        private void GetData(string control, WidgetFinderModel model)
+        private void GetData(string control, string objecttype, WidgetFinderModel model)
         {
-            model.Controls = App.WorkWith().Pages().LocatedIn(PageLocation.Frontend)
+            model.Controls.AddRange(App.WorkWith().Pages().LocatedIn(PageLocation.Frontend)
                                 .Where(p => p.Page != null)
                                 .Get()
                                 .SelectMany(x => x.Page.Controls)
                                 .Where(x => !x.ObjectType.Contains("GridSystem"))
-                                .Select(x => x.Caption)
-                                .ToList().Distinct().OrderBy(x => x);
+                                .GroupBy(c => new
+                                {
+                                    c.Caption,
+                                    c.ObjectType,
+                                }
+                                ).Select(x => new WidgetGroup(x.Key.Caption, x.Key.ObjectType, x.Count())));
+
+
 
             model.SelectedControl = control;
             if (!String.IsNullOrEmpty(control))
             {
+                var deEncodedControl = Telerik.Sitefinity.Services.SystemManager.CurrentHttpContext.Server.HtmlDecode(control.Replace("%2B", "+"));
+
                 model.FoundPages.AddRange(App.WorkWith().Pages().LocatedIn(PageLocation.Frontend)
                                     .Where(p => p.Page != null &&
-                                        p.Page.Controls.Where(c => c.Caption == control).Count() > 0)
+                                        p.Page.Controls.Where(c => c.Caption == deEncodedControl && c.ObjectType == objecttype).Count() > 0)
                                     .Get()
                                     .ToList());
             }
@@ -71,7 +81,7 @@ namespace SitefinityWebApp.Mvc.Controllers
         }
 
         #region PROPERTIES
-        public string TemplateName { get; set; } = "Default";
+        public string TemplateName { get; set; } = "WidgetFinder";
         public bool AllowUnauthenticated { get; set; } = false;
         #endregion
     }

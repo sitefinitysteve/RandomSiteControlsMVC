@@ -181,6 +181,7 @@
     <Compile Include="MVC\Models\PageTitle\PageTitleModel.cs" />
     <Compile Include="MVC\Models\TabStrip\Tab.cs" />
     <Compile Include="MVC\Models\TabStrip\TabStripModel.cs" />
+    <Compile Include="MVC\Models\WidgetFinder\WidgetGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\RSCUtil.cs" />
     <Compile Include="Services\TwitterApiService.cs" />
@@ -262,7 +263,7 @@
     <EmbeddedResource Include="MVC\Views\GoogleMap\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\GoogleMap\DesignerView.Simple.json" />
-    <EmbeddedResource Include="MVC\Views\WidgetFinder\Default.cshtml" />
+    <EmbeddedResource Include="MVC\Views\WidgetFinder\WidgetFinder.cshtml" />
     <EmbeddedResource Include="MVC\Views\ContentLiteral\Default.cshtml" />
     <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="MVC\Views\ContentLiteral\DesignerView.Simple.json" />
