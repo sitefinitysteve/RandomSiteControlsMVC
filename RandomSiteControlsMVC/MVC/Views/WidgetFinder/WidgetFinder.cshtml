@@ -28,7 +28,7 @@
             <hr />
 
             <ul class="list-group">
-                @foreach (var p in Model.FoundPages)
+                @foreach (var p in Model.FoundPages.OrderBy(x => x.GetUrl()))
                 {
                     var url = p.GetUrl().Replace("~", "");
 
