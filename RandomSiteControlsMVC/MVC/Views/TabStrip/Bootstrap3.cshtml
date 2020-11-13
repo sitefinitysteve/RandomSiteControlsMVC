@@ -11,7 +11,7 @@
 @Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.bootstrap.es5.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
 @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css"), "head")
 
-@if (SystemManager.IsDesignMode)
+@if (SystemManager.IsDesignMode && !SystemManager.IsPreviewMode)
 {
     <div class="sfs-tabstrip-configurator" data-type="bootstrap">
         @*This is so the designer has something to render instantly on a change as SF has no way to notify on save*@
@@ -26,9 +26,9 @@
             }
         </ul>
     </div>
-    }
-    else
-    {
+}
+else
+{
     <ul class="sfs-tabstrip-configurator nav nav-tabs" role="tablist" data-type="bootstrap" data-classname="@(Model.ClassName)">
         @{int i = 1;}
         @foreach (var tab in Model.Tabs)

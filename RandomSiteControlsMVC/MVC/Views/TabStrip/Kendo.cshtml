@@ -14,7 +14,7 @@
 @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css"), "head")
 
 
-@if (SystemManager.IsDesignMode)
+@if (SystemManager.IsDesignMode && !SystemManager.IsPreviewMode)
 {
     @*This is so the designer has something to render instantly on a change as SF has no way to notify on save*@
     <div class="k-tabstrip-wrapper">
@@ -22,7 +22,7 @@
             <ul class="sfs-tabstrip-configurator k-tabstrip-items k-reset">
                 @{int i = 0;}
                 @foreach (var tab in Model.Tabs)
-            {
+                {
                     <li class="k-item @(i==0 ? "k-first" : "")@(i==Model.Tabs.Count() - 1 ? "k-last" : "") @(tab.Selected ? "k-state-active" : "k-state-default")">
                         <span class="k-loading k-complete"></span>
                         <span class="k-link">@tab.Title</span>
