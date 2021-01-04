@@ -27,6 +27,9 @@
       <reference file="TweetSharp.dll" />
       <reference file="Hammock.ClientProfile.dll" />
     </references>
+    <dependencies>
+      <group targetFramework=".NETFramework4.8" />
+    </dependencies>
   </metadata>
   <files>
     <file src="Assemblies\tweetmoasharp\6.0.2\TweetSharp.dll" target="lib" />

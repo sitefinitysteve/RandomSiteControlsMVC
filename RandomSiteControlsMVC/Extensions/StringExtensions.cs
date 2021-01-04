@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 namespace Telerik.Sitefinity
-{
+{ 
     public static class StringExtensions
     {
         /// <summary>
