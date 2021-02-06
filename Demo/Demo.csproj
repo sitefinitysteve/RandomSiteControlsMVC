@@ -1057,6 +1057,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="AzureWebRole.cs" />
+    <Compile Include="Mvc\Controllers\SideNavController.cs" />
     <Compile Include="Mvc\Controllers\ExtensionsController.cs" />
     <Compile Include="Mvc\Controllers\DocLinkController.cs" />
     <Compile Include="Mvc\Controllers\HtmlLiteralController.cs" />
@@ -1066,7 +1067,9 @@
     <Compile Include="Mvc\Models\Extensions\ExtensionsModel.cs" />
     <Compile Include="Mvc\Models\Extensions\SfsDocs.cs" />
     <Compile Include="Mvc\Models\HeaderTitle\HeaderTitleModel.cs" />
+    <Compile Include="Mvc\Models\SideNav\SideNavModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourcePackages\RSC\TailwindUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminApp\assets\auth\oidc-client.min.js" />
@@ -1248,6 +1251,7 @@
       <DependentUpon>rscdemo.js</DependentUpon>
     </Content>
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\container.html" />
+    <Content Include="ResourcePackages\RSC\GridSystem\Templates\bootstrapper.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-12.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-2+3+2+3+2.html" />
     <Content Include="ResourcePackages\RSC\GridSystem\Templates\grid-3+3+3+3.html" />
@@ -1374,7 +1378,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mvc\Scripts\" />
-    <Folder Include="ResourcePackages\RSC\assets\hyper\js\" />
+    <Folder Include="ResourcePackages\RSC\assets\public\css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ResourcePackages\RSC\package-lock.json" />
@@ -1520,6 +1524,7 @@
     <Content Include="Mvc\Views\ContentLiteral\DesignerView.Simple.cshtml" />
     <EmbeddedResource Include="Mvc\Views\ContentLiteral\DesignerView.Simple.json" />
     <Content Include="Mvc\Views\HtmlLiteral\Default.cshtml" />
+    <Content Include="Mvc\Views\SideNav\SideNav.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

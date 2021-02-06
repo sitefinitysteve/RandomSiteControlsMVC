@@ -24,12 +24,24 @@
     }
     else
     {
-        <li class="side-nav-item  @GetClass(node)">
-            <a href="@node.Url" class="side-nav-link" target="@node.LinkTarget">
-                <i class="@node.CustomFields.PageIcon"></i>
-                <span> @node.Title </span>
-            </a>
-        </li>
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="@node.Url" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md @GetClass(node)" target="@node.LinkTarget">
+            <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
+            <!-- Heroicon name: outline/home -->
+            @if (!String.IsNullOrEmpty(node.CustomFields.IconSVGMarkup))
+            {
+                <svg class="text-white-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                @Html.Raw(node.CustomFields.IconSVGMarkup)
+                </svg>
+            }
+            else
+            {
+                <svg class="text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>   
+            }
+            @node.Title
+        </a>
     }
 }
 
@@ -62,10 +74,10 @@
 @helper GetClass(NodeViewModel node)
 {if (node.IsCurrentlyOpened)
     {
-@Html.HtmlSanitize("active");
+@Html.HtmlSanitize("bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md");
 }
 else if (node.HasChildOpen)
 {
-@Html.HtmlSanitize("active");
+@Html.HtmlSanitize("bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md");
 }
 }

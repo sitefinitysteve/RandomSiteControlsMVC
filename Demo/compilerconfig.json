@@ -6,5 +6,9 @@
   {
     "outputFile": "Mvc/Views/DocumentTree/Resources/documenttree.css",
     "inputFile": "Mvc/Views/DocumentTree/Resources/documenttree.less"
+  },
+  {
+    "outputFile": "ResourcePackages/RSC/assets/public/css/custom.bootstrap.min.css",
+    "inputFile": "ResourcePackages/RSC/assets/public/css/custom.bootstrap.min.scss"
   }
 ]

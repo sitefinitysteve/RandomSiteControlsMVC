@@ -1,21 +1,21 @@
 ﻿@model SitefinityWebApp.Mvc.Models.DocLink.DocLinkModel
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="card overflow-hidden doc-link" style=" color: #fff; background-color: #0acf97; border-color: #0acf97;">
-            <div class="card-body">
-                <div class="toll-free-box text-center">
-                    <h4> <i class="mdi mdi-download"></i> <a href="https://www.nuget.org/packages/RandomSiteControlsMVC/" target="_blank">Install Now</a></h4>
-                </div>
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="bg-white my-5">
+    <div class="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <span class="block">Ready to try on your site?</span>
+        </h2>
+        <div class="mt-8 flex justify-center">
+            <div class="inline-flex rounded-md shadow">
+                <a href="https://www.nuget.org/packages/RandomSiteControlsMVC/" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    Install Now
+                </a>
             </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card text-white bg-danger overflow-hidden doc-link">
-            <div class="card-body">
-                <div class="toll-free-box text-center">
-                    <h4> <i class="mdi mdi-file-document-outline"></i> <a href="@Model.Link" target="_blank">@Model.Text</a></h4>
-                </div>
+            <div class="ml-3 inline-flex">
+                <a href="@Model.Link" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
+                    @Model.Text
+                </a>
             </div>
         </div>
     </div>

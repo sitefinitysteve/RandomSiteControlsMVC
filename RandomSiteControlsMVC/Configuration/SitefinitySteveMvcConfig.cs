@@ -161,7 +161,6 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
-
         [ConfigurationProperty("googlemaps")]
         public GoogleMapsElement GoogleMaps
         {

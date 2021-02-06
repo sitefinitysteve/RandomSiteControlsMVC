@@ -7,38 +7,54 @@
 }
 
 <div id="extensionDocs">
+    <!-- This example requires Tailwind CSS v2.0+ -->
+
+
+
     <div>
         @foreach (var group in Model.Classes)
         {
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="header-title mb-4" style="text-transform:none">@group.Key</h4>
-
-                    <table class="table table-responsive" style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th style="width: 40%">Method</th>
-                                <th style="width: 40%">Summary</th>
-                                <th style="width: 20%">
-                                    Returns
-                                </th>
-                            </tr>
-                        </thead>
-                        @foreach (var m in group.OrderBy(x => x.MethodName))
-                        {
-                            <tr>
-                                <td style="word-break: break-all">
-                                    @m.MethodName
-                                </td>
-                                <td style="word-break: break-all">
-                                    @Html.Raw(m.Summary.Replace("<br/>","").Replace("<br />", "").Replace("<br>",""))
-                                </td>
-                                <td style="word-break: break-all">
-                                    @m.ReturnType
-                                </td>
-                            </tr>
-                        }
-                    </table>
+            <div class="flex flex-col mb-4 min-w-full">
+                <div class="-my-2 sm:-mx-6 lg:-mx-8 min-w-full">
+                    <div class="py-2 align-middle inline-block sm:px-6 lg:px-8 min-w-full">
+                        <h3 class="mb-2 text-green-500">@group.Key</h3>
+                        <div class="shadowborder-b border-gray-200 sm:rounded-lg">
+                            <table class="divide-y divide-gray-200 min-w-full">
+                                <thead class="bg-gray-50 hidden lg:table-row-group">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style="width: 40%">
+                                            Method
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"  style="width: 40%">
+                                            Summary
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"  style="width: 20%">
+                                            Returns
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    @foreach (var m in group.OrderBy(x => x.MethodName))
+                                    {
+                                        var method = m.MethodName;
+                                        <tr>
+                                            <td class="px-6 py-4 text-sm  break-words max-w-md">
+                                                <div class="font-medium text-gray-900"><span class="text-blue-400">@Html.Raw(m.MethodName.Replace("(", "</span>("))</div>
+                                                <p class="sm:visible lg:hidden text-gray-500">@Html.Raw(m.Summary.Replace("<br/>", "").Replace("<br />", "").Replace("<br>", ""))</p>
+                                                <p class="sm:visible lg:hidden text-gray-500  mt-2">Returns: @m.ReturnType</p>
+                                            </td>
+                                            <td class="px-6 py-4 text-sm text-gray-500 sm:hidden  lg:table-cell">
+                                                @Html.Raw(m.Summary.Replace("<br/>", "").Replace("<br />", "").Replace("<br>", ""))
+                                            </td>
+                                            <td class="px-6 py-4 text-sm text-gray-500 sm:hidden  lg:table-cell">
+                                                @m.ReturnType
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         }
