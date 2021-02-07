@@ -1057,6 +1057,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="AzureWebRole.cs" />
+    <Compile Include="Mvc\Controllers\StaticPageController.cs" />
     <Compile Include="Mvc\Controllers\SideNavController.cs" />
     <Compile Include="Mvc\Controllers\ExtensionsController.cs" />
     <Compile Include="Mvc\Controllers\DocLinkController.cs" />
@@ -1525,6 +1526,7 @@
     <EmbeddedResource Include="Mvc\Views\ContentLiteral\DesignerView.Simple.json" />
     <Content Include="Mvc\Views\HtmlLiteral\Default.cshtml" />
     <Content Include="Mvc\Views\SideNav\SideNav.cshtml" />
+    <Content Include="Mvc\Views\StaticPage\Home.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

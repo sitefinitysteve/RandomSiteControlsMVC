@@ -1,0 +1,90 @@
+﻿
+<div class="min-h-screen">
+    <div class="relative overflow-hidden">
+        <main>
+            <div class="pt-10 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden mb-10">
+                <div class="mx-auto max-w-7xl lg:px-8">
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                        <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                            <div class="lg:py-24">
+                                <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-gray-600 sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                                    <span class="block">A better way to</span>
+                                    <span class="block text-indigo-400">build Sitefinity</span>
+                                </h1>
+                                <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                    Random is a free suite of Drag\Drop MVC Widgets and developer extensions to use with Sitefinity made with ❤️ by sitefinitysteve.com
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+                            <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+                                <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
+                                <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="/ResourcePackages/RSC/assets/hyper/images/startup.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- This example requires Tailwind CSS v2.0+ -->
+            <div class="bg-white">
+                <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+                    <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-gray-700">
+                                Frequently asked questions
+                            </h2>
+                            <p class="mt-4 text-lg text-gray-500">Can’t find the answer you’re looking for? Reach out to our <a href="https://www.sitefinitysteve.com/contact" class="font-medium text-indigo-600 hover:text-indigo-500">customer support</a> team.</p>
+                        </div>
+
+                        @{
+                            var faq = new List<Tuple<string, string>>();
+
+                            faq.Add(Tuple.Create("How much do they cost?", "100% Free to use on any site you want.  Please consider <a class='text-indigo-600' href=\"https://www.sitefinitysteve.com/donate\">donating</a> to their development if they're helping you out though."));
+                            faq.Add(Tuple.Create("What if I experience issues?", "Since they are open source, please direct all issues into <a class='text-indigo-600' href=\"https://github.com/sitefinitysteve/RandomSiteControlsMVC/issues\">GitHub Issues</a>."));
+                            faq.Add(Tuple.Create("Can you build us a widget?", "Sure, <a class='text-indigo-600' href=\"https://www.sitefinitysteve.com/contact\">contact us</a> and we can chat about what you need. If you don't need to OWN it, consider adding it as a feature request to Github for this Library."));
+                            faq.Add(Tuple.Create("How often do you update?", "Assembly binding means we don't have to re-release for every Sitefinity version, so don't worry about being locked in. As long as your SF version is equal to or less than our compiled DLL, it'll just work."));
+                        }
+
+                        <div class="mt-12 lg:mt-0 lg:col-span-2">
+                            <dl class="space-y-12">
+                                @foreach (var f in faq)
+                                {
+                                    <div>
+                                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                                            @f.Item1
+                                        </dt>
+                                        <dd class="mt-2 text-base text-gray-500">
+                                            @Html.Raw(f.Item2)
+                                        </dd>
+                                    </div>
+                                }
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- This example requires Tailwind CSS v2.0+ -->
+            <div class="bg-indigo-100 mt-5">
+                <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
+                        <span class="block">Ready to dive in?</span>
+                        <span class="block text-indigo-600">Start using it today.</span>
+                    </h2>
+                    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                        <div class="inline-flex rounded-md shadow">
+                            <a href="https://www.nuget.org/packages/RandomSiteControlsMVC/" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                Get started
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+    </div>
+</div>
