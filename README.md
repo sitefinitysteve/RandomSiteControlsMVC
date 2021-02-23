@@ -37,7 +37,7 @@ Sitefinity added a new feature, a powershell script under \Builds called ScanCon
 then knows to load just those instead of everything like it used to. It's outlined in [this blog post](https://www.progress.com/blogs/performance-optimizations-in-sitefinity-12-2_).  The problem is
 if you aren't using the EXACT version of Sitefinity this DLL was built against, RandomSiteControlsMVC doesn't get picked up and added to that .json file, and thus SF doesn't load any of the views.
 
-The fix is to replace the default ScanControllerContainerAssemblies.ps1 with mine here: https://github.com/sitefinitysteve/RandomSiteControlsMVC/blob/master/RandomSiteControlsMVC/Build/ScanControllerContainerAssemblies.ps1
+The fix is to replace the default ~/Build/ScanControllerContainerAssemblies.ps1 with mine here: https://github.com/sitefinitysteve/RandomSiteControlsMVC/blob/master/RandomSiteControlsMVC/Build/ScanControllerContainerAssemblies.ps1
 
 All it does differently is pick up any DLLs having this assembly mismatch against a Telerik.Sitefinity .dll and just add it to this .json file.
 
