@@ -27,7 +27,7 @@
     <h3 class="mt-5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
         Components
     </h3>
-    @foreach (var node in Model.ComponentPages)
+    @foreach (var node in Model.ComponentPages.OrderBy(x => x.Ordinal))
     {
         var data = node.GetPageData();
         var svg = node.GetValue<Lstring>("IconSVGMarkup");
