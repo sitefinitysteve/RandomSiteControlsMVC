@@ -17,7 +17,7 @@
     "cross-env": "^7.0.3",
     "laravel-mix": "^5.0.9",
     "laravel-mix-vue3": "^0.7.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "resolve-url-loader": "^3.1.0",
     "sass-loader": "^10.1.0",
     "vue-loader": "^16.1.2"
