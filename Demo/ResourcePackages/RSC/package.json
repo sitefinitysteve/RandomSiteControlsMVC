@@ -5,7 +5,7 @@
   "description": "",
   "dependencies": {
     "autoprefixer": "^10.1.0",
-    "postcss": "^8.2.1",
+    "postcss": "^8.2.13",
     "tailwindcss": "^2.0.2",
     "vue": "^3.0.5"
   },
