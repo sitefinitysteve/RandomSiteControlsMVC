@@ -10,7 +10,7 @@
 @Html.Script(ScriptRef.JQuery, RSCUtil.SfsConfig.jQueryScriptPlaceholder)
 @Html.Script(ScriptRef.KendoWeb, RSCUtil.SfsConfig.KendoScriptPlaceholder)
 
-@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
+@Html.Script(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.min.js"), RSCUtil.SfsConfig.DefaultScriptPlaceholder)
 @Html.StyleSheet(Url.EmbeddedResource("RandomSiteControlsMVC.Reference", "RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css"), "head")
 
 
@@ -39,7 +39,7 @@ else
         @{int i = 1;}
         @foreach (var tab in Model.Tabs)
         {
-            <li role="presentation" class='@(tab.Selected ? "k-state-active" : "")'>
+            <li role="presentation" class='' data-selected="@(tab.Selected ? "true" : "false")" data-tabindex="@(i - 1)">
                 <a aria-controls="@tab.Title.ToLower()" role="tab">@tab.Title</a>
             </li>
             i++;

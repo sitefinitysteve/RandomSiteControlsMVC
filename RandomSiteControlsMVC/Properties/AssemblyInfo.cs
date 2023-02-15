@@ -52,6 +52,7 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.es5.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.bootstrap.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.js", "text/javascript")]
+[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.kendoui.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.es5.min.js", "text/javascript")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.GoogleMap.Resources.googlemap.es5.min.js", "text/javascript")]

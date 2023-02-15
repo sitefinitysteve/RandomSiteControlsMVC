@@ -251,12 +251,6 @@
       <DependentUpon>bootstrap.es5.js</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.js" />
-    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.es5.js">
-      <DependentUpon>kendoui.js</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.es5.min.js">
-      <DependentUpon>kendoui.es5.js</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\tabstrip.css">
       <DependentUpon>tabstrip.less</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +303,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MVC\Scripts\DocumentTree\designerview-simple.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.min.js">
+      <DependentUpon>kendoui.js</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

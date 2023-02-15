@@ -16,9 +16,12 @@
 
                 //Initalize the tabstrip on sfs-tabstrip
                 try {
+                    var selectedTab = wrapper.find("[data-selected='true'] a").text();
+
                     $(this).kendoTabStrip({
                         animation: false,
-                        tabPosition: config.data("tab-position")
+                        tabPosition: config.data("tab-position"),
+                        value: selectedTab
                     });
 
                     

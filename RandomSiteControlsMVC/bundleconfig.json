@@ -10,5 +10,11 @@
     "inputFiles": [
       "MVC/Views/WidgetFinder/Resources/widgetfinder.js"
     ]
+  },
+  {
+    "outputFileName": "MVC/Views/TabStrip/Resources/kendoui.min.js",
+    "inputFiles": [
+      "MVC/Views/TabStrip/Resources/kendoui.js"
+    ]
   }
 ]
