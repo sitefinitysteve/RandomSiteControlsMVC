@@ -203,7 +203,6 @@
     <EmbeddedResource Include="MVC\Views\Twitter\Resources\twitter.min.css">
       <DependentUpon>twitter.css</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
     <EmbeddedResource Include="MVC\Views\WidgetFinder\Resources\widgetfinder.css">
       <DependentUpon>widgetfinder.less</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +307,9 @@
     <EmbeddedResource Include="MVC\Views\TabStrip\Resources\kendoui.min.js">
       <DependentUpon>kendoui.js</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MVC\Scripts\ContentLiteral\designerview-simple.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

@@ -1268,6 +1268,12 @@
     <Content Include="ResourcePackages\Bootstrap4\GridSystem\Templates\grid-8+4.html" />
     <Content Include="ResourcePackages\Bootstrap4\GridSystem\Templates\grid-9+3.html" />
     <Content Include="ResourcePackages\Bootstrap4\MVC\Scripts\Navigation\pills.js" />
+    <Content Include="ResourcePackages\RSC\assets\rscdemo.es5.js">
+      <DependentUpon>rscdemo.js</DependentUpon>
+    </Content>
+    <Content Include="ResourcePackages\RSC\assets\rscdemo.es5.min.js">
+      <DependentUpon>rscdemo.es5.js</DependentUpon>
+    </Content>
     <Content Include="ResourcePackages\RSC\assets\rscdemo.js" />
     <Content Include="ResourcePackages\RSC\assets\rscdemo.min.js">
       <DependentUpon>rscdemo.js</DependentUpon>
@@ -1514,9 +1520,7 @@
     </None>
     <Content Include="Mvc\Views\WidgetFinder\Default.cshtml" />
     <Content Include="Mvc\Views\Extensions\Extensions.cshtml" />
-    <Content Include="Mvc\Views\ContentLiteral\Default.cshtml" />
-    <Content Include="Mvc\Views\ContentLiteral\DesignerView.Simple.cshtml" />
-    <EmbeddedResource Include="Mvc\Views\ContentLiteral\DesignerView.Simple.json" />
+    <EmbeddedResource Include="Mvc\Views\ContentLiteral\Default.cshtml" />
     <Content Include="Mvc\Views\HtmlLiteral\Default.cshtml" />
     <Content Include="Mvc\Views\SideNav\SideNav.cshtml" />
     <Content Include="Mvc\Views\StaticPage\Home.cshtml" />

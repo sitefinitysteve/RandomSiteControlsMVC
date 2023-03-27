@@ -253,4 +253,6 @@ paket-files/
 
 Settings.aiis
 /Demo/App_Data/Sitefinity/Sitefinity.lic
+/Demo/App_Data/Sitefinity/Search/*
+/Demo/App_Data/Sitefinity/Search
 /Demo/App_Data/Sitefinity/Configuration/SitefinitySteveMvcConfig.config

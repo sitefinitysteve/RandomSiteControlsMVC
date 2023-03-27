@@ -4,8 +4,38 @@
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
 @using Telerik.Sitefinity.Mvc;
 
-<div class="clearfix">
-    <div id="content-html-container" style="border: 1px solid #eee;">
+@Html.CodeMirrorScriptReferences()
 
+<style>
+    :root:root:root:root:root:root .sf-backend-wrp .sf-code {
+        margin-bottom: -16px !important;
+    }
+
+    :root:root:root:root:root:root .CodeMirror {
+        height: unset !important;
+    }
+    :root:root:root:root:root:root .sf-backend-wrp .CodeMirror-scroll {
+        height: unset !important;
+    }
+
+    :root:root:root:root:root:root .modal-footer{
+        background-color: #FFF !important;
+        z-index: 9999 !important;
+    }
+</style>
+
+<div class="clearfix">
+    <div class="sf-code sf-code--down clearfix sf-custom">
+        <div class="sf-code sf-code--down clearfix sf-custom">
+            <textarea sf-code-area
+                      class="sf-custom"
+                      sf-type="htmlmixed"
+                      sf-tab-mode="classic"
+                      sf-line-numbers="true"
+                      sf-match-brackets="true"
+                      sf-model="properties.HtmlContent.PropertyValue"
+                      placeholder="Enter Html">
+                        </textarea>
+        </div>
     </div>
 </div>

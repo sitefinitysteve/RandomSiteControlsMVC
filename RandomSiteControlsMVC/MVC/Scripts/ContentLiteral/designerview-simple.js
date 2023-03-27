@@ -1,69 +1,40 @@
-﻿var require = { paths: { 'vs': '/adminapp/assets/js/monaco-editor/vs/' } };
+﻿var $sfCodeMirrorHtmlEditor = null;
 
 (function ($) {
+    angular.module('designer').requires.push('expander', 'sfCodeArea', 'sfBootstrapPopover');
+
     angular.module('designer').controller('SimpleCtrl', ['$scope', 'propertyService', function ($scope, propertyService) {
-        //Fill the screen
         $('.sf-backend-wrp').addClass('modal-fluid');;
+        
+        //Set the max height
+        setTimeout(function(){
+            var elements = $(".CodeMirror-scroll > div, \
+            .CodeMirror-scroll > div > div > div,\
+            .CodeMirror-gutter");
 
-        var contentHtmlEditor;
+            var requiredHeight = $(".modal-content").height() - 120;
 
-        $scope.waitForMonaco = function () {
-            if (typeof monaco !== "undefined") {
-                //variable exists, do what you want
-                //Resize editor zone
-                $scope.resizeMonacoEditorWindow();
+            elements.height(requiredHeight)
+            elements.css("max-height", requiredHeight);
+            
+            console.log("Resizing from " + currentHeight + " to " + requiredHeight);
+        }, 500);
 
-                contentHtmlEditor = monaco.editor.create(document.getElementById('content-html-container'), {
-                    language: 'html',
-                    autoIndent: true
-                });
-
-                if ($scope.properties) {
-                    contentHtmlEditor.setValue($scope.properties.HtmlContent.PropertyValue);
-                }
-
-                $(window).resize(function () {
-                    $scope.resizeMonacoEditorWindow();
-                });
-            }
-            else {
-                setTimeout($scope.waitForMonaco, 250);
-            }
-        }
-
-        $scope.resizeMonacoEditorWindow = function () {
-            //Resize editor zone
-            var height = $("#viewsPlaceholder").closest(".modal-body").height();
-            $("#content-html-container").height(height);
-            console.log("Resizing editor: " + height);
-        }
-
-        if (typeof monaco === "undefined") {
-            addMonacoStyleSheet("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.css", "vs/editor/editor.main");
-            addMonacoScript("/adminapp/assets/js/monaco-editor/vs/editor/editor.main.js");
-            addMonacoScript("/adminapp/assets/js/monaco-editor/vs/loader.js");
-        }
-
-        $scope.waitForMonaco();
 
         propertyService.get()
             .then(function (data) {
-                if (data) {
+                if (data && data.Items) {
                     $scope.properties = propertyService.toAssociativeArray(data.Items);
-
-                    if (contentHtmlEditor) {
-                        contentHtmlEditor.setValue($scope.properties.HtmlContent.PropertyValue);
-                    }
                 }
             },
-                function (data) {
+                function (errorData) {
                     $scope.feedback.showError = true;
-                    if (data)
-                        $scope.feedback.errorMessage = data.Detail;
+                    if (errorData && errorData.data)
+                        $scope.feedback.errorMessage = errorData.data.Detail;
                 })
             .then(function () {
                 $scope.feedback.savingHandlers.push(function () {
-                    $scope.properties.HtmlContent.PropertyValue = contentHtmlEditor.getValue();
+                    
                 });
             })
             .finally(function () {
@@ -71,19 +42,3 @@
             });
     }]);
 })(jQuery);
-
-function addMonacoScript(src) {
-    var s = document.createElement('script');
-    s.setAttribute('src', src);
-    document.body.appendChild(s);
-}
-
-function addMonacoStyleSheet(src, dataname) {
-    var s = document.createElement('link');
-    s.setAttribute('href', src);
-    s.setAttribute('rel', 'stylesheet');
-    if (dataname) {
-        s.setAttribute('data-name', dataname);
-    }
-    document.head.appendChild(s);
-}
