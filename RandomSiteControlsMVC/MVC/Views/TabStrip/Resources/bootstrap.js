@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    if (!$("body").hasClass(".sfPageEditor")) {
+    if (!$("body").hasClass("sfPageEditor")) {
         var panelCounter = 0;
         $(".sfs-tabstrip").each(function () {
             var wrapper = $(this);

@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    if (!$("body").hasClass(".sfPageEditor")) {
+    if (!$("body").hasClass("sfPageEditor")) {
 
         $(".sfs-tabstrip").each(function () {
             var wrapper = $(this);
