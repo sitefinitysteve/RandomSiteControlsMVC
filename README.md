@@ -57,7 +57,6 @@ They are under the "Controls" toolbox menu below your standard grid layouts
 I'm using a Javascript converter in the designer, but using the ServiceStack markdown parser on the server widget.  You'd need to post the question to ServiceStack via Stackoverflow.
 
 ## Roadmap
-* Disqus
 * Modal popup\Fancybox?
 * Document Tree List
 * Placeholder

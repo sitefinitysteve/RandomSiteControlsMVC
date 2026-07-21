@@ -135,32 +135,6 @@ namespace RandomSiteControlsMVC.Configuration
             }
         }
 
-        [ConfigurationProperty("disqus")]
-        public DisqusConfigElement Disqus
-        {
-            get
-            {
-                return (DisqusConfigElement)this["disqus"];
-            }
-            set
-            {
-                this["disqus"] = value;
-            }
-        }
-
-        [ConfigurationProperty("twitter")]
-        public TwitterConfigElement Twitter
-        {
-            get
-            {
-                return (TwitterConfigElement)this["twitter"];
-            }
-            set
-            {
-                this["twitter"] = value;
-            }
-        }
-
         [ConfigurationProperty("googlemaps")]
         public GoogleMapsElement GoogleMaps
         {

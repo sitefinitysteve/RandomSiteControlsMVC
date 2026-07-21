@@ -37,8 +37,8 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("14.0.7700.2")]
-[assembly: AssemblyFileVersion("14.0.7700.2")]
+[assembly: AssemblyVersion("15.2.7700.2")]
+[assembly: AssemblyFileVersion("15.2.7700.2")]
 
 //INSTALLER
 [assembly: PreApplicationStartMethod(typeof(Installer), "PreApplicationStart")]
@@ -63,4 +63,3 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.TabStrip.Resources.tabstrip.min.css", "text/css")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.DocumentTree.Resources.documenttree.min.css", "text/css")]
 [assembly: WebResource("RandomSiteControlsMVC.MVC.Views.WidgetFinder.Resources.widgetfinder.min.css", "text/css")]
-[assembly: WebResource("RandomSiteControlsMVC.MVC.Views.Twitter.Resources.twitter.min.css", "text/css")]

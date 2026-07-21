@@ -10,7 +10,7 @@ using RandomSiteControlsMVC.MVC.Models.Markdown;
 using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
 using ServiceStack.Formats;
 using ServiceStack;
-using HeyRed.MarkdownSharp;
+using Markdig;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -43,19 +43,19 @@ namespace SitefinityWebApp.Mvc.Controllers
             return model;
         }
 
+        //Pipelines are immutable and thread safe, build once and reuse
+        //UseAutoLinks replaces the old AutoHyperlink\LinkEmails options
+        private static readonly MarkdownPipeline Pipeline = new MarkdownPipelineBuilder()
+            .UseAdvancedExtensions()
+            .UseAutoLinks()
+            .Build();
+
         protected string GetHtml()
         {
             try
             {
-                var options = new MarkdownOptions
-                {
-                    AutoHyperlink = true,
-                    LinkEmails = true,
-                    StrictBoldItalic = true
-                };
-
-                Markdown mark = new Markdown(options);
-                var html = mark.Transform(this.Markdown);
+                //Markdig.Markdown is qualified because this controller has its own Markdown property
+                var html = Markdig.Markdown.ToHtml(this.Markdown, Pipeline);
 
                 return html;
             }

@@ -54,12 +54,6 @@
             This is the default Action.
             </summary>
         </member>
-        <member name="M:RandomSiteControlsMVC.Services.TwitterServicePlugin.Register(ServiceStack.IAppHost)">
-            <summary>
-            Call this at SitefinityWebApp.App_Start.RegisterServiceStackRoutes
-            SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
-            </summary>
-        </member>
         <member name="M:RandomSiteControlsMVC.Services.UtilityServiceServicePlugin.Register(ServiceStack.IAppHost)">
             <summary>
             Call this at SitefinityWebApp.App_Start.RegisterServiceStackRoutes
@@ -457,20 +451,6 @@
             Thanks to 
             https://stackoverflow.com/questions/2185872/force-browsers-to-get-latest-js-and-css-files-in-asp-net-application
             </summary>
-        </member>
-        <member name="M:Telerik.Sitefinity.Frontend.Mvc.Helpers.FileReferenceExtensions.ScriptVersioned(System.Web.Mvc.HtmlHelper,System.String)">
-            <summary>
-            Append cache busting version a script tag
-            🔥 From SitefinitySteve
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Sitefinity.Frontend.Mvc.Helpers.FileReferenceExtensions.StyleSheetVersioned(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)">
-            <summary>
-            Append cache busting version a stylesheet link
-            🔥 From SitefinitySteve
-            </summary>
-            <returns>MvcHtmlString</returns>
         </member>
         <member name="M:Telerik.Sitefinity.Frontend.Mvc.Helpers.FileReferenceExtensions.GetVersion(System.Web.Mvc.HtmlHelper,System.String)">
             <summary>

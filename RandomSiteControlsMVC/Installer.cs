@@ -44,14 +44,6 @@ namespace RandomSiteControlsMVC
 
         private static void InstallServices()
         {
-            var sfconfig = Telerik.Sitefinity.Configuration.Config.Get<RandomSiteControlsMVC.Configuration.SitefinitySteveMvcConfig>();
-
-            if (sfconfig.Twitter.Enabled)
-            {
-                //Register ServiceStack route
-                SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.TwitterServicePlugin());
-            }
-
             //Utility service, for printer
             SystemManager.RegisterServiceStackPlugin(new RandomSiteControlsMVC.Services.UtilityServiceServicePlugin());
         }
