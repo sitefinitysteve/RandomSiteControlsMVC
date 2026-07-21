@@ -24,13 +24,6 @@ RandomSiteControls re-written in pure MVC for Sitefinity Feather
 ### Helpers
 * TODO: Document
 
-### Demo Setup
-## Restore the database 
-
-* Restore from from /Demo/App_Data/_database using SQL 2019
-* Update the /Demo/App_Data/Configuration/Data.config connection string to be your database
-
-
 ## Troubleshooting
 #### The widgets views are not loading *as of* 12.2 
 Sitefinity added a new feature, a powershell script under \Builds called ScanControllerContainerAssemblies.ps1.  The idea is that on build it scans all the DLLs in /bin and looks for any that are SF Controllers, 
@@ -66,20 +59,6 @@ I'm using a Javascript converter in the designer, but using the ServiceStack mar
 * Remove the reference in VS (If it's there)
 * Search your project for "RandomSiteControls" and remove all the old refs.  Toolbox.config and VirtualPaths.config will need to be edited
 * Find\Replace for "RandomSiteControlsUtil" to "RSCUtil"
-
-## Setting up the demo project
-* Database is in \App_Data\_database, attach it to SQL
-* Create the Data config file in \App_Data\Sitefinity\Configuration\Data.Config
-```
-<?xml version="1.0" encoding="utf-8"?>
-<dataConfig xmlns:config="urn:telerik:sitefinity:configuration" xmlns:type="urn:telerik:sitefinity:configuration:type" config:version="13.0.7327.0">
-	<connectionStrings>
-		<add connectionString="data source=(local);UID=rscdemo;PWD=rscdemo;initial catalog=rscdemo" name="Sitefinity" />
-	</connectionStrings>
-</dataConfig>
-```
-* Change the login to whatever suits you
-
 
 ## Author
 [Created by Sitefinity Steve](https://www.sitefinitysteve.com)

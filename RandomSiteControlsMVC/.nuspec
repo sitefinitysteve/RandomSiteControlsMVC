@@ -24,7 +24,7 @@
 	  <projectUrl>https://github.com/sitefinitysteve/RandomSiteControlsMVC</projectUrl>
     <dependencies>
 		<group targetFramework=".NETFramework4.8">
-			<dependency id="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" version="3.6.0" />
+			<dependency id="Markdig" version="0.42.0" />
 		</group>
     </dependencies>
   </metadata>
